@@ -1,0 +1,2692 @@
+#%RAML 1.0
+title: WParkW API
+version: 1.0
+baseUri: https://api.dev.wparkw.com
+baseUriParameters:
+  domain:
+    required: false
+    default: DefaultParameterValue
+    displayName: domain
+    type: string
+documentation:
+- title: WParkW API
+  content: |
+    # Introduction
+
+    What does your API do?
+
+
+    # Overview
+
+    Things that the developers should know about
+
+
+    # Authentication
+
+    What is the preferred way of using the API?
+
+
+    # Error Codes
+
+    What errors and status codes can a user expect?
+
+
+    # Rate limit
+
+    Is there a limit to the number of requests an user can send?
+types:
+  User  authenticaterequest:
+    example:
+      value:
+        login:
+          username: sandejones
+          password: P@ssw0rdSJ
+    displayName: User - AuthenticateRequest
+    type: object
+    properties:
+      login:
+        required: true
+        displayName: login
+        type: Login
+  Login:
+    example:
+      value:
+        username: sandejones
+        password: P@ssw0rdSJ
+    displayName: Login
+    type: object
+    properties:
+      username:
+        required: true
+        displayName: username
+        type: string
+      password:
+        required: true
+        displayName: password
+        type: string
+  User  authenticate:
+    example:
+      value:
+        message: Invalid username or password.
+        status: False
+        passwordcheck:
+          status: False
+          password:
+            PASSWORD: P@ssw0rdSJ
+            SALT: 8CC426699D408C25BA47CFDC753FCBC7BD5950C0ED600637C8A4F4B4B522252E
+            ALGORITHM: SHA384
+            PASSWORDHASH: 1AF876BBACB7CA55CA1BC1BCBC5B4B591B96DFD1880349BD4383856A3DD774F7F42BC44867CCE8E952961E3A532764EA
+          temp_password:
+            PASSWORD: P@ssw0rdSJ
+            SALT: 302031EB60CE1A89FB947E17EA8635D899BC6C4F6E1A1A73C4E55A6040858637
+            ALGORITHM: SHA384
+            PASSWORDHASH: 86A4A9CFA3726EF157963B756322EF5AF83FC3033723FB5BEB1B0D4158104A94CC0C4D5F99878F4E4F3F9C8EC8F0E0B3
+          test_password:
+            PASSWORD: P@ssw0rdSJ
+            SALT: 29E8E204593EBA6FFA9A0F8536CF30786E076A4A7946987145D8FECD05559B86
+            ALGORITHM: SHA384
+            PASSWORDHASH: 5E78F0A08CFC77835B89CD4FB4FC40C5ABD0A4A4C964AD8612C22EA220B133544953F9EF898A5B36F7D9366C69E7520E
+    displayName: User - Authenticate
+    type: object
+    properties:
+      message:
+        required: true
+        displayName: message
+        type: string
+      status:
+        required: true
+        displayName: status
+        type: boolean
+      passwordcheck:
+        required: true
+        displayName: passwordcheck
+        type: Passwordcheck
+  Passwordcheck:
+    example:
+      value:
+        status: False
+        password:
+          PASSWORD: P@ssw0rdSJ
+          SALT: 8CC426699D408C25BA47CFDC753FCBC7BD5950C0ED600637C8A4F4B4B522252E
+          ALGORITHM: SHA384
+          PASSWORDHASH: 1AF876BBACB7CA55CA1BC1BCBC5B4B591B96DFD1880349BD4383856A3DD774F7F42BC44867CCE8E952961E3A532764EA
+        temp_password:
+          PASSWORD: P@ssw0rdSJ
+          SALT: 302031EB60CE1A89FB947E17EA8635D899BC6C4F6E1A1A73C4E55A6040858637
+          ALGORITHM: SHA384
+          PASSWORDHASH: 86A4A9CFA3726EF157963B756322EF5AF83FC3033723FB5BEB1B0D4158104A94CC0C4D5F99878F4E4F3F9C8EC8F0E0B3
+        test_password:
+          PASSWORD: P@ssw0rdSJ
+          SALT: 29E8E204593EBA6FFA9A0F8536CF30786E076A4A7946987145D8FECD05559B86
+          ALGORITHM: SHA384
+          PASSWORDHASH: 5E78F0A08CFC77835B89CD4FB4FC40C5ABD0A4A4C964AD8612C22EA220B133544953F9EF898A5B36F7D9366C69E7520E
+    displayName: Passwordcheck
+    type: object
+    properties:
+      status:
+        required: true
+        displayName: status
+        type: boolean
+      password:
+        required: true
+        displayName: password
+        type: Password
+      temp_password:
+        required: true
+        displayName: temp_password
+        type: TempPassword
+      test_password:
+        required: true
+        displayName: test_password
+        type: TestPassword
+  Password:
+    example:
+      value:
+        PASSWORD: P@ssw0rdSJ
+        SALT: 8CC426699D408C25BA47CFDC753FCBC7BD5950C0ED600637C8A4F4B4B522252E
+        ALGORITHM: SHA384
+        PASSWORDHASH: 1AF876BBACB7CA55CA1BC1BCBC5B4B591B96DFD1880349BD4383856A3DD774F7F42BC44867CCE8E952961E3A532764EA
+    displayName: Password
+    type: object
+    properties:
+      PASSWORD:
+        required: true
+        displayName: PASSWORD
+        type: string
+      SALT:
+        required: true
+        displayName: SALT
+        type: string
+      ALGORITHM:
+        required: true
+        displayName: ALGORITHM
+        type: string
+      PASSWORDHASH:
+        required: true
+        displayName: PASSWORDHASH
+        type: string
+  TempPassword:
+    example:
+      value:
+        PASSWORD: P@ssw0rdSJ
+        SALT: 302031EB60CE1A89FB947E17EA8635D899BC6C4F6E1A1A73C4E55A6040858637
+        ALGORITHM: SHA384
+        PASSWORDHASH: 86A4A9CFA3726EF157963B756322EF5AF83FC3033723FB5BEB1B0D4158104A94CC0C4D5F99878F4E4F3F9C8EC8F0E0B3
+    displayName: TempPassword
+    type: object
+    properties:
+      PASSWORD:
+        required: true
+        displayName: PASSWORD
+        type: string
+      SALT:
+        required: true
+        displayName: SALT
+        type: string
+      ALGORITHM:
+        required: true
+        displayName: ALGORITHM
+        type: string
+      PASSWORDHASH:
+        required: true
+        displayName: PASSWORDHASH
+        type: string
+  TestPassword:
+    example:
+      value:
+        PASSWORD: P@ssw0rdSJ
+        SALT: 29E8E204593EBA6FFA9A0F8536CF30786E076A4A7946987145D8FECD05559B86
+        ALGORITHM: SHA384
+        PASSWORDHASH: 5E78F0A08CFC77835B89CD4FB4FC40C5ABD0A4A4C964AD8612C22EA220B133544953F9EF898A5B36F7D9366C69E7520E
+    displayName: TestPassword
+    type: object
+    properties:
+      PASSWORD:
+        required: true
+        displayName: PASSWORD
+        type: string
+      SALT:
+        required: true
+        displayName: SALT
+        type: string
+      ALGORITHM:
+        required: true
+        displayName: ALGORITHM
+        type: string
+      PASSWORDHASH:
+        required: true
+        displayName: PASSWORDHASH
+        type: string
+  User  user agreement setrequest:
+    example:
+      value:
+        user_account_id: 16
+        agreement_flag: 0
+    displayName: User - User Agreement setRequest
+    type: object
+    properties:
+      user_account_id:
+        required: true
+        displayName: user_account_id
+        type: string
+      agreement_flag:
+        required: true
+        displayName: agreement_flag
+        type: string
+  User  user reset passwordrequest:
+    example:
+      value:
+        username: sandejones
+        email_address: sandejones@gmail.com
+    displayName: User - User Reset PasswordRequest
+    type: object
+    properties:
+      username:
+        required: true
+        displayName: username
+        type: string
+      email_address:
+        required: true
+        displayName: email_address
+        type: string
+  User  user clear password resetrequest:
+    example:
+      value:
+        user_account_id: 22
+    displayName: User - User Clear Password ResetRequest
+    type: object
+    properties:
+      user_account_id:
+        required: true
+        displayName: user_account_id
+        type: string
+  User  user set new passwordrequest:
+    example:
+      value:
+        email_address: sandejones@gmail.com
+        username: sandejones
+        current_password: 5#WjddZ&
+        new_password: ABCDEFG
+        confirm_new_password: ABCDEFG
+    displayName: User - User Set New PasswordRequest
+    type: object
+    properties:
+      email_address:
+        required: true
+        displayName: email_address
+        type: string
+      username:
+        required: true
+        displayName: username
+        type: string
+      current_password:
+        required: true
+        displayName: current_password
+        type: string
+      new_password:
+        required: true
+        displayName: new_password
+        type: string
+      confirm_new_password:
+        required: true
+        displayName: confirm_new_password
+        type: string
+  'User  user set new password ( miss match : faile)':
+    example:
+      value:
+        MESSAGE:
+          message: Old Password provided does not match.
+          status: False
+    displayName: 'User - User Set New Password ( miss match : faile)'
+    type: object
+    properties:
+      MESSAGE:
+        required: true
+        displayName: MESSAGE
+        type: MESSAGE
+  MESSAGE:
+    example:
+      value:
+        message: Old Password provided does not match.
+        status: False
+    displayName: MESSAGE
+    type: object
+    properties:
+      message:
+        required: true
+        displayName: message
+        type: string
+      status:
+        required: true
+        displayName: status
+        type: boolean
+  Local:user  authenticaterequest:
+    example:
+      value:
+        login:
+          username: jsjung23
+          password: P@ssw0rd
+    displayName: Local:User - AuthenticateRequest
+    type: object
+    properties:
+      login:
+        required: true
+        displayName: login
+        type: Login
+  Asset  checkInrequest:
+    example:
+      value:
+        asset_event:
+          asset_id: 132
+          asset_category: VEHICL
+          event_outcome_id: 1
+          asset_damaged: false
+          asset_properties:
+            vin_num: WBA7E4C37HGU99926
+            year: 2017
+            make: BMW
+            model: 7 Series
+            body: Sedan
+            trim: 740i xDrive
+            vehicle_type: Sedan
+            mileage: 5
+            highway_mpg: ''
+            city_mpg: ''
+            engine: ''
+            interior_color: Black Dakota
+            exterior_color: Jet Black
+            age: ''
+            cost: ''
+            msrp: ''
+          asset_images:
+            generic:
+            - img_url: https://s3.amazonaws.com/vimsdev.assets/image1.jpg
+              img_file_name: image1.jpg
+              img_mime_type: image/jpg
+              title: Image 1 Title
+              description: Image 1 description lorem ipsum.
+              location: ''
+            - img_url: https://s3.amazonaws.com/vimsdev.assets/image2.jpg
+              img_file_name: image2.jpg
+              img_mime_type: image/jpg
+              title: Image 2 Title
+              description: Image 2 description lorem ipsum.
+              location: ''
+            damages: []
+          asset_documents:
+          - document_url: https://s3.amazonaws.com/vimsdev.assets/document1.pdf
+            document_file_name: document1.pdf
+            document_mime_type: application/pdf
+            title: Document 1 Title
+            description: Document 1 description lorem ipsum.
+            location: ''
+          - document_url: https://s3.amazonaws.com/vimsdev.assets/document2.pdf
+            document_file_name: document2.pdf
+            document_mime_type: application/pdf
+            title: Document 2 Title
+            description: Document 2 description lorem ipsum.
+            location: ''
+          asset_comments:
+          - comment: Comment 1 consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+          - comment: Comment 2 consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+          event_action_type_id: 1
+          asset_origination_id: ''
+          asset_origination:
+            origination_name: BMW
+            origination_type_id: 1
+            contact_phone: 703-555-1212
+            email_address: jacksmith.fake@doesnotexist.gmail.com
+            address_line1: 200 BMW St
+            address_line2: ''
+            city: Someplace
+            state_province: SC
+            postal_code: 29301
+            country: USA
+          poc_id: ''
+          event_poc:
+            full_name: John Salespeson
+            phone_number: 703-333-1212
+            email_address: john.salesperson@rosenthalauto.com
+            organization_name: Rosenthal Automotive Group
+            id_photo_img_url: ''
+          asset_review:
+            review_status: REQAPV
+            signature_url: ''
+            review_user_account_id: 6
+          vin_decode_log:
+            vin_num: WBA7E4C37HGU99926
+            vin_photo_img_url: https://s3.amazonaws.com/wparkw.assets/vin.png
+            vin_decode_location_lat: 18.851031
+            vin_decode_location_long: -57.366377
+    displayName: Asset - Check-InRequest
+    type: object
+    properties:
+      asset_event:
+        required: true
+        displayName: asset_event
+        type: AssetEvent
+  AssetEvent:
+    example:
+      value:
+        asset_id: 132
+        asset_category: VEHICL
+        event_outcome_id: 1
+        asset_damaged: false
+        asset_properties:
+          vin_num: WBA7E4C37HGU99926
+          year: 2017
+          make: BMW
+          model: 7 Series
+          body: Sedan
+          trim: 740i xDrive
+          vehicle_type: Sedan
+          mileage: 5
+          highway_mpg: ''
+          city_mpg: ''
+          engine: ''
+          interior_color: Black Dakota
+          exterior_color: Jet Black
+          age: ''
+          cost: ''
+          msrp: ''
+        asset_images:
+          generic:
+          - img_url: https://s3.amazonaws.com/vimsdev.assets/image1.jpg
+            img_file_name: image1.jpg
+            img_mime_type: image/jpg
+            title: Image 1 Title
+            description: Image 1 description lorem ipsum.
+            location: ''
+          - img_url: https://s3.amazonaws.com/vimsdev.assets/image2.jpg
+            img_file_name: image2.jpg
+            img_mime_type: image/jpg
+            title: Image 2 Title
+            description: Image 2 description lorem ipsum.
+            location: ''
+          damages: []
+        asset_documents:
+        - document_url: https://s3.amazonaws.com/vimsdev.assets/document1.pdf
+          document_file_name: document1.pdf
+          document_mime_type: application/pdf
+          title: Document 1 Title
+          description: Document 1 description lorem ipsum.
+          location: ''
+        - document_url: https://s3.amazonaws.com/vimsdev.assets/document2.pdf
+          document_file_name: document2.pdf
+          document_mime_type: application/pdf
+          title: Document 2 Title
+          description: Document 2 description lorem ipsum.
+          location: ''
+        asset_comments:
+        - comment: Comment 1 consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+        - comment: Comment 2 consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+        event_action_type_id: 1
+        asset_origination_id: ''
+        asset_origination:
+          origination_name: BMW
+          origination_type_id: 1
+          contact_phone: 703-555-1212
+          email_address: jacksmith.fake@doesnotexist.gmail.com
+          address_line1: 200 BMW St
+          address_line2: ''
+          city: Someplace
+          state_province: SC
+          postal_code: 29301
+          country: USA
+        poc_id: ''
+        event_poc:
+          full_name: John Salespeson
+          phone_number: 703-333-1212
+          email_address: john.salesperson@rosenthalauto.com
+          organization_name: Rosenthal Automotive Group
+          id_photo_img_url: ''
+        asset_review:
+          review_status: REQAPV
+          signature_url: ''
+          review_user_account_id: 6
+        vin_decode_log:
+          vin_num: WBA7E4C37HGU99926
+          vin_photo_img_url: https://s3.amazonaws.com/wparkw.assets/vin.png
+          vin_decode_location_lat: 18.851031
+          vin_decode_location_long: -57.366377
+    displayName: AssetEvent
+    type: object
+    properties:
+      asset_id:
+        required: true
+        displayName: asset_id
+        type: string
+      asset_category:
+        required: true
+        displayName: asset_category
+        type: string
+      event_outcome_id:
+        required: true
+        displayName: event_outcome_id
+        type: string
+      asset_damaged:
+        required: true
+        displayName: asset_damaged
+        type: string
+      asset_properties:
+        required: true
+        displayName: asset_properties
+        type: AssetProperties
+      asset_images:
+        required: true
+        displayName: asset_images
+        type: AssetImages
+      asset_documents:
+        required: true
+        displayName: asset_documents
+        type: array
+        items:
+          type: AssetDocument
+      asset_comments:
+        required: true
+        displayName: asset_comments
+        type: array
+        items:
+          type: AssetComment
+      event_action_type_id:
+        required: true
+        displayName: event_action_type_id
+        type: string
+      asset_origination_id:
+        required: true
+        displayName: asset_origination_id
+        type: string
+      asset_origination:
+        required: true
+        displayName: asset_origination
+        type: AssetOrigination
+      poc_id:
+        required: true
+        displayName: poc_id
+        type: string
+      event_poc:
+        required: true
+        displayName: event_poc
+        type: EventPoc
+      asset_review:
+        required: true
+        displayName: asset_review
+        type: AssetReview
+      vin_decode_log:
+        required: true
+        displayName: vin_decode_log
+        type: VinDecodeLog
+  AssetProperties:
+    example:
+      value:
+        vin_num: WBA7E4C37HGU99926
+        year: 2017
+        make: BMW
+        model: 7 Series
+        body: Sedan
+        trim: 740i xDrive
+        vehicle_type: Sedan
+        mileage: 5
+        highway_mpg: ''
+        city_mpg: ''
+        engine: ''
+        interior_color: Black Dakota
+        exterior_color: Jet Black
+        age: ''
+        cost: ''
+        msrp: ''
+    displayName: AssetProperties
+    type: object
+    properties:
+      vin_num:
+        required: true
+        displayName: vin_num
+        type: string
+      year:
+        required: true
+        displayName: year
+        type: integer
+        format: int32
+      make:
+        required: true
+        displayName: make
+        type: string
+      model:
+        required: true
+        displayName: model
+        type: string
+      body:
+        required: true
+        displayName: body
+        type: string
+      trim:
+        required: true
+        displayName: trim
+        type: string
+      vehicle_type:
+        required: true
+        displayName: vehicle_type
+        type: string
+      mileage:
+        required: true
+        displayName: mileage
+        type: integer
+        format: int32
+      highway_mpg:
+        required: true
+        displayName: highway_mpg
+        type: string
+      city_mpg:
+        required: true
+        displayName: city_mpg
+        type: string
+      engine:
+        required: true
+        displayName: engine
+        type: string
+      interior_color:
+        required: true
+        displayName: interior_color
+        type: string
+      exterior_color:
+        required: true
+        displayName: exterior_color
+        type: string
+      age:
+        required: true
+        displayName: age
+        type: string
+      cost:
+        required: true
+        displayName: cost
+        type: string
+      msrp:
+        required: true
+        displayName: msrp
+        type: string
+  AssetImages:
+    example:
+      value:
+        generic:
+        - img_url: https://s3.amazonaws.com/vimsdev.assets/image1.jpg
+          img_file_name: image1.jpg
+          img_mime_type: image/jpg
+          title: Image 1 Title
+          description: Image 1 description lorem ipsum.
+          location: ''
+        - img_url: https://s3.amazonaws.com/vimsdev.assets/image2.jpg
+          img_file_name: image2.jpg
+          img_mime_type: image/jpg
+          title: Image 2 Title
+          description: Image 2 description lorem ipsum.
+          location: ''
+        damages: []
+    displayName: AssetImages
+    type: object
+    properties:
+      generic:
+        required: true
+        displayName: generic
+        type: array
+        items:
+          type: Generic
+      damages:
+        required: true
+        displayName: damages
+        type: array
+        items:
+          type: string
+  Generic:
+    example:
+      value:
+        img_url: https://s3.amazonaws.com/vimsdev.assets/image1.jpg
+        img_file_name: image1.jpg
+        img_mime_type: image/jpg
+        title: Image 1 Title
+        description: Image 1 description lorem ipsum.
+        location: ''
+    displayName: Generic
+    type: object
+    properties:
+      img_url:
+        required: true
+        displayName: img_url
+        type: string
+      img_file_name:
+        required: true
+        displayName: img_file_name
+        type: string
+      img_mime_type:
+        required: true
+        displayName: img_mime_type
+        type: string
+      title:
+        required: true
+        displayName: title
+        type: string
+      description:
+        required: true
+        displayName: description
+        type: string
+      location:
+        required: true
+        displayName: location
+        type: string
+  AssetDocument:
+    example:
+      value:
+        document_url: https://s3.amazonaws.com/vimsdev.assets/document1.pdf
+        document_file_name: document1.pdf
+        document_mime_type: application/pdf
+        title: Document 1 Title
+        description: Document 1 description lorem ipsum.
+        location: ''
+    displayName: AssetDocument
+    type: object
+    properties:
+      document_url:
+        required: true
+        displayName: document_url
+        type: string
+      document_file_name:
+        required: true
+        displayName: document_file_name
+        type: string
+      document_mime_type:
+        required: true
+        displayName: document_mime_type
+        type: string
+      title:
+        required: true
+        displayName: title
+        type: string
+      description:
+        required: true
+        displayName: description
+        type: string
+      location:
+        required: true
+        displayName: location
+        type: string
+  AssetComment:
+    example:
+      value:
+        comment: Comment 1 consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+    displayName: AssetComment
+    type: object
+    properties:
+      comment:
+        required: true
+        displayName: comment
+        type: string
+  AssetOrigination:
+    example:
+      value:
+        origination_name: BMW
+        origination_type_id: 1
+        contact_phone: 703-555-1212
+        email_address: jacksmith.fake@doesnotexist.gmail.com
+        address_line1: 200 BMW St
+        address_line2: ''
+        city: Someplace
+        state_province: SC
+        postal_code: 29301
+        country: USA
+    displayName: AssetOrigination
+    type: object
+    properties:
+      origination_name:
+        required: true
+        displayName: origination_name
+        type: string
+      origination_type_id:
+        required: true
+        displayName: origination_type_id
+        type: string
+      contact_phone:
+        required: true
+        displayName: contact_phone
+        type: string
+      email_address:
+        required: true
+        displayName: email_address
+        type: string
+      address_line1:
+        required: true
+        displayName: address_line1
+        type: string
+      address_line2:
+        required: true
+        displayName: address_line2
+        type: string
+      city:
+        required: true
+        displayName: city
+        type: string
+      state_province:
+        required: true
+        displayName: state_province
+        type: string
+      postal_code:
+        required: true
+        displayName: postal_code
+        type: string
+      country:
+        required: true
+        displayName: country
+        type: string
+  EventPoc:
+    example:
+      value:
+        full_name: John Salespeson
+        phone_number: 703-333-1212
+        email_address: john.salesperson@rosenthalauto.com
+        organization_name: Rosenthal Automotive Group
+        id_photo_img_url: ''
+    displayName: EventPoc
+    type: object
+    properties:
+      full_name:
+        required: true
+        displayName: full_name
+        type: string
+      phone_number:
+        required: true
+        displayName: phone_number
+        type: string
+      email_address:
+        required: true
+        displayName: email_address
+        type: string
+      organization_name:
+        required: true
+        displayName: organization_name
+        type: string
+      id_photo_img_url:
+        required: true
+        displayName: id_photo_img_url
+        type: string
+  AssetReview:
+    example:
+      value:
+        review_status: REQAPV
+        signature_url: ''
+        review_user_account_id: 6
+    displayName: AssetReview
+    type: object
+    properties:
+      review_status:
+        required: true
+        displayName: review_status
+        type: string
+      signature_url:
+        required: true
+        displayName: signature_url
+        type: string
+      review_user_account_id:
+        required: true
+        displayName: review_user_account_id
+        type: string
+  VinDecodeLog:
+    example:
+      value:
+        vin_num: WBA7E4C37HGU99926
+        vin_photo_img_url: https://s3.amazonaws.com/wparkw.assets/vin.png
+        vin_decode_location_lat: 18.851031
+        vin_decode_location_long: -57.366377
+    displayName: VinDecodeLog
+    type: object
+    properties:
+      vin_num:
+        required: true
+        displayName: vin_num
+        type: string
+      vin_photo_img_url:
+        required: true
+        displayName: vin_photo_img_url
+        type: string
+      vin_decode_location_lat:
+        required: true
+        displayName: vin_decode_location_lat
+        type: string
+      vin_decode_location_long:
+        required: true
+        displayName: vin_decode_location_long
+        type: string
+  Asset event history  listrequest:
+    example:
+      value:
+        searchParams:
+          vin: 1HGCT2B08HA005015
+          stockNum: ''
+    displayName: Asset Event History - ListRequest
+    type: object
+    properties:
+      searchParams:
+        required: true
+        displayName: searchParams
+        type: SearchParams
+  SearchParams:
+    example:
+      value:
+        vin: 1HGCT2B08HA005015
+        stockNum: ''
+    displayName: SearchParams
+    type: object
+    properties:
+      vin:
+        required: true
+        displayName: vin
+        type: string
+      stockNum:
+        required: true
+        displayName: stockNum
+        type: string
+  Asset activity  searchrequest:
+    example:
+      value:
+        searchParams:
+          dateTo: ''
+          dateRange: TODAY1
+          statusKey: CHKDIN
+          dateFrom: ''
+          vin: ''
+          stockNum: ''
+    displayName: Asset Activity - SearchRequest
+    type: object
+    properties:
+      searchParams:
+        required: true
+        displayName: searchParams
+        type: SearchParams29
+  SearchParams29:
+    example:
+      value:
+        dateTo: ''
+        dateRange: TODAY1
+        statusKey: CHKDIN
+        dateFrom: ''
+        vin: ''
+        stockNum: ''
+    displayName: SearchParams29
+    type: object
+    properties:
+      dateTo:
+        required: true
+        displayName: dateTo
+        type: string
+      dateRange:
+        required: true
+        displayName: dateRange
+        type: string
+      statusKey:
+        required: true
+        displayName: statusKey
+        type: string
+      dateFrom:
+        required: true
+        displayName: dateFrom
+        type: string
+      vin:
+        required: true
+        displayName: vin
+        type: string
+      stockNum:
+        required: true
+        displayName: stockNum
+        type: string
+  Asset origination  listrequest:
+    example:
+      value:
+        searchParams:
+          originationTypeId: 3
+          organizationName: ''
+    displayName: Asset Origination - ListRequest
+    type: object
+    properties:
+      searchParams:
+        required: true
+        displayName: searchParams
+        type: SearchParams31
+  SearchParams31:
+    example:
+      value:
+        originationTypeId: 3
+        organizationName: ''
+    displayName: SearchParams31
+    type: object
+    properties:
+      originationTypeId:
+        required: true
+        displayName: originationTypeId
+        type: string
+      organizationName:
+        required: true
+        displayName: organizationName
+        type: string
+  Vehicle  edit (create/update)request:
+    example:
+      value:
+        asset:
+          asset_id: ''
+          asset_category: VEHICL
+          asset_properties:
+            msrp: ''
+            body: Car
+            trim: Base
+            mileage: 25
+            age: ''
+            model: Corolla
+            interior_color: ''
+            vin_num: 1NXBU40E59Z105957
+            highway_mpg: ''
+            city_mpg: ''
+            cost: ''
+            stock_num: ''
+            exterior_color: Barcelona Red Metallic
+            year: 2009
+            make: Toyota
+            engine: Engine
+            vehicle_type: Sedan
+    displayName: Vehicle - Edit (Create/Update)Request
+    type: object
+    properties:
+      asset:
+        required: true
+        displayName: asset
+        type: Asset
+  Asset:
+    example:
+      value:
+        asset_id: ''
+        asset_category: VEHICL
+        asset_properties:
+          msrp: ''
+          body: Car
+          trim: Base
+          mileage: 25
+          age: ''
+          model: Corolla
+          interior_color: ''
+          vin_num: 1NXBU40E59Z105957
+          highway_mpg: ''
+          city_mpg: ''
+          cost: ''
+          stock_num: ''
+          exterior_color: Barcelona Red Metallic
+          year: 2009
+          make: Toyota
+          engine: Engine
+          vehicle_type: Sedan
+    displayName: Asset
+    type: object
+    properties:
+      asset_id:
+        required: true
+        displayName: asset_id
+        type: string
+      asset_category:
+        required: true
+        displayName: asset_category
+        type: string
+      asset_properties:
+        required: true
+        displayName: asset_properties
+        type: AssetProperties34
+  AssetProperties34:
+    example:
+      value:
+        msrp: ''
+        body: Car
+        trim: Base
+        mileage: 25
+        age: ''
+        model: Corolla
+        interior_color: ''
+        vin_num: 1NXBU40E59Z105957
+        highway_mpg: ''
+        city_mpg: ''
+        cost: ''
+        stock_num: ''
+        exterior_color: Barcelona Red Metallic
+        year: 2009
+        make: Toyota
+        engine: Engine
+        vehicle_type: Sedan
+    displayName: AssetProperties34
+    type: object
+    properties:
+      msrp:
+        required: true
+        displayName: msrp
+        type: string
+      body:
+        required: true
+        displayName: body
+        type: string
+      trim:
+        required: true
+        displayName: trim
+        type: string
+      mileage:
+        required: true
+        displayName: mileage
+        type: integer
+        format: int32
+      age:
+        required: true
+        displayName: age
+        type: string
+      model:
+        required: true
+        displayName: model
+        type: string
+      interior_color:
+        required: true
+        displayName: interior_color
+        type: string
+      vin_num:
+        required: true
+        displayName: vin_num
+        type: string
+      highway_mpg:
+        required: true
+        displayName: highway_mpg
+        type: string
+      city_mpg:
+        required: true
+        displayName: city_mpg
+        type: string
+      cost:
+        required: true
+        displayName: cost
+        type: string
+      stock_num:
+        required: true
+        displayName: stock_num
+        type: string
+      exterior_color:
+        required: true
+        displayName: exterior_color
+        type: string
+      year:
+        required: true
+        displayName: year
+        type: string
+      make:
+        required: true
+        displayName: make
+        type: string
+      engine:
+        required: true
+        displayName: engine
+        type: string
+      vehicle_type:
+        required: true
+        displayName: vehicle_type
+        type: string
+  User  createrequest:
+    example:
+      value:
+        user:
+          user_type_id: 2
+          membership_type_id: 2
+          username: zfrankt
+          password: P@ssw0rdq
+          first_name: Brank
+          last_name: Rhomas
+          email_address: Brank@genevamedia.com
+          cell_phone: 7033991129
+          organization:
+            organization_name: zzz Arlington
+            address_line1: 3200 Columbia Pike
+            address_line2: ''
+            city: Arlington
+            state_province: VA
+            postal_code: 22204
+            country: United States of America
+            country_fips: US
+    displayName: User - CreateRequest
+    type: object
+    properties:
+      user:
+        required: true
+        displayName: user
+        type: User
+  User:
+    example:
+      value:
+        user_type_id: 2
+        membership_type_id: 2
+        username: zfrankt
+        password: P@ssw0rdq
+        first_name: Brank
+        last_name: Rhomas
+        email_address: Brank@genevamedia.com
+        cell_phone: 7033991129
+        organization:
+          organization_name: zzz Arlington
+          address_line1: 3200 Columbia Pike
+          address_line2: ''
+          city: Arlington
+          state_province: VA
+          postal_code: 22204
+          country: United States of America
+          country_fips: US
+    displayName: User
+    type: object
+    properties:
+      user_type_id:
+        required: true
+        displayName: user_type_id
+        type: integer
+        format: int32
+      membership_type_id:
+        required: true
+        displayName: membership_type_id
+        type: integer
+        format: int32
+      username:
+        required: true
+        displayName: username
+        type: string
+      password:
+        required: true
+        displayName: password
+        type: string
+      first_name:
+        required: true
+        displayName: first_name
+        type: string
+      last_name:
+        required: true
+        displayName: last_name
+        type: string
+      email_address:
+        required: true
+        displayName: email_address
+        type: string
+      cell_phone:
+        required: true
+        displayName: cell_phone
+        type: string
+      organization:
+        required: true
+        displayName: organization
+        type: Organization
+  Organization:
+    example:
+      value:
+        organization_name: zzz Arlington
+        address_line1: 3200 Columbia Pike
+        address_line2: ''
+        city: Arlington
+        state_province: VA
+        postal_code: 22204
+        country: United States of America
+        country_fips: US
+    displayName: Organization
+    type: object
+    properties:
+      organization_name:
+        required: true
+        displayName: organization_name
+        type: string
+      address_line1:
+        required: true
+        displayName: address_line1
+        type: string
+      address_line2:
+        required: true
+        displayName: address_line2
+        type: string
+      city:
+        required: true
+        displayName: city
+        type: string
+      state_province:
+        required: true
+        displayName: state_province
+        type: string
+      postal_code:
+        required: true
+        displayName: postal_code
+        type: string
+      country:
+        required: true
+        displayName: country
+        type: string
+      country_fips:
+        required: true
+        displayName: country_fips
+        type: string
+  Asset  checkIn  with origination idrequest:
+    example:
+      value:
+        asset_event:
+          asset_id: 480
+          asset_category: VEHICL
+          event_outcome_id: 1
+          asset_damaged: false
+          asset_properties:
+            vin_num: WBA7F2C56HG422712
+            year: 2017
+            make: BMW
+            model: 7 Series
+            body: Sedan
+            trim: 750i xDrive
+            vehicle_type: Sedan
+            mileage: ''
+            highway_mpg: ''
+            city_mpg: ''
+            engine: ''
+            interior_color: Cognac Nappa
+            exterior_color: Black Sapphire Metallic
+            age: ''
+            cost: ''
+            msrp: ''
+          asset_images:
+            generic:
+            - img_url: https://s3.amazonaws.com/vimsdev.assets/image1.jpg
+              img_file_name: image1.jpg
+              img_mime_type: image/jpg
+              title: Image 1 Title
+              description: Image 1 description lorem ipsum.
+              location: ''
+            - img_url: https://s3.amazonaws.com/vimsdev.assets/image2.jpg
+              img_file_name: image2.jpg
+              img_mime_type: image/jpg
+              title: Image 2 Title
+              description: Image 2 description lorem ipsum.
+              location: ''
+            damages: []
+          asset_documents:
+          - document_url: https://s3.amazonaws.com/vimsdev.assets/document1.pdf
+            document_file_name: document1.pdf
+            document_mime_type: application/pdf
+            title: Document 1 Title
+            description: Document 1 description lorem ipsum.
+            location: ''
+          - document_url: https://s3.amazonaws.com/vimsdev.assets/document2.pdf
+            document_file_name: document2.pdf
+            document_mime_type: application/pdf
+            title: Document 2 Title
+            description: Document 2 description lorem ipsum.
+            location: ''
+          asset_comments:
+          - comment: Comment 1 consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+          - comment: Comment 2 consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+          event_action_type_id: 1
+          asset_origination_id: 39
+          poc_id: ''
+          event_poc:
+            full_name: John Salespeson2
+            phone_number: 703-333-1212
+            email_address: john.salesperson2@rosenthalauto.com
+            organization_name: Rosenthal Automotive Group
+            id_photo_img_url: ''
+          asset_review:
+            review_status: REQAPV
+            signature_url: ''
+            review_user_account_id: 6
+          vin_decode_log:
+            vin_num: WBA7F2C56HG422712
+            vin_photo_img_url: https://s3.amazonaws.com/wparkw.assets/vin.png
+            vin_decode_location_lat: 18.851031
+            vin_decode_location_long: -57.366377
+    displayName: Asset - Check-In - With Origination IDRequest
+    type: object
+    properties:
+      asset_event:
+        required: true
+        displayName: asset_event
+        type: AssetEvent39
+  AssetEvent39:
+    example:
+      value:
+        asset_id: 480
+        asset_category: VEHICL
+        event_outcome_id: 1
+        asset_damaged: false
+        asset_properties:
+          vin_num: WBA7F2C56HG422712
+          year: 2017
+          make: BMW
+          model: 7 Series
+          body: Sedan
+          trim: 750i xDrive
+          vehicle_type: Sedan
+          mileage: ''
+          highway_mpg: ''
+          city_mpg: ''
+          engine: ''
+          interior_color: Cognac Nappa
+          exterior_color: Black Sapphire Metallic
+          age: ''
+          cost: ''
+          msrp: ''
+        asset_images:
+          generic:
+          - img_url: https://s3.amazonaws.com/vimsdev.assets/image1.jpg
+            img_file_name: image1.jpg
+            img_mime_type: image/jpg
+            title: Image 1 Title
+            description: Image 1 description lorem ipsum.
+            location: ''
+          - img_url: https://s3.amazonaws.com/vimsdev.assets/image2.jpg
+            img_file_name: image2.jpg
+            img_mime_type: image/jpg
+            title: Image 2 Title
+            description: Image 2 description lorem ipsum.
+            location: ''
+          damages: []
+        asset_documents:
+        - document_url: https://s3.amazonaws.com/vimsdev.assets/document1.pdf
+          document_file_name: document1.pdf
+          document_mime_type: application/pdf
+          title: Document 1 Title
+          description: Document 1 description lorem ipsum.
+          location: ''
+        - document_url: https://s3.amazonaws.com/vimsdev.assets/document2.pdf
+          document_file_name: document2.pdf
+          document_mime_type: application/pdf
+          title: Document 2 Title
+          description: Document 2 description lorem ipsum.
+          location: ''
+        asset_comments:
+        - comment: Comment 1 consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+        - comment: Comment 2 consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+        event_action_type_id: 1
+        asset_origination_id: 39
+        poc_id: ''
+        event_poc:
+          full_name: John Salespeson2
+          phone_number: 703-333-1212
+          email_address: john.salesperson2@rosenthalauto.com
+          organization_name: Rosenthal Automotive Group
+          id_photo_img_url: ''
+        asset_review:
+          review_status: REQAPV
+          signature_url: ''
+          review_user_account_id: 6
+        vin_decode_log:
+          vin_num: WBA7F2C56HG422712
+          vin_photo_img_url: https://s3.amazonaws.com/wparkw.assets/vin.png
+          vin_decode_location_lat: 18.851031
+          vin_decode_location_long: -57.366377
+    displayName: AssetEvent39
+    type: object
+    properties:
+      asset_id:
+        required: true
+        displayName: asset_id
+        type: string
+      asset_category:
+        required: true
+        displayName: asset_category
+        type: string
+      event_outcome_id:
+        required: true
+        displayName: event_outcome_id
+        type: string
+      asset_damaged:
+        required: true
+        displayName: asset_damaged
+        type: string
+      asset_properties:
+        required: true
+        displayName: asset_properties
+        type: AssetProperties40
+      asset_images:
+        required: true
+        displayName: asset_images
+        type: AssetImages
+      asset_documents:
+        required: true
+        displayName: asset_documents
+        type: array
+        items:
+          type: AssetDocument
+      asset_comments:
+        required: true
+        displayName: asset_comments
+        type: array
+        items:
+          type: AssetComment
+      event_action_type_id:
+        required: true
+        displayName: event_action_type_id
+        type: string
+      asset_origination_id:
+        required: true
+        displayName: asset_origination_id
+        type: string
+      poc_id:
+        required: true
+        displayName: poc_id
+        type: string
+      event_poc:
+        required: true
+        displayName: event_poc
+        type: EventPoc
+      asset_review:
+        required: true
+        displayName: asset_review
+        type: AssetReview
+      vin_decode_log:
+        required: true
+        displayName: vin_decode_log
+        type: VinDecodeLog
+  AssetProperties40:
+    example:
+      value:
+        vin_num: WBA7F2C56HG422712
+        year: 2017
+        make: BMW
+        model: 7 Series
+        body: Sedan
+        trim: 750i xDrive
+        vehicle_type: Sedan
+        mileage: ''
+        highway_mpg: ''
+        city_mpg: ''
+        engine: ''
+        interior_color: Cognac Nappa
+        exterior_color: Black Sapphire Metallic
+        age: ''
+        cost: ''
+        msrp: ''
+    displayName: AssetProperties40
+    type: object
+    properties:
+      vin_num:
+        required: true
+        displayName: vin_num
+        type: string
+      year:
+        required: true
+        displayName: year
+        type: integer
+        format: int32
+      make:
+        required: true
+        displayName: make
+        type: string
+      model:
+        required: true
+        displayName: model
+        type: string
+      body:
+        required: true
+        displayName: body
+        type: string
+      trim:
+        required: true
+        displayName: trim
+        type: string
+      vehicle_type:
+        required: true
+        displayName: vehicle_type
+        type: string
+      mileage:
+        required: true
+        displayName: mileage
+        type: string
+      highway_mpg:
+        required: true
+        displayName: highway_mpg
+        type: string
+      city_mpg:
+        required: true
+        displayName: city_mpg
+        type: string
+      engine:
+        required: true
+        displayName: engine
+        type: string
+      interior_color:
+        required: true
+        displayName: interior_color
+        type: string
+      exterior_color:
+        required: true
+        displayName: exterior_color
+        type: string
+      age:
+        required: true
+        displayName: age
+        type: string
+      cost:
+        required: true
+        displayName: cost
+        type: string
+      msrp:
+        required: true
+        displayName: msrp
+        type: string
+  Asset event poc  editrequest:
+    example:
+      value:
+        poc:
+          organization_name: ''
+          poc_id: ''
+          phone_number: 556665
+          email_address: '@mail'
+          full_name: 222
+          id_photo_img_url: ''
+    displayName: Asset Event POC - EditRequest
+    type: object
+    properties:
+      poc:
+        required: true
+        displayName: poc
+        type: Poc
+  Poc:
+    example:
+      value:
+        organization_name: ''
+        poc_id: ''
+        phone_number: 556665
+        email_address: '@mail'
+        full_name: 222
+        id_photo_img_url: ''
+    displayName: Poc
+    type: object
+    properties:
+      organization_name:
+        required: true
+        displayName: organization_name
+        type: string
+      poc_id:
+        required: true
+        displayName: poc_id
+        type: string
+      phone_number:
+        required: true
+        displayName: phone_number
+        type: string
+      email_address:
+        required: true
+        displayName: email_address
+        type: string
+      full_name:
+        required: true
+        displayName: full_name
+        type: string
+      id_photo_img_url:
+        required: true
+        displayName: id_photo_img_url
+        type: string
+  Asset origination  editrequest:
+    example:
+      value:
+        asset_origination:
+          origination_type_id: 4
+          contact_phone: 7013333333
+          city: union
+          state_province: NJ
+          address_line2: ''
+          asset_origination_id: ''
+          email_address: cxcb@gmail.com
+          origination_name: Jae's Company
+          address_line1: dhdjdhd AAAA
+          postal_code: 07087
+          country: ''
+    displayName: Asset Origination - EditRequest
+    type: object
+    properties:
+      asset_origination:
+        required: true
+        displayName: asset_origination
+        type: AssetOrigination51
+  AssetOrigination51:
+    example:
+      value:
+        origination_type_id: 4
+        contact_phone: 7013333333
+        city: union
+        state_province: NJ
+        address_line2: ''
+        asset_origination_id: ''
+        email_address: cxcb@gmail.com
+        origination_name: Jae's Company
+        address_line1: dhdjdhd AAAA
+        postal_code: 07087
+        country: ''
+    displayName: AssetOrigination51
+    type: object
+    properties:
+      origination_type_id:
+        required: true
+        displayName: origination_type_id
+        type: integer
+        format: int32
+      contact_phone:
+        required: true
+        displayName: contact_phone
+        type: string
+      city:
+        required: true
+        displayName: city
+        type: string
+      state_province:
+        required: true
+        displayName: state_province
+        type: string
+      address_line2:
+        required: true
+        displayName: address_line2
+        type: string
+      asset_origination_id:
+        required: true
+        displayName: asset_origination_id
+        type: string
+      email_address:
+        required: true
+        displayName: email_address
+        type: string
+      origination_name:
+        required: true
+        displayName: origination_name
+        type: string
+      address_line1:
+        required: true
+        displayName: address_line1
+        type: string
+      postal_code:
+        required: true
+        displayName: postal_code
+        type: string
+      country:
+        required: true
+        displayName: country
+        type: string
+  User  update settingsrequest:
+    example:
+      value:
+        first_name: Sande
+        last_name: Jones
+        text_notif_flag: 1
+        email_notif_flag: 1
+        email_address: sandejones@gmail.com
+        cell_phone: 6145551212
+        profile_img_url: https://wparkw.s3.amazonaws.com/profile/1/sandejones.jpg
+        agreement_flag: 1
+        agreement_date: 1
+    displayName: User - Update SettingsRequest
+    type: object
+    properties:
+      first_name:
+        required: true
+        displayName: first_name
+        type: string
+      last_name:
+        required: true
+        displayName: last_name
+        type: string
+      text_notif_flag:
+        required: true
+        displayName: text_notif_flag
+        type: integer
+        format: int32
+      email_notif_flag:
+        required: true
+        displayName: email_notif_flag
+        type: integer
+        format: int32
+      email_address:
+        required: true
+        displayName: email_address
+        type: string
+      cell_phone:
+        required: true
+        displayName: cell_phone
+        type: string
+      profile_img_url:
+        required: true
+        displayName: profile_img_url
+        type: string
+      agreement_flag:
+        required: true
+        displayName: agreement_flag
+        type: integer
+        format: int32
+      agreement_date:
+        required: true
+        displayName: agreement_date
+        type: integer
+        format: int32
+  User  sande jonesrequest:
+    example:
+      value:
+        user:
+          user_type_id: 2
+          membership_type_id: 2
+          username: sandejones
+          password: P@ssw0rdSJ
+          first_name: Sande
+          last_name: Jones
+          email_address: sandejones@gmail.com
+          cell_phone: 614-679-2974
+          agreement_flag: 1
+          agreement_date: 02/16/2018
+          organization:
+            organization_name: Intelimatrix LLC
+            address_line1: 1323 Walshire Drive
+            address_line2: North
+            city: Columbus
+            state_province: OH
+            postal_code: 43232
+            country: United States of America
+            country_fips: US
+    displayName: User - Sande JonesRequest
+    type: object
+    properties:
+      user:
+        required: true
+        displayName: user
+        type: User54
+  User54:
+    example:
+      value:
+        user_type_id: 2
+        membership_type_id: 2
+        username: sandejones
+        password: P@ssw0rdSJ
+        first_name: Sande
+        last_name: Jones
+        email_address: sandejones@gmail.com
+        cell_phone: 614-679-2974
+        agreement_flag: 1
+        agreement_date: 02/16/2018
+        organization:
+          organization_name: Intelimatrix LLC
+          address_line1: 1323 Walshire Drive
+          address_line2: North
+          city: Columbus
+          state_province: OH
+          postal_code: 43232
+          country: United States of America
+          country_fips: US
+    displayName: User54
+    type: object
+    properties:
+      user_type_id:
+        required: true
+        displayName: user_type_id
+        type: integer
+        format: int32
+      membership_type_id:
+        required: true
+        displayName: membership_type_id
+        type: integer
+        format: int32
+      username:
+        required: true
+        displayName: username
+        type: string
+      password:
+        required: true
+        displayName: password
+        type: string
+      first_name:
+        required: true
+        displayName: first_name
+        type: string
+      last_name:
+        required: true
+        displayName: last_name
+        type: string
+      email_address:
+        required: true
+        displayName: email_address
+        type: string
+      cell_phone:
+        required: true
+        displayName: cell_phone
+        type: string
+      agreement_flag:
+        required: true
+        displayName: agreement_flag
+        type: integer
+        format: int32
+      agreement_date:
+        required: true
+        displayName: agreement_date
+        type: string
+      organization:
+        required: true
+        displayName: organization
+        type: Organization
+  User  belichickrequest:
+    example:
+      value:
+        user:
+          user_type_id: 2
+          membership_type_id: 2
+          username: billbell
+          password: P@ssw0rdBB
+          first_name: Bill
+          last_name: belichick
+          email_address: bbelichick@gmail.com
+          cell_phone: 541-202-4745
+          agreement_flag: 1
+          agreement_date: 02/11/2018
+          organization:
+            organization_name: NFL
+            address_line1: 123 NFL Lane
+            address_line2: Suite 882
+            city: Tampa
+            state_province: FL
+            postal_code: 78820
+            country: United States of America
+            country_fips: US
+    displayName: User - belichickRequest
+    type: object
+    properties:
+      user:
+        required: true
+        displayName: user
+        type: User54
+  User  authenticate  sanderequest:
+    example:
+      value:
+        login:
+          username: sandejones
+          password: P@ssw0rdSJ
+    displayName: User - Authenticate - SandeRequest
+    type: object
+    properties:
+      login:
+        required: true
+        displayName: login
+        type: Login
+  User  reset passwordrequest:
+    example:
+      value:
+        username: sandejones
+        email_address: sandejones@gmail.com
+    displayName: User - reset passwordRequest
+    type: object
+    properties:
+      username:
+        required: true
+        displayName: username
+        type: string
+      email_address:
+        required: true
+        displayName: email_address
+        type: string
+/authenticate:
+  post:
+    displayName: User - Authenticate1
+    description: 'TODO: Add Description'
+    body:
+      application/json:
+        example:
+          value:
+            login:
+              username: jackb
+              password: P@ssw0rd
+        displayName: Body
+        type: User  authenticaterequest
+    queryParameters:
+      fwreinit:
+        required: true
+        example:
+          value: 1
+        displayName: fwreinit
+        type: integer
+        format: int32
+    headers:
+      Content-Type:
+        required: true
+        example:
+          value: application/json
+        displayName: Content-Type
+        type: string
+/asset-activity/search:
+  post:
+    displayName: Asset Activity - Search
+    description: 'TODO: Add Description'
+    body:
+      application/json:
+        example:
+          value:
+            searchParams:
+              dateTo: ''
+              dateRange: TODAY1
+              statusKey: CHKDIN
+              dateFrom: ''
+              vin: ''
+              stockNum: ''
+        displayName: Body
+        type: Asset activity  searchrequest
+    headers:
+      Content-Type:
+        required: true
+        example:
+          value: application/json
+        displayName: Content-Type
+        type: string
+      Authorization:
+        required: true
+        example:
+          value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+        displayName: Authorization
+        type: string
+/vin-decode/WAUW2AFC9HN131967:
+  get:
+    displayName: VIN Decode
+    description: 'TODO: Add Description'
+    headers:
+      Content-Type:
+        required: true
+        example:
+          value: application/json
+        displayName: Content-Type
+        type: string
+      Authorization:
+        required: true
+        example:
+          value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+        displayName: Authorization
+        type: string
+/aws-authenticate:
+  get:
+    displayName: AWS Authenticate
+    description: 'TODO: Add Description'
+    headers:
+      Content-Type:
+        required: true
+        example:
+          value: application/json
+        displayName: Content-Type
+        type: string
+      Authorization:
+        required: true
+        example:
+          value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+        displayName: Authorization
+        type: string
+/asset-origination-type/list/1:
+  post:
+    displayName: Asset Origination Types - List
+    description: 'TODO: Add Description'
+    headers:
+      Content-Type:
+        required: true
+        example:
+          value: application/json
+        displayName: Content-Type
+        type: string
+      Authorization:
+        required: true
+        example:
+          value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+        displayName: Authorization
+        type: string
+/event-type/list:
+  get:
+    displayName: Event Types - List
+    description: 'TODO: Add Description'
+    headers:
+      Content-Type:
+        required: true
+        example:
+          value: application/json
+        displayName: Content-Type
+        type: string
+      Authorization:
+        required: true
+        example:
+          value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+        displayName: Authorization
+        type: string
+/event-action-type/list/1/1:
+  get:
+    displayName: Event Action Types - List
+    description: 'TODO: Add Description'
+    headers:
+      Content-Type:
+        required: true
+        example:
+          value: application/json
+        displayName: Content-Type
+        type: string
+      Authorization:
+        required: true
+        example:
+          value: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJ1c2VyX2FjY291bnRfaWQiOjMsInNhbHQiOiJBQjVFMTE5MURCNzU0NzAwMUY2OEJBMzZFNzRFNUY4MzlCRjhDNUEwOTk5RTE5OTFBNkRDREEwNTk0Njc4NzAzODQzQTc5NzQzMTQyMTZENTdEMjcxM0Q0OTQyMEQzQUUxMkU2MjNDOUEyN0MxNjgzQUM3ODlDODVFMjkzQUIzMiIsInVzZXJuYW1lIjoianNqdW5nMiIsInRzIjoiQXByaWwgMDggMjAxNyAwMDowMDowMCJ9.9i1MAS3EsVjsteyQUIFudN3lsWUK6FW50yEliMKm2Q4YLjKsGUarl0DqzQdeL6B837SByyUKgdG16QY1l5snYA
+        displayName: Authorization
+        type: string
+/event-outcome/list/1:
+  get:
+    displayName: Event Outcome - List
+    description: 'TODO: Add Description'
+    headers:
+      Content-Type:
+        required: true
+        example:
+          value: application/json
+        displayName: Content-Type
+        type: string
+      Authorization:
+        required: true
+        example:
+          value: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJ1c2VyX2FjY291bnRfaWQiOjMsInNhbHQiOiJBQjVFMTE5MURCNzU0NzAwMUY2OEJBMzZFNzRFNUY4MzlCRjhDNUEwOTk5RTE5OTFBNkRDREEwNTk0Njc4NzAzODQzQTc5NzQzMTQyMTZENTdEMjcxM0Q0OTQyMEQzQUUxMkU2MjNDOUEyN0MxNjgzQUM3ODlDODVFMjkzQUIzMiIsInVzZXJuYW1lIjoianNqdW5nMiIsInRzIjoiQXByaWwgMDggMjAxNyAwMDowMDowMCJ9.9i1MAS3EsVjsteyQUIFudN3lsWUK6FW50yEliMKm2Q4YLjKsGUarl0DqzQdeL6B837SByyUKgdG16QY1l5snYA
+        displayName: Authorization
+        type: string
+/logout:
+  get:
+    displayName: User - Logout
+    description: 'TODO: Add Description'
+    headers:
+      Content-Type:
+        required: true
+        example:
+          value: application/json
+        displayName: Content-Type
+        type: string
+/profile.jpg:
+  get:
+    displayName: https://wparkw.s3.amazonaws.com/profile/1/profile.jpg
+    description: 'TODO: Add Description'
+/account:
+  /agreement:
+    post:
+      displayName: User - User Agreement set
+      description: 'TODO: Add Description'
+      body:
+        application/json:
+          example:
+            value:
+              user_account_id: 16
+              agreement_flag: 0
+          displayName: Body
+          type: User  user agreement setrequest
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
+  /resetpassword:
+    post:
+      displayName: User - reset password
+      description: 'TODO: Add Description'
+      body:
+        application/json:
+          example:
+            value:
+              username: sandejones
+              email_address: sandejones@gmail.com
+          displayName: Body
+          type: User  reset passwordrequest
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
+  /clearpasswordreset:
+    post:
+      displayName: User - User Clear Password Reset
+      description: 'TODO: Add Description'
+      body:
+        application/json:
+          example:
+            value:
+              user_account_id: 22
+          displayName: Body
+          type: User  user clear password resetrequest
+      queryParameters:
+        fwreinit:
+          required: true
+          example:
+            value: 1
+          displayName: fwreinit
+          type: integer
+          format: int32
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
+  /setpassword:
+    post:
+      displayName: User - User Set New Password
+      description: 'TODO: Add Description'
+      body:
+        application/json:
+          example:
+            value:
+              email_address: sandejones@gmail.com
+              username: sandejones
+              current_password: 5#WjddZ&
+              new_password: ABCDEFG
+              confirm_new_password: ABCDEFG
+          displayName: Body
+          type: User  user set new passwordrequest
+      queryParameters:
+        fwreinit:
+          required: true
+          example:
+            value: 1
+          displayName: fwreinit
+          type: integer
+          format: int32
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
+      responses:
+        200:
+          description: Success
+          body:
+            application/json:
+              example:
+                value:
+                  MESSAGE:
+                    message: Old Password provided does not match.
+                    status: False
+              displayName: 'User - User Set New Password ( miss match : faile)'
+              type: 'User  user set new password ( miss match : faile)'
+  /list:
+    get:
+      displayName: Users - List
+      description: 'TODO: Add Description'
+      queryParameters:
+        token:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: token
+          type: string
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
+  /create:
+    post:
+      displayName: User - belichick
+      description: 'TODO: Add Description'
+      body:
+        application/json:
+          example:
+            value:
+              user:
+                user_type_id: 2
+                membership_type_id: 2
+                username: billbell
+                password: P@ssw0rdBB
+                first_name: Bill
+                last_name: belichick
+                email_address: bbelichick@gmail.com
+                cell_phone: 541-202-4745
+                agreement_flag: 1
+                agreement_date: 02/11/2018
+                organization:
+                  organization_name: NFL
+                  address_line1: 123 NFL Lane
+                  address_line2: Suite 882
+                  city: Tampa
+                  state_province: FL
+                  postal_code: 78820
+                  country: United States of America
+                  country_fips: US
+          displayName: Body
+          type: User  belichickrequest
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        99:
+          required: true
+          displayName: 99
+          type: string
+  /update-settings/:
+    post:
+      displayName: User - Update Settings
+      description: 'TODO: Add Description'
+      body:
+        application/json:
+          example:
+            value:
+              first_name: Sande
+              last_name: Jones
+              text_notif_flag: 1
+              email_notif_flag: 1
+              email_address: sandejones@gmail.com
+              cell_phone: 6145551212
+              profile_img_url: https://wparkw.s3.amazonaws.com/profile/1/sandejones.jpg
+              agreement_flag: 1
+              agreement_date: 1
+          displayName: Body
+          type: User  update settingsrequest
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
+/asset-event:
+  /check-in:
+    post:
+      displayName: Asset - Check-In - With Origination ID
+      description: 'TODO: Add Description'
+      body:
+        application/json:
+          example:
+            value:
+              asset_event:
+                asset_id: 480
+                asset_category: VEHICL
+                event_outcome_id: 1
+                asset_damaged: false
+                asset_properties:
+                  vin_num: WBA7F2C56HG422712
+                  year: 2017
+                  make: BMW
+                  model: 7 Series
+                  body: Sedan
+                  trim: 750i xDrive
+                  vehicle_type: Sedan
+                  mileage: ''
+                  highway_mpg: ''
+                  city_mpg: ''
+                  engine: ''
+                  interior_color: Cognac Nappa
+                  exterior_color: Black Sapphire Metallic
+                  age: ''
+                  cost: ''
+                  msrp: ''
+                asset_images:
+                  generic:
+                  - img_url: https://s3.amazonaws.com/vimsdev.assets/image1.jpg
+                    img_file_name: image1.jpg
+                    img_mime_type: image/jpg
+                    title: Image 1 Title
+                    description: Image 1 description lorem ipsum.
+                    location: ''
+                  - img_url: https://s3.amazonaws.com/vimsdev.assets/image2.jpg
+                    img_file_name: image2.jpg
+                    img_mime_type: image/jpg
+                    title: Image 2 Title
+                    description: Image 2 description lorem ipsum.
+                    location: ''
+                  damages: []
+                asset_documents:
+                - document_url: https://s3.amazonaws.com/vimsdev.assets/document1.pdf
+                  document_file_name: document1.pdf
+                  document_mime_type: application/pdf
+                  title: Document 1 Title
+                  description: Document 1 description lorem ipsum.
+                  location: ''
+                - document_url: https://s3.amazonaws.com/vimsdev.assets/document2.pdf
+                  document_file_name: document2.pdf
+                  document_mime_type: application/pdf
+                  title: Document 2 Title
+                  description: Document 2 description lorem ipsum.
+                  location: ''
+                asset_comments:
+                - comment: Comment 1 consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                - comment: Comment 2 consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                event_action_type_id: 1
+                asset_origination_id: 39
+                poc_id: ''
+                event_poc:
+                  full_name: John Salespeson2
+                  phone_number: 703-333-1212
+                  email_address: john.salesperson2@rosenthalauto.com
+                  organization_name: Rosenthal Automotive Group
+                  id_photo_img_url: ''
+                asset_review:
+                  review_status: REQAPV
+                  signature_url: ''
+                  review_user_account_id: 6
+                vin_decode_log:
+                  vin_num: WBA7F2C56HG422712
+                  vin_photo_img_url: https://s3.amazonaws.com/wparkw.assets/vin.png
+                  vin_decode_location_lat: 18.851031
+                  vin_decode_location_long: -57.366377
+          displayName: Body
+          type: Asset  checkIn  with origination idrequest
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
+  /history:
+    post:
+      displayName: Asset Event History - List
+      description: 'TODO: Add Description'
+      body:
+        application/json:
+          example:
+            value:
+              searchParams:
+                vin: 1HGCT2B08HA005015
+                stockNum: ''
+          displayName: Body
+          type: Asset event history  listrequest
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
+/asset-event-poc:
+  /list:
+    get:
+      displayName: Asset Event POC - List
+      description: 'TODO: Add Description'
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
+  /edit:
+    post:
+      displayName: Asset Event POC - Edit
+      description: 'TODO: Add Description'
+      body:
+        application/json:
+          example:
+            value:
+              poc:
+                organization_name: ''
+                poc_id: ''
+                phone_number: 556665
+                email_address: '@mail'
+                full_name: 222
+                id_photo_img_url: ''
+          displayName: Body
+          type: Asset event poc  editrequest
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
+/asset-origination:
+  /list:
+    post:
+      displayName: Asset Origination - List
+      description: 'TODO: Add Description'
+      body:
+        application/json:
+          example:
+            value:
+              searchParams:
+                originationTypeId: 3
+                organizationName: ''
+          displayName: Body
+          type: Asset origination  listrequest
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
+  /18:
+    get:
+      displayName: Asset Origination - Detail
+      description: 'TODO: Add Description'
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJ1c2VyX2FjY291bnRfaWQiOjMsInNhbHQiOiJBQTBGNTI4RTg0NzFCNjIyNTMyRUI3NEU3RjgyMjAzRDYwRjUxRTM2NzRFOUI5MERDRDc5RUVBMzc4RDhBNjdCQUNDNDc0Q0VERjFFMkMyNUM4NUI4Nzc3NzJDODAyMjUxMURCQ0E3RkM1QjVCRkU2MDE0REY1MTY1NkIzREUzNCIsInVzZXJuYW1lIjoianNqdW5nMiIsInRzIjoiQXByaWwgMDYgMjAxNyAwMDowMDowMCJ9.QCUKzUY5qaba0OODmex8L-kartwDjfxrssRH9AyRXBryio-P5qiEsQm8mC9UuzhYG-FNUf2PqLxgpK0hVQG6MA
+          displayName: Authorization
+          type: string
+  /edit:
+    post:
+      displayName: Asset Origination - Edit
+      description: 'TODO: Add Description'
+      body:
+        application/json:
+          example:
+            value:
+              asset_origination:
+                origination_type_id: 4
+                contact_phone: 7013333333
+                city: union
+                state_province: NJ
+                address_line2: ''
+                asset_origination_id: ''
+                email_address: cxcb@gmail.com
+                origination_name: Jae's Company
+                address_line1: dhdjdhd AAAA
+                postal_code: 07087
+                country: ''
+          displayName: Body
+          type: Asset origination  editrequest
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
+/vehicle:
+  /edit:
+    post:
+      displayName: Vehicle - Edit (Create/Update)
+      description: 'TODO: Add Description'
+      body:
+        application/json:
+          example:
+            value:
+              asset:
+                asset_id: ''
+                asset_category: VEHICL
+                asset_properties:
+                  msrp: ''
+                  body: Car
+                  trim: Base
+                  mileage: 25
+                  age: ''
+                  model: Corolla
+                  interior_color: ''
+                  vin_num: 1NXBU40E59Z105957
+                  highway_mpg: ''
+                  city_mpg: ''
+                  cost: ''
+                  stock_num: ''
+                  exterior_color: Barcelona Red Metallic
+                  year: 2009
+                  make: Toyota
+                  engine: Engine
+                  vehicle_type: Sedan
+          displayName: Body
+          type: Vehicle  edit (create/update)request
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
+  /view/1399:
+    get:
+      displayName: Vehicle - Detail
+      description: 'TODO: Add Description'
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
