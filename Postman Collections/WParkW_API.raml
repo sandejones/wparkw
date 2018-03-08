@@ -215,8 +215,8 @@ types:
   User  user agreement setrequest:
     example:
       value:
-        user_account_id: 16
-        agreement_flag: 0
+        user_account_id: 25
+        agreement_flag: 1
     displayName: User - User Agreement setRequest
     type: object
     properties:
@@ -232,7 +232,7 @@ types:
     example:
       value:
         username: sandejones
-        email_address: sandejones@gmail.com
+        email_address: sandejoneas@gmail.com
     displayName: User - User Reset PasswordRequest
     type: object
     properties:
@@ -2156,10 +2156,18 @@ types:
         application/json:
           example:
             value:
-              user_account_id: 16
-              agreement_flag: 0
+              user_account_id: 25
+              agreement_flag: 1
           displayName: Body
           type: User  user agreement setrequest
+      queryParameters:
+        fwreinit:
+          required: true
+          example:
+            value: 1
+          displayName: fwreinit
+          type: integer
+          format: int32
       headers:
         Content-Type:
           required: true
