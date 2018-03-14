@@ -35,7 +35,7 @@ types:
       value:
         login:
           username: sandejones
-          password: P@ssw0rdSJ
+          password: T0zqa^Pk
     displayName: User - AuthenticateRequest
     type: object
     properties:
@@ -47,7 +47,7 @@ types:
     example:
       value:
         username: sandejones
-        password: P@ssw0rdSJ
+        password: T0zqa^Pk
     displayName: Login
     type: object
     properties:
@@ -215,8 +215,7 @@ types:
   User  user agreement setrequest:
     example:
       value:
-        user_account_id: 25
-        agreement_flag: 1
+        user_account_id: 32
     displayName: User - User Agreement setRequest
     type: object
     properties:
@@ -224,15 +223,11 @@ types:
         required: true
         displayName: user_account_id
         type: string
-      agreement_flag:
-        required: true
-        displayName: agreement_flag
-        type: string
   User  user reset passwordrequest:
     example:
       value:
-        username: sandejones
-        email_address: sandejoneas@gmail.com
+        username: ''
+        email_address: sandejones@gmail.com
     displayName: User - User Reset PasswordRequest
     type: object
     properties:
@@ -247,7 +242,7 @@ types:
   User  user clear password resetrequest:
     example:
       value:
-        user_account_id: 22
+        user_account_id: 35
     displayName: User - User Clear Password ResetRequest
     type: object
     properties:
@@ -1972,6 +1967,167 @@ types:
         required: true
         displayName: email_address
         type: string
+  Users  crud users createrequest:
+    example:
+      value:
+        user:
+          user_type_id: 1
+          membership_type_id: 2
+          username: PabloPicasso
+          password: P@ssw0rdq
+          first_name: Pablo
+          last_name: Picasso
+          email_address: Picasso@genevamedia.com
+          cell_phone: 8083991129
+          organization_id: 1
+    displayName: Users - CRUD Users CreateRequest
+    type: object
+    properties:
+      user:
+        required: true
+        displayName: user
+        type: User65
+  User65:
+    example:
+      value:
+        user_type_id: 1
+        membership_type_id: 2
+        username: PabloPicasso
+        password: P@ssw0rdq
+        first_name: Pablo
+        last_name: Picasso
+        email_address: Picasso@genevamedia.com
+        cell_phone: 8083991129
+        organization_id: 1
+    displayName: User65
+    type: object
+    properties:
+      user_type_id:
+        required: true
+        displayName: user_type_id
+        type: integer
+        format: int32
+      membership_type_id:
+        required: true
+        displayName: membership_type_id
+        type: integer
+        format: int32
+      username:
+        required: true
+        displayName: username
+        type: string
+      password:
+        required: true
+        displayName: password
+        type: string
+      first_name:
+        required: true
+        displayName: first_name
+        type: string
+      last_name:
+        required: true
+        displayName: last_name
+        type: string
+      email_address:
+        required: true
+        displayName: email_address
+        type: string
+      cell_phone:
+        required: true
+        displayName: cell_phone
+        type: string
+      organization_id:
+        required: true
+        displayName: organization_id
+        type: integer
+        format: int32
+  Users  crud users put  updaterequest:
+    example:
+      value:
+        user:
+          user_account_id: 36
+          user_type_id: 1
+          membership_type_id: 2
+          username: PabloPicasso
+          password: P@ssw0rdq
+          first_name: Pablo
+          last_name: Picasso
+          email_address: Picasso@genevamedia.com
+          cell_phone: 555141448
+          organization_id: 2
+          new_password: ''
+    displayName: Users - CRUD Users Put - UpdateRequest
+    type: object
+    properties:
+      user:
+        required: true
+        displayName: user
+        type: User67
+  User67:
+    example:
+      value:
+        user_account_id: 36
+        user_type_id: 1
+        membership_type_id: 2
+        username: PabloPicasso
+        password: P@ssw0rdq
+        first_name: Pablo
+        last_name: Picasso
+        email_address: Picasso@genevamedia.com
+        cell_phone: 555141448
+        organization_id: 2
+        new_password: ''
+    displayName: User67
+    type: object
+    properties:
+      user_account_id:
+        required: true
+        displayName: user_account_id
+        type: integer
+        format: int32
+      user_type_id:
+        required: true
+        displayName: user_type_id
+        type: integer
+        format: int32
+      membership_type_id:
+        required: true
+        displayName: membership_type_id
+        type: integer
+        format: int32
+      username:
+        required: true
+        displayName: username
+        type: string
+      password:
+        required: true
+        displayName: password
+        type: string
+      first_name:
+        required: true
+        displayName: first_name
+        type: string
+      last_name:
+        required: true
+        displayName: last_name
+        type: string
+      email_address:
+        required: true
+        displayName: email_address
+        type: string
+      cell_phone:
+        required: true
+        displayName: cell_phone
+        type: string
+      organization_id:
+        required: true
+        displayName: organization_id
+        type: integer
+        format: int32
+      new_password:
+        required: true
+        displayName: new_password
+        type: string
 /authenticate:
   post:
     displayName: User - Authenticate1
@@ -2132,30 +2288,6 @@ types:
           value: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJ1c2VyX2FjY291bnRfaWQiOjMsInNhbHQiOiJBQjVFMTE5MURCNzU0NzAwMUY2OEJBMzZFNzRFNUY4MzlCRjhDNUEwOTk5RTE5OTFBNkRDREEwNTk0Njc4NzAzODQzQTc5NzQzMTQyMTZENTdEMjcxM0Q0OTQyMEQzQUUxMkU2MjNDOUEyN0MxNjgzQUM3ODlDODVFMjkzQUIzMiIsInVzZXJuYW1lIjoianNqdW5nMiIsInRzIjoiQXByaWwgMDggMjAxNyAwMDowMDowMCJ9.9i1MAS3EsVjsteyQUIFudN3lsWUK6FW50yEliMKm2Q4YLjKsGUarl0DqzQdeL6B837SByyUKgdG16QY1l5snYA
         displayName: Authorization
         type: string
-/user/list:
-  get:
-    displayName: Users - List Copy
-    description: 'TODO: Add Description'
-    queryParameters:
-      token:
-        required: true
-        example:
-          value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
-        displayName: token
-        type: string
-    headers:
-      Content-Type:
-        required: true
-        example:
-          value: application/json
-        displayName: Content-Type
-        type: string
-      Authorization:
-        required: true
-        example:
-          value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
-        displayName: Authorization
-        type: string
 /logout:
   get:
     displayName: User - Logout
@@ -2180,8 +2312,7 @@ types:
         application/json:
           example:
             value:
-              user_account_id: 25
-              agreement_flag: 1
+              user_account_id: 32
           displayName: Body
           type: User  user agreement setrequest
       queryParameters:
@@ -2238,7 +2369,7 @@ types:
         application/json:
           example:
             value:
-              user_account_id: 22
+              user_account_id: 35
           displayName: Body
           type: User  user clear password resetrequest
       queryParameters:
@@ -2704,6 +2835,141 @@ types:
     get:
       displayName: Vehicle - Detail
       description: 'TODO: Add Description'
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
+/user:
+  /list:
+    get:
+      displayName: Users CRUD - List
+      description: 'TODO: Add Description'
+      queryParameters:
+        fwreinit:
+          required: true
+          example:
+            value: 1
+          displayName: fwreinit
+          type: integer
+          format: int32
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
+  /get:
+    get:
+      displayName: Users - CRUD List Users
+      description: 'TODO: Add Description'
+      queryParameters:
+        user_account_id:
+          required: true
+          example:
+            value: 35
+          displayName: user_account_id
+          type: integer
+          format: int32
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
+  /create:
+    post:
+      displayName: Users - CRUD Users Create
+      description: 'TODO: Add Description'
+      body:
+        application/json:
+          example:
+            value:
+              user:
+                user_type_id: 1
+                membership_type_id: 2
+                username: PabloPicasso
+                password: P@ssw0rdq
+                first_name: Pablo
+                last_name: Picasso
+                email_address: Picasso@genevamedia.com
+                cell_phone: 8083991129
+                organization_id: 1
+          displayName: Body
+          type: Users  crud users createrequest
+      queryParameters:
+        fwreinit:
+          required: true
+          example:
+            value: 1
+          displayName: fwreinit
+          type: integer
+          format: int32
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
+  /put:
+    post:
+      displayName: Users - CRUD Users Put - Update
+      description: 'TODO: Add Description'
+      body:
+        application/json:
+          example:
+            value:
+              user:
+                user_account_id: 36
+                user_type_id: 1
+                membership_type_id: 2
+                username: PabloPicasso
+                password: P@ssw0rdq
+                first_name: Pablo
+                last_name: Picasso
+                email_address: Picasso@genevamedia.com
+                cell_phone: 555141448
+                organization_id: 2
+                new_password: ''
+          displayName: Body
+          type: Users  crud users put  updaterequest
+      queryParameters:
+        fwreinit:
+          required: true
+          example:
+            value: 1
+          displayName: fwreinit
+          type: integer
+          format: int32
       headers:
         Content-Type:
           required: true
