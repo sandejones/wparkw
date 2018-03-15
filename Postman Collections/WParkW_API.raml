@@ -2128,6 +2128,43 @@ types:
         required: true
         displayName: new_password
         type: string
+  Event action types  put / updaerequest:
+    example:
+      value:
+        params:
+          ORIGINATION_TYPE_ID: 1
+          event_type_id: 1
+          action_type: Purchase from Manufacturer!
+    displayName: Event Action Types - Put / UpdaeRequest
+    type: object
+    properties:
+      params:
+        required: true
+        displayName: params
+        type: Params
+  Params:
+    example:
+      value:
+        ORIGINATION_TYPE_ID: 1
+        event_type_id: 1
+        action_type: Purchase from Manufacturer!
+    displayName: Params
+    type: object
+    properties:
+      ORIGINATION_TYPE_ID:
+        required: true
+        displayName: ORIGINATION_TYPE_ID
+        type: integer
+        format: int32
+      event_type_id:
+        required: true
+        displayName: event_type_id
+        type: integer
+        format: int32
+      action_type:
+        required: true
+        displayName: action_type
+        type: string
 /authenticate:
   post:
     displayName: User - Authenticate1
@@ -2252,23 +2289,6 @@ types:
         required: true
         example:
           value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
-        displayName: Authorization
-        type: string
-/event-action-type/list/1/1:
-  get:
-    displayName: Event Action Types - List
-    description: 'TODO: Add Description'
-    headers:
-      Content-Type:
-        required: true
-        example:
-          value: application/json
-        displayName: Content-Type
-        type: string
-      Authorization:
-        required: true
-        example:
-          value: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJ1c2VyX2FjY291bnRfaWQiOjMsInNhbHQiOiJBQjVFMTE5MURCNzU0NzAwMUY2OEJBMzZFNzRFNUY4MzlCRjhDNUEwOTk5RTE5OTFBNkRDREEwNTk0Njc4NzAzODQzQTc5NzQzMTQyMTZENTdEMjcxM0Q0OTQyMEQzQUUxMkU2MjNDOUEyN0MxNjgzQUM3ODlDODVFMjkzQUIzMiIsInVzZXJuYW1lIjoianNqdW5nMiIsInRzIjoiQXByaWwgMDggMjAxNyAwMDowMDowMCJ9.9i1MAS3EsVjsteyQUIFudN3lsWUK6FW50yEliMKm2Q4YLjKsGUarl0DqzQdeL6B837SByyUKgdG16QY1l5snYA
         displayName: Authorization
         type: string
 /event-outcome/list/1:
@@ -2773,6 +2793,59 @@ types:
                 country: ''
           displayName: Body
           type: Asset origination  editrequest
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
+/event-action-type:
+  /list/1/2:
+    get:
+      displayName: Event Action Types - List
+      description: 'TODO: Add Description'
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
+  /put:
+    post:
+      displayName: Event Action Types - Put / Updae
+      description: 'TODO: Add Description'
+      body:
+        application/json:
+          example:
+            value:
+              params:
+                ORIGINATION_TYPE_ID: 1
+                event_type_id: 1
+                action_type: Purchase from Manufacturer!
+          displayName: Body
+          type: Event action types  put / updaerequest
+      queryParameters:
+        fwreinit:
+          required: true
+          example:
+            value: 1
+          displayName: fwreinit
+          type: integer
+          format: int32
       headers:
         Content-Type:
           required: true
