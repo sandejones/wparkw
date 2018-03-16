@@ -2132,9 +2132,8 @@ types:
     example:
       value:
         params:
-          ORIGINATION_TYPE_ID: 1
-          event_type_id: 1
-          action_type: Purchase from Manufacturer!
+          origination_type_id: 1
+          event_type_id: 2
     displayName: Event Action Types - Put / UpdaeRequest
     type: object
     properties:
@@ -2145,15 +2144,33 @@ types:
   Params:
     example:
       value:
-        ORIGINATION_TYPE_ID: 1
-        event_type_id: 1
-        action_type: Purchase from Manufacturer!
+        origination_type_id: 1
+        event_type_id: 2
     displayName: Params
     type: object
     properties:
-      ORIGINATION_TYPE_ID:
+      origination_type_id:
         required: true
-        displayName: ORIGINATION_TYPE_ID
+        displayName: origination_type_id
+        type: integer
+        format: int32
+      event_type_id:
+        required: true
+        displayName: event_type_id
+        type: integer
+        format: int32
+  Event action types  createrequest:
+    example:
+      value:
+        origination_type_id: 7
+        event_type_id: 1
+        action_type: test
+    displayName: Event Action Types - createRequest
+    type: object
+    properties:
+      origination_type_id:
+        required: true
+        displayName: origination_type_id
         type: integer
         format: int32
       event_type_id:
@@ -2164,6 +2181,54 @@ types:
       action_type:
         required: true
         displayName: action_type
+        type: string
+  Organization  createrequest:
+    example:
+      value:
+        origination_type_id: 7
+        event_type_id: 1
+        action_type: test
+    displayName: organization - createRequest
+    type: object
+    properties:
+      origination_type_id:
+        required: true
+        displayName: origination_type_id
+        type: integer
+        format: int32
+      event_type_id:
+        required: true
+        displayName: event_type_id
+        type: integer
+        format: int32
+      action_type:
+        required: true
+        displayName: action_type
+        type: string
+/organization/list:
+  get:
+    displayName: organization - create
+    description: 'TODO: Add Description'
+    queryParameters:
+      fwreinit:
+        required: true
+        example:
+          value: 1
+        displayName: fwreinit
+        type: integer
+        format: int32
+    headers:
+      Content-Type:
+        required: true
+        example:
+          value: application/json
+        displayName: Content-Type
+        type: string
+      Authorization:
+        required: true
+        example:
+          value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+        displayName: Authorization
         type: string
 /authenticate:
   post:
@@ -2323,6 +2388,40 @@ types:
   get:
     displayName: https://wparkw.s3.amazonaws.com/profile/1/profile.jpg
     description: 'TODO: Add Description'
+/event-action-type-check-in/create:
+  post:
+    displayName: organization - create
+    description: 'TODO: Add Description'
+    body:
+      application/json:
+        example:
+          value:
+            origination_type_id: 7
+            event_type_id: 1
+            action_type: test
+        displayName: Body
+        type: Organization  createrequest
+    queryParameters:
+      fwreinit:
+        required: true
+        example:
+          value: 1
+        displayName: fwreinit
+        type: integer
+        format: int32
+    headers:
+      Content-Type:
+        required: true
+        example:
+          value: application/json
+        displayName: Content-Type
+        type: string
+      Authorization:
+        required: true
+        example:
+          value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+        displayName: Authorization
+        type: string
 /account:
   /agreement:
     post:
@@ -2833,9 +2932,8 @@ types:
           example:
             value:
               params:
-                ORIGINATION_TYPE_ID: 1
-                event_type_id: 1
-                action_type: Purchase from Manufacturer!
+                origination_type_id: 1
+                event_type_id: 2
           displayName: Body
           type: Event action types  put / updaerequest
       queryParameters:
