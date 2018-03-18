@@ -166,8 +166,7 @@ types:
       value:
         event_action_type_id: 35
         action_type: Test Changed
-        origination_type_id: 7
-        event_type_id: 1
+        origination_type_id: 8
     displayName: event-action-type-check-in - PUT / UpdateRequest
     type: object
     properties:
@@ -183,23 +182,6 @@ types:
       origination_type_id:
         required: true
         displayName: origination_type_id
-        type: integer
-        format: int32
-      event_type_id:
-        required: true
-        displayName: event_type_id
-        type: integer
-        format: int32
-  EventActionTypeCheckIn  listrequest:
-    example:
-      value:
-        originationtypeid: 1
-    displayName: event-action-type-check-in - LISTRequest
-    type: object
-    properties:
-      originationtypeid:
-        required: true
-        displayName: originationtypeid
         type: integer
         format: int32
   EventActionTypeCheckIn createrequest:
@@ -347,8 +329,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User10
-  User10:
+        type: User9
+  User9:
     example:
       value:
         user_type_id: 1
@@ -360,7 +342,7 @@ types:
         email_address: Picasso@genevamedia.com
         cell_phone: 8083991129
         organization_id: 1
-    displayName: User10
+    displayName: User9
     type: object
     properties:
       user_type_id:
@@ -1320,8 +1302,8 @@ types:
       searchParams:
         required: true
         displayName: searchParams
-        type: SearchParams40
-  SearchParams40:
+        type: SearchParams39
+  SearchParams39:
     example:
       value:
         dateTo: ''
@@ -1330,7 +1312,7 @@ types:
         dateFrom: ''
         vin: ''
         stockNum: ''
-    displayName: SearchParams40
+    displayName: SearchParams39
     type: object
     properties:
       dateTo:
@@ -1369,13 +1351,13 @@ types:
       searchParams:
         required: true
         displayName: searchParams
-        type: SearchParams42
-  SearchParams42:
+        type: SearchParams41
+  SearchParams41:
     example:
       value:
         originationTypeId: 1
         organizationName: ''
-    displayName: SearchParams42
+    displayName: SearchParams41
     type: object
     properties:
       originationTypeId:
@@ -1454,8 +1436,8 @@ types:
       asset_properties:
         required: true
         displayName: asset_properties
-        type: AssetProperties45
-  AssetProperties45:
+        type: AssetProperties44
+  AssetProperties44:
     example:
       value:
         msrp: ''
@@ -1475,7 +1457,7 @@ types:
         make: Toyota
         engine: Engine
         vehicle_type: Sedan
-    displayName: AssetProperties45
+    displayName: AssetProperties44
     type: object
     properties:
       msrp:
@@ -1574,8 +1556,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User47
-  User47:
+        type: User46
+  User46:
     example:
       value:
         user_type_id: 2
@@ -1595,7 +1577,7 @@ types:
           postal_code: 22204
           country: United States of America
           country_fips: US
-    displayName: User47
+    displayName: User46
     type: object
     properties:
       user_type_id:
@@ -1635,8 +1617,8 @@ types:
       organization:
         required: true
         displayName: organization
-        type: Organization48
-  Organization48:
+        type: Organization47
+  Organization47:
     example:
       value:
         organization_name: zzz Arlington
@@ -1647,7 +1629,7 @@ types:
         postal_code: 22204
         country: United States of America
         country_fips: US
-    displayName: Organization48
+    displayName: Organization47
     type: object
     properties:
       organization_name:
@@ -1762,8 +1744,8 @@ types:
       asset_event:
         required: true
         displayName: asset_event
-        type: AssetEvent50
-  AssetEvent50:
+        type: AssetEvent49
+  AssetEvent49:
     example:
       value:
         asset_id: 480
@@ -1836,7 +1818,7 @@ types:
           vin_photo_img_url: https://s3.amazonaws.com/wparkw.assets/vin.png
           vin_decode_location_lat: 18.851031
           vin_decode_location_long: -57.366377
-    displayName: AssetEvent50
+    displayName: AssetEvent49
     type: object
     properties:
       asset_id:
@@ -1858,7 +1840,7 @@ types:
       asset_properties:
         required: true
         displayName: asset_properties
-        type: AssetProperties51
+        type: AssetProperties50
       asset_images:
         required: true
         displayName: asset_images
@@ -1899,7 +1881,7 @@ types:
         required: true
         displayName: vin_decode_log
         type: VinDecodeLog
-  AssetProperties51:
+  AssetProperties50:
     example:
       value:
         vin_num: WBA7F2C56HG422712
@@ -1918,7 +1900,7 @@ types:
         age: ''
         cost: ''
         msrp: ''
-    displayName: AssetProperties51
+    displayName: AssetProperties50
     type: object
     properties:
       vin_num:
@@ -2060,8 +2042,8 @@ types:
       asset_origination:
         required: true
         displayName: asset_origination
-        type: AssetOrigination62
-  AssetOrigination62:
+        type: AssetOrigination61
+  AssetOrigination61:
     example:
       value:
         origination_type_id: 4
@@ -2075,7 +2057,7 @@ types:
         address_line1: dhdjdhd AAAA
         postal_code: 07087
         country: ''
-    displayName: AssetOrigination62
+    displayName: AssetOrigination61
     type: object
     properties:
       origination_type_id:
@@ -2207,8 +2189,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User65
-  User65:
+        type: User64
+  User64:
     example:
       value:
         user_type_id: 2
@@ -2230,7 +2212,7 @@ types:
           postal_code: 43232
           country: United States of America
           country_fips: US
-    displayName: User65
+    displayName: User64
     type: object
     properties:
       user_type_id:
@@ -2279,7 +2261,7 @@ types:
       organization:
         required: true
         displayName: organization
-        type: Organization48
+        type: Organization47
   User  belichickrequest:
     example:
       value:
@@ -2309,7 +2291,7 @@ types:
       user:
         required: true
         displayName: user
-        type: User65
+        type: User64
   User  authenticate  sanderequest:
     example:
       value:
@@ -3230,8 +3212,7 @@ types:
             value:
               event_action_type_id: 35
               action_type: Test Changed
-              origination_type_id: 7
-              event_type_id: 1
+              origination_type_id: 8
           displayName: Body
           type: EventActionTypeCheckIn  put / updaterequest
       queryParameters:
@@ -3256,16 +3237,9 @@ types:
           displayName: Authorization
           type: string
   /list:
-    post:
+    get:
       displayName: event-action-type-check-in - LIST
       description: 'TODO: Add Description'
-      body:
-        application/json:
-          example:
-            value:
-              originationtypeid: 1
-          displayName: Body
-          type: EventActionTypeCheckIn  listrequest
       queryParameters:
         fwreinit:
           required: true
