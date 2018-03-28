@@ -34,12 +34,12 @@ types:
     example:
       value:
         organization:
-          organization_name: test1
-          address_line1: 123 Cherry Lane
-          address_line2: suite 212
-          city: Tampa
-          state_province: FL
-          postal_code: 33617
+          organization_name: Gravilson and Sons
+          address_line1: 5441 Thompson Road
+          address_line2: suite 1304
+          city: Brooklyn
+          state_province: NY
+          postal_code: 11205
           country: U
     displayName: organization - createRequest
     type: object
@@ -51,12 +51,12 @@ types:
   Organization:
     example:
       value:
-        organization_name: test1
-        address_line1: 123 Cherry Lane
-        address_line2: suite 212
-        city: Tampa
-        state_province: FL
-        postal_code: 33617
+        organization_name: Gravilson and Sons
+        address_line1: 5441 Thompson Road
+        address_line2: suite 1304
+        city: Brooklyn
+        state_province: NY
+        postal_code: 11205
         country: U
     displayName: Organization
     type: object
@@ -89,6 +89,24 @@ types:
         required: true
         displayName: country
         type: string
+  Organization  putrequest:
+    example:
+      value:
+        organization:
+          organization_name: test1
+          address_line1: 123 Cherry Lane
+          address_line2: suite 212
+          city: Tampa
+          state_province: FL
+          postal_code: 33617
+          country: U
+    displayName: organization - putRequest
+    type: object
+    properties:
+      organization:
+        required: true
+        displayName: organization
+        type: Organization
   Organization  list (full list):
     example:
       value:
@@ -161,6 +179,29 @@ types:
         required: true
         displayName: UPDATED_DATE
         type: string
+  EventActionTypeCheckIn/createrequest:
+    example:
+      value:
+        origination_type_id: 7
+        event_type_id: 1
+        action_type: test2
+    displayName: Event-action-type-check-in/createRequest
+    type: object
+    properties:
+      origination_type_id:
+        required: true
+        displayName: origination_type_id
+        type: integer
+        format: int32
+      event_type_id:
+        required: true
+        displayName: event_type_id
+        type: integer
+        format: int32
+      action_type:
+        required: true
+        displayName: action_type
+        type: string
   EventActionTypeCheckIn  put / updaterequest:
     example:
       value:
@@ -184,13 +225,13 @@ types:
         displayName: origination_type_id
         type: integer
         format: int32
-  EventActionTypeCheckIn createrequest:
+  EventActionTypeCheckIn createrequest7:
     example:
       value:
         origination_type_id: 7
         event_type_id: 1
         action_type: test
-    displayName: event-action-type-check-in CREATERequest
+    displayName: event-action-type-check-in CREATERequest7
     type: object
     properties:
       origination_type_id:
@@ -207,7 +248,7 @@ types:
         required: true
         displayName: action_type
         type: string
-  Users  crud users put  updaterequest:
+  User  crud users put  updaterequest:
     example:
       value:
         user:
@@ -222,7 +263,7 @@ types:
           cell_phone: 555141448
           organization_id: 2
           new_password: ''
-    displayName: Users - CRUD Users Put - UpdateRequest
+    displayName: User - CRUD Users Put - UpdateRequest
     type: object
     properties:
       user:
@@ -310,6 +351,237 @@ types:
         required: true
         displayName: status
         type: boolean
+  User  update settings/sandejonesrequest:
+    example:
+      value:
+        first_name: Sande
+        last_name: Jones
+        text_notif_flag: 1
+        email_notif_flag: 1
+        email_address: sandejones@gmail.com
+        cell_phone: 6145551212
+        profile_img_url: https://wparkw.s3.amazonaws.com/profile/1/sandejones.jpg
+        agreement_flag: 1
+        agreement_date: 1
+    displayName: User - Update Settings/sandejonesRequest
+    type: object
+    properties:
+      first_name:
+        required: true
+        displayName: first_name
+        type: string
+      last_name:
+        required: true
+        displayName: last_name
+        type: string
+      text_notif_flag:
+        required: true
+        displayName: text_notif_flag
+        type: integer
+        format: int32
+      email_notif_flag:
+        required: true
+        displayName: email_notif_flag
+        type: integer
+        format: int32
+      email_address:
+        required: true
+        displayName: email_address
+        type: string
+      cell_phone:
+        required: true
+        displayName: cell_phone
+        type: string
+      profile_img_url:
+        required: true
+        displayName: profile_img_url
+        type: string
+      agreement_flag:
+        required: true
+        displayName: agreement_flag
+        type: integer
+        format: int32
+      agreement_date:
+        required: true
+        displayName: agreement_date
+        type: integer
+        format: int32
+  User  reset passwordrequest:
+    example:
+      value:
+        username: sandejones
+        email_address: sandejones@gmail.com
+    displayName: User - reset passwordRequest
+    type: object
+    properties:
+      username:
+        required: true
+        displayName: username
+        type: string
+      email_address:
+        required: true
+        displayName: email_address
+        type: string
+  UserCreate/sandeJonesrequest:
+    example:
+      value:
+        user:
+          user_type_id: 2
+          membership_type_id: 2
+          username: sandejones
+          password: P@ssw0rdSJ
+          first_name: Sande
+          last_name: Jones
+          email_address: sandejones@gmail.com
+          cell_phone: 614-679-2974
+          agreement_flag: 1
+          agreement_date: 02/16/2018
+          organization:
+            organization_name: Intelimatrix LLC
+            address_line1: 1323 Walshire Drive
+            address_line2: North
+            city: Columbus
+            state_province: OH
+            postal_code: 43232
+            country: United States of America
+            country_fips: US
+    displayName: User Create/Sande JonesRequest
+    type: object
+    properties:
+      user:
+        required: true
+        displayName: user
+        type: User14
+  User14:
+    example:
+      value:
+        user_type_id: 2
+        membership_type_id: 2
+        username: sandejones
+        password: P@ssw0rdSJ
+        first_name: Sande
+        last_name: Jones
+        email_address: sandejones@gmail.com
+        cell_phone: 614-679-2974
+        agreement_flag: 1
+        agreement_date: 02/16/2018
+        organization:
+          organization_name: Intelimatrix LLC
+          address_line1: 1323 Walshire Drive
+          address_line2: North
+          city: Columbus
+          state_province: OH
+          postal_code: 43232
+          country: United States of America
+          country_fips: US
+    displayName: User14
+    type: object
+    properties:
+      user_type_id:
+        required: true
+        displayName: user_type_id
+        type: integer
+        format: int32
+      membership_type_id:
+        required: true
+        displayName: membership_type_id
+        type: integer
+        format: int32
+      username:
+        required: true
+        displayName: username
+        type: string
+      password:
+        required: true
+        displayName: password
+        type: string
+      first_name:
+        required: true
+        displayName: first_name
+        type: string
+      last_name:
+        required: true
+        displayName: last_name
+        type: string
+      email_address:
+        required: true
+        displayName: email_address
+        type: string
+      cell_phone:
+        required: true
+        displayName: cell_phone
+        type: string
+      agreement_flag:
+        required: true
+        displayName: agreement_flag
+        type: integer
+        format: int32
+      agreement_date:
+        required: true
+        displayName: agreement_date
+        type: string
+      organization:
+        required: true
+        displayName: organization
+        type: Organization15
+  Organization15:
+    example:
+      value:
+        organization_name: Intelimatrix LLC
+        address_line1: 1323 Walshire Drive
+        address_line2: North
+        city: Columbus
+        state_province: OH
+        postal_code: 43232
+        country: United States of America
+        country_fips: US
+    displayName: Organization15
+    type: object
+    properties:
+      organization_name:
+        required: true
+        displayName: organization_name
+        type: string
+      address_line1:
+        required: true
+        displayName: address_line1
+        type: string
+      address_line2:
+        required: true
+        displayName: address_line2
+        type: string
+      city:
+        required: true
+        displayName: city
+        type: string
+      state_province:
+        required: true
+        displayName: state_province
+        type: string
+      postal_code:
+        required: true
+        displayName: postal_code
+        type: string
+      country:
+        required: true
+        displayName: country
+        type: string
+      country_fips:
+        required: true
+        displayName: country_fips
+        type: string
+  Users  crud user deleterequest:
+    example:
+      value:
+        user_account_id: 36
+    displayName: Users - CRUD User DeleteRequest
+    type: object
+    properties:
+      user_account_id:
+        required: true
+        displayName: user_account_id
+        type: integer
+        format: int32
   Users  crud users createrequest:
     example:
       value:
@@ -329,8 +601,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User9
-  User9:
+        type: User18
+  User18:
     example:
       value:
         user_type_id: 1
@@ -342,7 +614,7 @@ types:
         email_address: Picasso@genevamedia.com
         cell_phone: 8083991129
         organization_id: 1
-    displayName: User9
+    displayName: User18
     type: object
     properties:
       user_type_id:
@@ -1302,8 +1574,8 @@ types:
       searchParams:
         required: true
         displayName: searchParams
-        type: SearchParams39
-  SearchParams39:
+        type: SearchParams48
+  SearchParams48:
     example:
       value:
         dateTo: ''
@@ -1312,7 +1584,7 @@ types:
         dateFrom: ''
         vin: ''
         stockNum: ''
-    displayName: SearchParams39
+    displayName: SearchParams48
     type: object
     properties:
       dateTo:
@@ -1351,13 +1623,13 @@ types:
       searchParams:
         required: true
         displayName: searchParams
-        type: SearchParams41
-  SearchParams41:
+        type: SearchParams50
+  SearchParams50:
     example:
       value:
         originationTypeId: 1
         organizationName: ''
-    displayName: SearchParams41
+    displayName: SearchParams50
     type: object
     properties:
       originationTypeId:
@@ -1436,8 +1708,8 @@ types:
       asset_properties:
         required: true
         displayName: asset_properties
-        type: AssetProperties44
-  AssetProperties44:
+        type: AssetProperties53
+  AssetProperties53:
     example:
       value:
         msrp: ''
@@ -1457,7 +1729,7 @@ types:
         make: Toyota
         engine: Engine
         vehicle_type: Sedan
-    displayName: AssetProperties44
+    displayName: AssetProperties53
     type: object
     properties:
       msrp:
@@ -1556,8 +1828,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User46
-  User46:
+        type: User55
+  User55:
     example:
       value:
         user_type_id: 2
@@ -1577,7 +1849,7 @@ types:
           postal_code: 22204
           country: United States of America
           country_fips: US
-    displayName: User46
+    displayName: User55
     type: object
     properties:
       user_type_id:
@@ -1617,53 +1889,7 @@ types:
       organization:
         required: true
         displayName: organization
-        type: Organization47
-  Organization47:
-    example:
-      value:
-        organization_name: zzz Arlington
-        address_line1: 3200 Columbia Pike
-        address_line2: ''
-        city: Arlington
-        state_province: VA
-        postal_code: 22204
-        country: United States of America
-        country_fips: US
-    displayName: Organization47
-    type: object
-    properties:
-      organization_name:
-        required: true
-        displayName: organization_name
-        type: string
-      address_line1:
-        required: true
-        displayName: address_line1
-        type: string
-      address_line2:
-        required: true
-        displayName: address_line2
-        type: string
-      city:
-        required: true
-        displayName: city
-        type: string
-      state_province:
-        required: true
-        displayName: state_province
-        type: string
-      postal_code:
-        required: true
-        displayName: postal_code
-        type: string
-      country:
-        required: true
-        displayName: country
-        type: string
-      country_fips:
-        required: true
-        displayName: country_fips
-        type: string
+        type: Organization15
   Asset  checkIn  with origination idrequest:
     example:
       value:
@@ -1744,8 +1970,8 @@ types:
       asset_event:
         required: true
         displayName: asset_event
-        type: AssetEvent49
-  AssetEvent49:
+        type: AssetEvent58
+  AssetEvent58:
     example:
       value:
         asset_id: 480
@@ -1818,7 +2044,7 @@ types:
           vin_photo_img_url: https://s3.amazonaws.com/wparkw.assets/vin.png
           vin_decode_location_lat: 18.851031
           vin_decode_location_long: -57.366377
-    displayName: AssetEvent49
+    displayName: AssetEvent58
     type: object
     properties:
       asset_id:
@@ -1840,7 +2066,7 @@ types:
       asset_properties:
         required: true
         displayName: asset_properties
-        type: AssetProperties50
+        type: AssetProperties59
       asset_images:
         required: true
         displayName: asset_images
@@ -1881,7 +2107,7 @@ types:
         required: true
         displayName: vin_decode_log
         type: VinDecodeLog
-  AssetProperties50:
+  AssetProperties59:
     example:
       value:
         vin_num: WBA7F2C56HG422712
@@ -1900,7 +2126,7 @@ types:
         age: ''
         cost: ''
         msrp: ''
-    displayName: AssetProperties50
+    displayName: AssetProperties59
     type: object
     properties:
       vin_num:
@@ -2042,8 +2268,8 @@ types:
       asset_origination:
         required: true
         displayName: asset_origination
-        type: AssetOrigination61
-  AssetOrigination61:
+        type: AssetOrigination70
+  AssetOrigination70:
     example:
       value:
         origination_type_id: 4
@@ -2057,7 +2283,7 @@ types:
         address_line1: dhdjdhd AAAA
         postal_code: 07087
         country: ''
-    displayName: AssetOrigination61
+    displayName: AssetOrigination70
     type: object
     properties:
       origination_type_id:
@@ -2105,163 +2331,6 @@ types:
         required: true
         displayName: country
         type: string
-  User  update settingsrequest:
-    example:
-      value:
-        first_name: Sande
-        last_name: Jones
-        text_notif_flag: 1
-        email_notif_flag: 1
-        email_address: sandejones@gmail.com
-        cell_phone: 6145551212
-        profile_img_url: https://wparkw.s3.amazonaws.com/profile/1/sandejones.jpg
-        agreement_flag: 1
-        agreement_date: 1
-    displayName: User - Update SettingsRequest
-    type: object
-    properties:
-      first_name:
-        required: true
-        displayName: first_name
-        type: string
-      last_name:
-        required: true
-        displayName: last_name
-        type: string
-      text_notif_flag:
-        required: true
-        displayName: text_notif_flag
-        type: integer
-        format: int32
-      email_notif_flag:
-        required: true
-        displayName: email_notif_flag
-        type: integer
-        format: int32
-      email_address:
-        required: true
-        displayName: email_address
-        type: string
-      cell_phone:
-        required: true
-        displayName: cell_phone
-        type: string
-      profile_img_url:
-        required: true
-        displayName: profile_img_url
-        type: string
-      agreement_flag:
-        required: true
-        displayName: agreement_flag
-        type: integer
-        format: int32
-      agreement_date:
-        required: true
-        displayName: agreement_date
-        type: integer
-        format: int32
-  User  sande jonesrequest:
-    example:
-      value:
-        user:
-          user_type_id: 2
-          membership_type_id: 2
-          username: sandejones
-          password: P@ssw0rdSJ
-          first_name: Sande
-          last_name: Jones
-          email_address: sandejones@gmail.com
-          cell_phone: 614-679-2974
-          agreement_flag: 1
-          agreement_date: 02/16/2018
-          organization:
-            organization_name: Intelimatrix LLC
-            address_line1: 1323 Walshire Drive
-            address_line2: North
-            city: Columbus
-            state_province: OH
-            postal_code: 43232
-            country: United States of America
-            country_fips: US
-    displayName: User - Sande JonesRequest
-    type: object
-    properties:
-      user:
-        required: true
-        displayName: user
-        type: User64
-  User64:
-    example:
-      value:
-        user_type_id: 2
-        membership_type_id: 2
-        username: sandejones
-        password: P@ssw0rdSJ
-        first_name: Sande
-        last_name: Jones
-        email_address: sandejones@gmail.com
-        cell_phone: 614-679-2974
-        agreement_flag: 1
-        agreement_date: 02/16/2018
-        organization:
-          organization_name: Intelimatrix LLC
-          address_line1: 1323 Walshire Drive
-          address_line2: North
-          city: Columbus
-          state_province: OH
-          postal_code: 43232
-          country: United States of America
-          country_fips: US
-    displayName: User64
-    type: object
-    properties:
-      user_type_id:
-        required: true
-        displayName: user_type_id
-        type: integer
-        format: int32
-      membership_type_id:
-        required: true
-        displayName: membership_type_id
-        type: integer
-        format: int32
-      username:
-        required: true
-        displayName: username
-        type: string
-      password:
-        required: true
-        displayName: password
-        type: string
-      first_name:
-        required: true
-        displayName: first_name
-        type: string
-      last_name:
-        required: true
-        displayName: last_name
-        type: string
-      email_address:
-        required: true
-        displayName: email_address
-        type: string
-      cell_phone:
-        required: true
-        displayName: cell_phone
-        type: string
-      agreement_flag:
-        required: true
-        displayName: agreement_flag
-        type: integer
-        format: int32
-      agreement_date:
-        required: true
-        displayName: agreement_date
-        type: string
-      organization:
-        required: true
-        displayName: organization
-        type: Organization47
   User  belichickrequest:
     example:
       value:
@@ -2291,7 +2360,7 @@ types:
       user:
         required: true
         displayName: user
-        type: User64
+        type: User14
   User  authenticate  sanderequest:
     example:
       value:
@@ -2305,21 +2374,22 @@ types:
         required: true
         displayName: login
         type: Login
-  User  reset passwordrequest:
-    example:
-      value:
-        username: sandejones
-        email_address: sandejones@gmail.com
-    displayName: User - reset passwordRequest
-    type: object
-    properties:
-      username:
+/check-in-event-action-type/get:
+  post:
+    displayName: Event Action Types - List
+    description: 'TODO: Add Description'
+    headers:
+      Content-Type:
         required: true
-        displayName: username
+        example:
+          value: application/json
+        displayName: Content-Type
         type: string
-      email_address:
+      Authorization:
         required: true
-        displayName: email_address
+        example:
+          value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+        displayName: Authorization
         type: string
 /authenticate:
   post:
@@ -2506,12 +2576,12 @@ types:
           example:
             value:
               organization:
-                organization_name: test1
-                address_line1: 123 Cherry Lane
-                address_line2: suite 212
-                city: Tampa
-                state_province: FL
-                postal_code: 33617
+                organization_name: Gravilson and Sons
+                address_line1: 5441 Thompson Road
+                address_line2: suite 1304
+                city: Brooklyn
+                state_province: NY
+                postal_code: 11205
                 country: U
           displayName: Body
           type: Organization  createrequest
@@ -2536,7 +2606,38 @@ types:
             value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
           displayName: Authorization
           type: string
-  /list/:
+  /put:
+    post:
+      displayName: organization - put
+      description: 'TODO: Add Description'
+      body:
+        application/json:
+          example:
+            value:
+              organization:
+                organization_name: test1
+                address_line1: 123 Cherry Lane
+                address_line2: suite 212
+                city: Tampa
+                state_province: FL
+                postal_code: 33617
+                country: U
+          displayName: Body
+          type: Organization  putrequest
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
+  /serialnumber/0:
     get:
       displayName: organization/serialnumber/get
       description: 'TODO: Add Description'
@@ -2553,160 +2654,10 @@ types:
             value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
           displayName: Authorization
           type: string
-/event-action-type-check-in:
-  /put:
-    post:
-      displayName: event-action-type-check-in - PUT / Update
-      description: 'TODO: Add Description'
-      body:
-        application/json:
-          example:
-            value:
-              event_action_type_id: 35
-              action_type: Test Changed
-              origination_type_id: 7
-          displayName: Body
-          type: EventActionTypeCheckIn  put / updaterequest
-      queryParameters:
-        fwreinit:
-          required: true
-          example:
-            value: 1
-          displayName: fwreinit
-          type: integer
-          format: int32
-      headers:
-        Content-Type:
-          required: true
-          example:
-            value: application/json
-          displayName: Content-Type
-          type: string
-        Authorization:
-          required: true
-          example:
-            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
-          displayName: Authorization
-          type: string
-  /list:
+  /list/:
     get:
-      displayName: event-action-type-check-in - LIST
+      displayName: organization - list
       description: 'TODO: Add Description'
-      queryParameters:
-        fwreinit:
-          required: true
-          example:
-            value: 1
-          displayName: fwreinit
-          type: integer
-          format: int32
-      headers:
-        Content-Type:
-          required: true
-          example:
-            value: application/json
-          displayName: Content-Type
-          type: string
-        Authorization:
-          required: true
-          example:
-            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
-          displayName: Authorization
-          type: string
-      responses:
-        500:
-          description: Internal Server Error
-          body: {}
-  /create:
-    post:
-      displayName: event-action-type-check-in CREATE
-      description: 'TODO: Add Description'
-      body:
-        application/json:
-          example:
-            value:
-              origination_type_id: 7
-              event_type_id: 1
-              action_type: test
-          displayName: Body
-          type: EventActionTypeCheckIn createrequest
-      queryParameters:
-        fwreinit:
-          required: true
-          example:
-            value: 1
-          displayName: fwreinit
-          type: integer
-          format: int32
-      headers:
-        Content-Type:
-          required: true
-          example:
-            value: application/json
-          displayName: Content-Type
-          type: string
-        Authorization:
-          required: true
-          example:
-            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
-          displayName: Authorization
-          type: string
-/user:
-  /list:
-    get:
-      displayName: Users - List Copy
-      description: 'TODO: Add Description'
-      queryParameters:
-        fwreinit:
-          required: true
-          example:
-            value: 1
-          displayName: fwreinit
-          type: integer
-          format: int32
-      headers:
-        Content-Type:
-          required: true
-          example:
-            value: application/json
-          displayName: Content-Type
-          type: string
-        Authorization:
-          required: true
-          example:
-            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
-          displayName: Authorization
-          type: string
-  /put:
-    post:
-      displayName: Users - CRUD Users Put - Update
-      description: 'TODO: Add Description'
-      body:
-        application/json:
-          example:
-            value:
-              user:
-                user_account_id: 36
-                user_type_id: 1
-                membership_type_id: 2
-                username: PabloPicasso
-                password: P@ssw0rdq
-                first_name: Pablo
-                last_name: Picasso
-                email_address: Picasso@genevamedia.com
-                cell_phone: 555141448
-                organization_id: 2
-                new_password: ''
-          displayName: Body
-          type: Users  crud users put  updaterequest
-      queryParameters:
-        fwreinit:
-          required: true
-          example:
-            value: 1
-          displayName: fwreinit
-          type: integer
-          format: int32
       headers:
         Content-Type:
           required: true
@@ -2727,20 +2678,688 @@ types:
             application/json:
               example:
                 value:
-                  message: The new username supplied is already in use.
-                  status: False
-              displayName: Users - CRUD Users Put - Update - fail dupe username
-              type: Users  crud users put  update  fail dupe username
-  /get:
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: December, 30 2016 13:32:59
+                  ORGANIZATION_NAME: XYZ Corp.
+                  ORGANIZATION_ID: 14
+                  ADDRESS_LINE1: 500 Corporate Drive
+                  ADDRESS_LINE2: Suite 1000
+                  CITY: Parsippany
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 07054
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: NJ
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: January, 03 2017 10:11:41
+                  ORGANIZATION_NAME: XYZ Corp.
+                  ORGANIZATION_ID: 15
+                  ADDRESS_LINE1: 500 Corporate Drive
+                  ADDRESS_LINE2: Suite 1000
+                  CITY: Parsippany
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 07054
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: NJ
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: January, 03 2017 10:13:40
+                  ORGANIZATION_NAME: XYZ Corp.
+                  ORGANIZATION_ID: 16
+                  ADDRESS_LINE1: 500 Corporate Drive
+                  ADDRESS_LINE2: Suite 1000
+                  CITY: Parsippany
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 07054
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: NJ
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: January, 03 2017 10:13:53
+                  ORGANIZATION_NAME: XYZ Corp.
+                  ORGANIZATION_ID: 17
+                  ADDRESS_LINE1: 500 Corporate Drive
+                  ADDRESS_LINE2: Suite 1000
+                  CITY: Parsippany
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 07054
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: NJ
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: January, 04 2017 05:05:08
+                  ORGANIZATION_NAME: XYZ Corp.
+                  ORGANIZATION_ID: 18
+                  ADDRESS_LINE1: 500 Corporate Drive
+                  ADDRESS_LINE2: Suite 1000
+                  CITY: Parsippany
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 07054
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: NJ
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: February, 03 2017 08:53:17
+                  ORGANIZATION_NAME: XYZ Corp.
+                  ORGANIZATION_ID: 19
+                  ADDRESS_LINE1: 500 Corporate Drive
+                  ADDRESS_LINE2: Suite 1000
+                  CITY: Parsippany
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 07054
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: NJ
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: January, 25 2018 13:39:11
+                  ORGANIZATION_NAME: Audi Arlington
+                  ORGANIZATION_ID: 20
+                  ADDRESS_LINE1: 3200 Columbia Pike
+                  ADDRESS_LINE2: ''
+                  CITY: Arlington
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 22204
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: VA
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: February, 15 2018 23:21:20
+                  ORGANIZATION_NAME: Audi Arlington
+                  ORGANIZATION_ID: 21
+                  ADDRESS_LINE1: 3200 Columbia Pike
+                  ADDRESS_LINE2: ''
+                  CITY: Arlington
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 22204
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: VA
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: February, 15 2018 23:22:01
+                  ORGANIZATION_NAME: Audi Arlington
+                  ORGANIZATION_ID: 22
+                  ADDRESS_LINE1: 3200 Columbia Pike
+                  ADDRESS_LINE2: ''
+                  CITY: Arlington
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 22204
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: VA
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: February, 15 2018 23:22:14
+                  ORGANIZATION_NAME: Audi Arlington
+                  ORGANIZATION_ID: 23
+                  ADDRESS_LINE1: 3200 Columbia Pike
+                  ADDRESS_LINE2: ''
+                  CITY: Arlington
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 22204
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: VA
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: February, 16 2018 15:55:48
+                  ORGANIZATION_NAME: Audi Arlington
+                  ORGANIZATION_ID: 24
+                  ADDRESS_LINE1: 3200 Columbia Pike
+                  ADDRESS_LINE2: ''
+                  CITY: Arlington
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 22204
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: VA
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: February, 16 2018 15:56:23
+                  ORGANIZATION_NAME: Audi Arlington
+                  ORGANIZATION_ID: 25
+                  ADDRESS_LINE1: 3200 Columbia Pike
+                  ADDRESS_LINE2: ''
+                  CITY: Arlington
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 22204
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: VA
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: February, 16 2018 15:56:59
+                  ORGANIZATION_NAME: Audi Arlington
+                  ORGANIZATION_ID: 26
+                  ADDRESS_LINE1: 3200 Columbia Pike
+                  ADDRESS_LINE2: ''
+                  CITY: Arlington
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 22204
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: VA
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: February, 16 2018 15:57:31
+                  ORGANIZATION_NAME: Audi Arlington
+                  ORGANIZATION_ID: 27
+                  ADDRESS_LINE1: 3200 Columbia Pike
+                  ADDRESS_LINE2: ''
+                  CITY: Arlington
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 22204
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: VA
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: February, 16 2018 15:58:50
+                  ORGANIZATION_NAME: zzz Arlington
+                  ORGANIZATION_ID: 28
+                  ADDRESS_LINE1: 3200 Columbia Pike
+                  ADDRESS_LINE2: ''
+                  CITY: Arlington
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 22204
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: VA
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: February, 16 2018 16:02:34
+                  ORGANIZATION_NAME: Intelimatrix LLC
+                  ORGANIZATION_ID: 29
+                  ADDRESS_LINE1: 1323 Walshire Drive
+                  ADDRESS_LINE2: North
+                  CITY: Columbus
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 43232
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: OH
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: February, 16 2018 18:24:39
+                  ORGANIZATION_NAME: NFL
+                  ORGANIZATION_ID: 30
+                  ADDRESS_LINE1: 123 NFL Lane
+                  ADDRESS_LINE2: Suite 882
+                  CITY: Tampa
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 78820
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: FL
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: February, 28 2018 09:57:54
+                  ORGANIZATION_NAME: Intelimatrix LLC
+                  ORGANIZATION_ID: 31
+                  ADDRESS_LINE1: 1323 Walshire Drive
+                  ADDRESS_LINE2: North
+                  CITY: Columbus
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 43232
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: OH
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: February, 28 2018 10:29:24
+                  ORGANIZATION_NAME: Intelimatrix LLC
+                  ORGANIZATION_ID: 32
+                  ADDRESS_LINE1: 1323 Walshire Drive
+                  ADDRESS_LINE2: North
+                  CITY: Columbus
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 43232
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: OH
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: March, 01 2018 00:59:45
+                  ORGANIZATION_NAME: Intelimatrix LLC
+                  ORGANIZATION_ID: 33
+                  ADDRESS_LINE1: 1323 Walshire Drive
+                  ADDRESS_LINE2: North
+                  CITY: Columbus
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 43232
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: OH
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: March, 01 2018 22:17:20
+                  ORGANIZATION_NAME: Intelimatrix LLC
+                  ORGANIZATION_ID: 34
+                  ADDRESS_LINE1: 1323 Walshire Drive
+                  ADDRESS_LINE2: North
+                  CITY: Columbus
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 43232
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: OH
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: March, 02 2018 01:58:27
+                  ORGANIZATION_NAME: Intelimatrix LLC
+                  ORGANIZATION_ID: 35
+                  ADDRESS_LINE1: 1323 Walshire Drive
+                  ADDRESS_LINE2: North
+                  CITY: Columbus
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 43232
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: OH
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: March, 02 2018 09:56:50
+                  ORGANIZATION_NAME: Intelimatrix LLC
+                  ORGANIZATION_ID: 36
+                  ADDRESS_LINE1: 1323 Walshire Drive
+                  ADDRESS_LINE2: North
+                  CITY: Columbus
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 43232
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: OH
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: March, 02 2018 14:09:57
+                  ORGANIZATION_NAME: Intelimatrix LLC
+                  ORGANIZATION_ID: 37
+                  ADDRESS_LINE1: 1323 Walshire Drive
+                  ADDRESS_LINE2: North
+                  CITY: Columbus
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 43232
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: OH
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: March, 02 2018 23:43:14
+                  ORGANIZATION_NAME: Intelimatrix LLC
+                  ORGANIZATION_ID: 38
+                  ADDRESS_LINE1: 1323 Walshire Drive
+                  ADDRESS_LINE2: North
+                  CITY: Columbus
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 43232
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: OH
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: March, 03 2018 12:31:11
+                  ORGANIZATION_NAME: Intelimatrix LLC
+                  ORGANIZATION_ID: 39
+                  ADDRESS_LINE1: 1323 Walshire Drive
+                  ADDRESS_LINE2: North
+                  CITY: Columbus
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 43232
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: OH
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: March, 05 2018 09:35:37
+                  ORGANIZATION_NAME: Audi Arlington
+                  ORGANIZATION_ID: 40
+                  ADDRESS_LINE1: 3200 Columbia Pike
+                  ADDRESS_LINE2: ''
+                  CITY: Arlington
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 22204
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: VA
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: March, 07 2018 03:37:08
+                  ORGANIZATION_NAME: Audi Arlington
+                  ORGANIZATION_ID: 41
+                  ADDRESS_LINE1: 3200 Columbia Pike
+                  ADDRESS_LINE2: ''
+                  CITY: Arlington
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 22204
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: VA
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: March, 07 2018 03:38:35
+                  ORGANIZATION_NAME: Audi Arlington
+                  ORGANIZATION_ID: 42
+                  ADDRESS_LINE1: 3200 Columbia Pike
+                  ADDRESS_LINE2: ''
+                  CITY: Arlington
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 22204
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: VA
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: March, 07 2018 03:45:55
+                  ORGANIZATION_NAME: Audi Arlington
+                  ORGANIZATION_ID: 43
+                  ADDRESS_LINE1: 3200 Columbia Pike
+                  ADDRESS_LINE2: ''
+                  CITY: Arlington
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 22204
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: VA
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: March, 07 2018 03:46:08
+                  ORGANIZATION_NAME: Audi Arlington
+                  ORGANIZATION_ID: 44
+                  ADDRESS_LINE1: 3200 Columbia Pike
+                  ADDRESS_LINE2: ''
+                  CITY: Arlington
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 22204
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: VA
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: March, 07 2018 03:46:28
+                  ORGANIZATION_NAME: Audi Arlington
+                  ORGANIZATION_ID: 45
+                  ADDRESS_LINE1: 3200 Columbia Pike
+                  ADDRESS_LINE2: ''
+                  CITY: Arlington
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 22204
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: VA
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: March, 07 2018 04:05:07
+                  ORGANIZATION_NAME: Audi Arlington
+                  ORGANIZATION_ID: 46
+                  ADDRESS_LINE1: 3200 Columbia Pike
+                  ADDRESS_LINE2: ''
+                  CITY: Arlington
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 22204
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: VA
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: March, 07 2018 04:05:20
+                  ORGANIZATION_NAME: Audi Arlington
+                  ORGANIZATION_ID: 47
+                  ADDRESS_LINE1: 3200 Columbia Pike
+                  ADDRESS_LINE2: ''
+                  CITY: Arlington
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 22204
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: VA
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: UA
+                  CREATED_DATE: March, 07 2018 04:23:19
+                  ORGANIZATION_NAME: SOMESOFT
+                  ORGANIZATION_ID: 48
+                  ADDRESS_LINE1: Kremen sity
+                  ADDRESS_LINE2: hz
+                  CITY: Kremenchug
+                  COUNTRY: Ukraine
+                  POSTAL_CODE: 39600
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: KS
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: UA
+                  CREATED_DATE: March, 07 2018 04:27:30
+                  ORGANIZATION_NAME: SOMESOFT
+                  ORGANIZATION_ID: 49
+                  ADDRESS_LINE1: Kremen sity
+                  ADDRESS_LINE2: hz
+                  CITY: Kremenchug
+                  COUNTRY: Ukraine
+                  POSTAL_CODE: 39600
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: KS
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: US
+                  CREATED_DATE: March, 07 2018 17:08:55
+                  ORGANIZATION_NAME: Intelimatrix LLC
+                  ORGANIZATION_ID: 50
+                  ADDRESS_LINE1: 1323 Walshire Drive
+                  ADDRESS_LINE2: North
+                  CITY: Columbus
+                  COUNTRY: United States of America
+                  POSTAL_CODE: 43232
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: OH
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: UA
+                  CREATED_DATE: March, 12 2018 05:48:43
+                  ORGANIZATION_NAME: SOMESOFT
+                  ORGANIZATION_ID: 51
+                  ADDRESS_LINE1: Kremen sity
+                  ADDRESS_LINE2: hz
+                  CITY: Kremenchug
+                  COUNTRY: Ukraine
+                  POSTAL_CODE: 39600
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: KS
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: UA
+                  CREATED_DATE: March, 12 2018 05:50:31
+                  ORGANIZATION_NAME: SOMESOFT
+                  ORGANIZATION_ID: 52
+                  ADDRESS_LINE1: Kremen sity
+                  ADDRESS_LINE2: hz
+                  CITY: Kremenchug
+                  COUNTRY: Ukraine
+                  POSTAL_CODE: 39600
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: KS
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: UA
+                  CREATED_DATE: March, 12 2018 07:38:43
+                  ORGANIZATION_NAME: SOMESOFT
+                  ORGANIZATION_ID: 53
+                  ADDRESS_LINE1: Kremen sity
+                  ADDRESS_LINE2: hz
+                  CITY: Kremenchug
+                  COUNTRY: Ukraine
+                  POSTAL_CODE: 39600
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: KS
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: UA
+                  CREATED_DATE: March, 12 2018 07:41:30
+                  ORGANIZATION_NAME: SOMESOFT
+                  ORGANIZATION_ID: 54
+                  ADDRESS_LINE1: Kremen sity
+                  ADDRESS_LINE2: hz
+                  CITY: Kremenchug
+                  COUNTRY: Ukraine
+                  POSTAL_CODE: 39600
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: KS
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: UA
+                  CREATED_DATE: March, 12 2018 07:42:09
+                  ORGANIZATION_NAME: SOMESOFT
+                  ORGANIZATION_ID: 55
+                  ADDRESS_LINE1: Kremen sity
+                  ADDRESS_LINE2: hz
+                  CITY: Kremenchug
+                  COUNTRY: Ukraine
+                  POSTAL_CODE: 39600
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: KS
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: UA
+                  CREATED_DATE: March, 12 2018 07:42:44
+                  ORGANIZATION_NAME: SOMESOFT
+                  ORGANIZATION_ID: 56
+                  ADDRESS_LINE1: Kremen sity
+                  ADDRESS_LINE2: hz
+                  CITY: Kremenchug
+                  COUNTRY: Ukraine
+                  POSTAL_CODE: 39600
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: KS
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: UA
+                  CREATED_DATE: March, 12 2018 07:43:28
+                  ORGANIZATION_NAME: SOMESOFT
+                  ORGANIZATION_ID: 57
+                  ADDRESS_LINE1: Kremen sity
+                  ADDRESS_LINE2: hz
+                  CITY: Kremenchug
+                  COUNTRY: Ukraine
+                  POSTAL_CODE: 39600
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: KS
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: UA
+                  CREATED_DATE: March, 12 2018 07:51:20
+                  ORGANIZATION_NAME: SOMESOFT
+                  ORGANIZATION_ID: 58
+                  ADDRESS_LINE1: Kremen sity
+                  ADDRESS_LINE2: hz
+                  CITY: Kremenchug
+                  COUNTRY: Ukraine
+                  POSTAL_CODE: 39600
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: KS
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: UA
+                  CREATED_DATE: March, 12 2018 07:52:15
+                  ORGANIZATION_NAME: SOMESOFT
+                  ORGANIZATION_ID: 59
+                  ADDRESS_LINE1: Kremen sity
+                  ADDRESS_LINE2: hz
+                  CITY: Kremenchug
+                  COUNTRY: Ukraine
+                  POSTAL_CODE: 39600
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: KS
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: UA
+                  CREATED_DATE: March, 14 2018 03:28:24
+                  ORGANIZATION_NAME: SOMESOFT
+                  ORGANIZATION_ID: 60
+                  ADDRESS_LINE1: Kremen sity
+                  ADDRESS_LINE2: hz
+                  CITY: Kremenchug
+                  COUNTRY: Ukraine
+                  POSTAL_CODE: 39600
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: KS
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: UA
+                  CREATED_DATE: March, 14 2018 03:30:10
+                  ORGANIZATION_NAME: SOMESOFT
+                  ORGANIZATION_ID: 61
+                  ADDRESS_LINE1: Kremen sity
+                  ADDRESS_LINE2: hz
+                  CITY: Kremenchug
+                  COUNTRY: Ukraine
+                  POSTAL_CODE: 39600
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: KS
+                  UPDATED_DATE: ''
+                - CREATED_BY: ''
+                  COUNTRY_FIPS: ''
+                  CREATED_DATE: March, 16 2018 09:48:00
+                  ORGANIZATION_NAME: test1
+                  ORGANIZATION_ID: 62
+                  ADDRESS_LINE1: 123 Cherry Lane
+                  ADDRESS_LINE2: suite 212
+                  CITY: Tampa
+                  COUNTRY: U
+                  POSTAL_CODE: 33617
+                  UPDATED_BY: ''
+                  STATE_PROVINCE: FL
+                  UPDATED_DATE: ''
+              displayName: organization - list (full list)
+              type: array
+              items:
+                type: Organization  list (full list)
+/event-action-type-check-in:
+  /list/:
     get:
-      displayName: Users - CRUD List Users
+      displayName: event-action-type-check-in - LIST
       description: 'TODO: Add Description'
-      queryParameters:
-        user_account_id:
+      headers:
+        Content-Type:
           required: true
           example:
-            value: 35
-          displayName: user_account_id
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
+      responses:
+        500:
+          description: Internal Server Error
+          body: {}
+  /create:
+    post:
+      displayName: event-action-type-check-in CREATE1
+      description: 'TODO: Add Description'
+      body:
+        application/json:
+          example:
+            value:
+              origination_type_id: 7
+              event_type_id: 1
+              action_type: test
+          displayName: Body
+          type: EventActionTypeCheckIn createrequest7
+      queryParameters:
+        fwreinit:
+          required: true
+          example:
+            value: 1
+          displayName: fwreinit
           type: integer
           format: int32
       headers:
@@ -2756,26 +3375,19 @@ types:
             value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
           displayName: Authorization
           type: string
-  /create:
+  /put:
     post:
-      displayName: Users - CRUD Users Create
+      displayName: event-action-type-check-in - PUT / Update
       description: 'TODO: Add Description'
       body:
         application/json:
           example:
             value:
-              user:
-                user_type_id: 1
-                membership_type_id: 2
-                username: PabloPicasso
-                password: P@ssw0rdq
-                first_name: Pablo
-                last_name: Picasso
-                email_address: Picasso@genevamedia.com
-                cell_phone: 8083991129
-                organization_id: 1
+              event_action_type_id: 35
+              action_type: Test Changed
+              origination_type_id: 7
           displayName: Body
-          type: Users  crud users createrequest
+          type: EventActionTypeCheckIn  put / updaterequest
       queryParameters:
         fwreinit:
           required: true
@@ -2822,17 +3434,50 @@ types:
             value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
           displayName: Authorization
           type: string
-  /agreement:
+  /update-settings/:
     post:
-      displayName: User - User Agreement set
+      displayName: User - Update Settings/sandejones
       description: 'TODO: Add Description'
       body:
         application/json:
           example:
             value:
-              user_account_id: 32
+              first_name: Sande
+              last_name: Jones
+              text_notif_flag: 1
+              email_notif_flag: 1
+              email_address: sandejones@gmail.com
+              cell_phone: 6145551212
+              profile_img_url: https://wparkw.s3.amazonaws.com/profile/1/sandejones.jpg
+              agreement_flag: 1
+              agreement_date: 1
           displayName: Body
-          type: User  user agreement setrequest
+          type: User  update settings/sandejonesrequest
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
+  /resetpassword:
+    post:
+      displayName: User - User Reset Password
+      description: 'TODO: Add Description'
+      body:
+        application/json:
+          example:
+            value:
+              username: ''
+              email_address: sandejones@gmail.com
+          displayName: Body
+          type: User  user reset passwordrequest
       queryParameters:
         fwreinit:
           required: true
@@ -2854,18 +3499,66 @@ types:
             value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
           displayName: Authorization
           type: string
-  /resetpassword:
+  /create:
     post:
-      displayName: User - reset password
+      displayName: User - belichick
       description: 'TODO: Add Description'
       body:
         application/json:
           example:
             value:
-              username: sandejones
-              email_address: sandejones@gmail.com
+              user:
+                user_type_id: 2
+                membership_type_id: 2
+                username: billbell
+                password: P@ssw0rdBB
+                first_name: Bill
+                last_name: belichick
+                email_address: bbelichick@gmail.com
+                cell_phone: 541-202-4745
+                agreement_flag: 1
+                agreement_date: 02/11/2018
+                organization:
+                  organization_name: NFL
+                  address_line1: 123 NFL Lane
+                  address_line2: Suite 882
+                  city: Tampa
+                  state_province: FL
+                  postal_code: 78820
+                  country: United States of America
+                  country_fips: US
           displayName: Body
-          type: User  reset passwordrequest
+          type: User  belichickrequest
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        99:
+          required: true
+          displayName: 99
+          type: string
+  /agreement:
+    post:
+      displayName: User - User Agreement set
+      description: 'TODO: Add Description'
+      body:
+        application/json:
+          example:
+            value:
+              user_account_id: 32
+          displayName: Body
+          type: User  user agreement setrequest
+      queryParameters:
+        fwreinit:
+          required: true
+          example:
+            value: 1
+          displayName: fwreinit
+          type: integer
+          format: int32
       headers:
         Content-Type:
           required: true
@@ -2959,36 +3652,19 @@ types:
                     status: False
               displayName: 'User - User Set New Password ( miss match : faile)'
               type: 'User  user set new password ( miss match : faile)'
-  /create:
-    post:
-      displayName: User - belichick
+/user:
+  /list:
+    get:
+      displayName: Users - List Copy
       description: 'TODO: Add Description'
-      body:
-        application/json:
+      queryParameters:
+        fwreinit:
+          required: true
           example:
-            value:
-              user:
-                user_type_id: 2
-                membership_type_id: 2
-                username: billbell
-                password: P@ssw0rdBB
-                first_name: Bill
-                last_name: belichick
-                email_address: bbelichick@gmail.com
-                cell_phone: 541-202-4745
-                agreement_flag: 1
-                agreement_date: 02/11/2018
-                organization:
-                  organization_name: NFL
-                  address_line1: 123 NFL Lane
-                  address_line2: Suite 882
-                  city: Tampa
-                  state_province: FL
-                  postal_code: 78820
-                  country: United States of America
-                  country_fips: US
-          displayName: Body
-          type: User  belichickrequest
+            value: 1
+          displayName: fwreinit
+          type: integer
+          format: int32
       headers:
         Content-Type:
           required: true
@@ -2996,29 +3672,135 @@ types:
             value: application/json
           displayName: Content-Type
           type: string
-        99:
+        Authorization:
           required: true
-          displayName: 99
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
           type: string
-  /update-settings/:
+  /put:
     post:
-      displayName: User - Update Settings
+      displayName: User - CRUD Users Put - Update
       description: 'TODO: Add Description'
       body:
         application/json:
           example:
             value:
-              first_name: Sande
-              last_name: Jones
-              text_notif_flag: 1
-              email_notif_flag: 1
-              email_address: sandejones@gmail.com
-              cell_phone: 6145551212
-              profile_img_url: https://wparkw.s3.amazonaws.com/profile/1/sandejones.jpg
-              agreement_flag: 1
-              agreement_date: 1
+              user:
+                user_account_id: 36
+                user_type_id: 1
+                membership_type_id: 2
+                username: PabloPicasso
+                password: P@ssw0rdq
+                first_name: Pablo
+                last_name: Picasso
+                email_address: Picasso@genevamedia.com
+                cell_phone: 555141448
+                organization_id: 2
+                new_password: ''
           displayName: Body
-          type: User  update settingsrequest
+          type: User  crud users put  updaterequest
+      queryParameters:
+        fwreinit:
+          required: true
+          example:
+            value: 1
+          displayName: fwreinit
+          type: integer
+          format: int32
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
+      responses:
+        200:
+          description: Success
+          body:
+            application/json:
+              example:
+                value:
+                  message: The new username supplied is already in use.
+                  status: False
+              displayName: Users - CRUD Users Put - Update - fail dupe username
+              type: Users  crud users put  update  fail dupe username
+  /get/35:
+    get:
+      displayName: User - CRUD get
+      description: 'TODO: Add Description'
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
+  /delete:
+    post:
+      displayName: Users - CRUD User Delete
+      description: 'TODO: Add Description'
+      body:
+        application/json:
+          example:
+            value:
+              user_account_id: 36
+          displayName: Body
+          type: Users  crud user deleterequest
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
+  /create:
+    post:
+      displayName: Users - CRUD Users Create
+      description: 'TODO: Add Description'
+      body:
+        application/json:
+          example:
+            value:
+              user:
+                user_type_id: 1
+                membership_type_id: 2
+                username: PabloPicasso
+                password: P@ssw0rdq
+                first_name: Pablo
+                last_name: Picasso
+                email_address: Picasso@genevamedia.com
+                cell_phone: 8083991129
+                organization_id: 1
+          displayName: Body
+          type: Users  crud users createrequest
+      queryParameters:
+        fwreinit:
+          required: true
+          example:
+            value: 1
+          displayName: fwreinit
+          type: integer
+          format: int32
       headers:
         Content-Type:
           required: true
