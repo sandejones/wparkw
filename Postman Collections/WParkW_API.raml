@@ -1,7 +1,7 @@
 #%RAML 1.0
 title: WParkW API
 version: 1.0
-baseUri: http://example.com
+baseUri: https://api.dev.wparkw.com
 baseUriParameters:
   domain:
     required: false
@@ -30,6 +30,188 @@ documentation:
 
     What errors and status codes can a user expect?
 types:
+  User  authenticaterequest:
+    example:
+      value:
+        login:
+          username: sandejones
+          password: T0zqa^Pk
+    displayName: User - AuthenticateRequest
+    type: object
+    properties:
+      login:
+        required: true
+        displayName: login
+        type: Login
+  Login:
+    example:
+      value:
+        username: sandejones
+        password: T0zqa^Pk
+    displayName: Login
+    type: object
+    properties:
+      username:
+        required: true
+        displayName: username
+        type: string
+      password:
+        required: true
+        displayName: password
+        type: string
+  User  authenticate:
+    example:
+      value:
+        message: Invalid username or password.
+        status: False
+        passwordcheck:
+          status: False
+          password:
+            PASSWORD: P@ssw0rdSJ
+            SALT: 8CC426699D408C25BA47CFDC753FCBC7BD5950C0ED600637C8A4F4B4B522252E
+            ALGORITHM: SHA384
+            PASSWORDHASH: 1AF876BBACB7CA55CA1BC1BCBC5B4B591B96DFD1880349BD4383856A3DD774F7F42BC44867CCE8E952961E3A532764EA
+          temp_password:
+            PASSWORD: P@ssw0rdSJ
+            SALT: 302031EB60CE1A89FB947E17EA8635D899BC6C4F6E1A1A73C4E55A6040858637
+            ALGORITHM: SHA384
+            PASSWORDHASH: 86A4A9CFA3726EF157963B756322EF5AF83FC3033723FB5BEB1B0D4158104A94CC0C4D5F99878F4E4F3F9C8EC8F0E0B3
+          test_password:
+            PASSWORD: P@ssw0rdSJ
+            SALT: 29E8E204593EBA6FFA9A0F8536CF30786E076A4A7946987145D8FECD05559B86
+            ALGORITHM: SHA384
+            PASSWORDHASH: 5E78F0A08CFC77835B89CD4FB4FC40C5ABD0A4A4C964AD8612C22EA220B133544953F9EF898A5B36F7D9366C69E7520E
+    displayName: User - Authenticate
+    type: object
+    properties:
+      message:
+        required: true
+        displayName: message
+        type: string
+      status:
+        required: true
+        displayName: status
+        type: boolean
+      passwordcheck:
+        required: true
+        displayName: passwordcheck
+        type: Passwordcheck
+  Passwordcheck:
+    example:
+      value:
+        status: False
+        password:
+          PASSWORD: P@ssw0rdSJ
+          SALT: 8CC426699D408C25BA47CFDC753FCBC7BD5950C0ED600637C8A4F4B4B522252E
+          ALGORITHM: SHA384
+          PASSWORDHASH: 1AF876BBACB7CA55CA1BC1BCBC5B4B591B96DFD1880349BD4383856A3DD774F7F42BC44867CCE8E952961E3A532764EA
+        temp_password:
+          PASSWORD: P@ssw0rdSJ
+          SALT: 302031EB60CE1A89FB947E17EA8635D899BC6C4F6E1A1A73C4E55A6040858637
+          ALGORITHM: SHA384
+          PASSWORDHASH: 86A4A9CFA3726EF157963B756322EF5AF83FC3033723FB5BEB1B0D4158104A94CC0C4D5F99878F4E4F3F9C8EC8F0E0B3
+        test_password:
+          PASSWORD: P@ssw0rdSJ
+          SALT: 29E8E204593EBA6FFA9A0F8536CF30786E076A4A7946987145D8FECD05559B86
+          ALGORITHM: SHA384
+          PASSWORDHASH: 5E78F0A08CFC77835B89CD4FB4FC40C5ABD0A4A4C964AD8612C22EA220B133544953F9EF898A5B36F7D9366C69E7520E
+    displayName: Passwordcheck
+    type: object
+    properties:
+      status:
+        required: true
+        displayName: status
+        type: boolean
+      password:
+        required: true
+        displayName: password
+        type: Password
+      temp_password:
+        required: true
+        displayName: temp_password
+        type: TempPassword
+      test_password:
+        required: true
+        displayName: test_password
+        type: TestPassword
+  Password:
+    example:
+      value:
+        PASSWORD: P@ssw0rdSJ
+        SALT: 8CC426699D408C25BA47CFDC753FCBC7BD5950C0ED600637C8A4F4B4B522252E
+        ALGORITHM: SHA384
+        PASSWORDHASH: 1AF876BBACB7CA55CA1BC1BCBC5B4B591B96DFD1880349BD4383856A3DD774F7F42BC44867CCE8E952961E3A532764EA
+    displayName: Password
+    type: object
+    properties:
+      PASSWORD:
+        required: true
+        displayName: PASSWORD
+        type: string
+      SALT:
+        required: true
+        displayName: SALT
+        type: string
+      ALGORITHM:
+        required: true
+        displayName: ALGORITHM
+        type: string
+      PASSWORDHASH:
+        required: true
+        displayName: PASSWORDHASH
+        type: string
+  TempPassword:
+    example:
+      value:
+        PASSWORD: P@ssw0rdSJ
+        SALT: 302031EB60CE1A89FB947E17EA8635D899BC6C4F6E1A1A73C4E55A6040858637
+        ALGORITHM: SHA384
+        PASSWORDHASH: 86A4A9CFA3726EF157963B756322EF5AF83FC3033723FB5BEB1B0D4158104A94CC0C4D5F99878F4E4F3F9C8EC8F0E0B3
+    displayName: TempPassword
+    type: object
+    properties:
+      PASSWORD:
+        required: true
+        displayName: PASSWORD
+        type: string
+      SALT:
+        required: true
+        displayName: SALT
+        type: string
+      ALGORITHM:
+        required: true
+        displayName: ALGORITHM
+        type: string
+      PASSWORDHASH:
+        required: true
+        displayName: PASSWORDHASH
+        type: string
+  TestPassword:
+    example:
+      value:
+        PASSWORD: P@ssw0rdSJ
+        SALT: 29E8E204593EBA6FFA9A0F8536CF30786E076A4A7946987145D8FECD05559B86
+        ALGORITHM: SHA384
+        PASSWORDHASH: 5E78F0A08CFC77835B89CD4FB4FC40C5ABD0A4A4C964AD8612C22EA220B133544953F9EF898A5B36F7D9366C69E7520E
+    displayName: TestPassword
+    type: object
+    properties:
+      PASSWORD:
+        required: true
+        displayName: PASSWORD
+        type: string
+      SALT:
+        required: true
+        displayName: SALT
+        type: string
+      ALGORITHM:
+        required: true
+        displayName: ALGORITHM
+        type: string
+      PASSWORDHASH:
+        required: true
+        displayName: PASSWORDHASH
+        type: string
   Organization  createrequest:
     example:
       value:
@@ -225,13 +407,13 @@ types:
         displayName: origination_type_id
         type: integer
         format: int32
-  EventActionTypeCheckIn createrequest7:
+  EventActionTypeCheckIn createrequest14:
     example:
       value:
         origination_type_id: 7
         event_type_id: 1
         action_type: test
-    displayName: event-action-type-check-in CREATERequest7
+    displayName: event-action-type-check-in CREATERequest14
     type: object
     properties:
       origination_type_id:
@@ -248,6 +430,92 @@ types:
         required: true
         displayName: action_type
         type: string
+  Users  crud user deleterequest:
+    example:
+      value:
+        user_account_id: 36
+    displayName: Users - CRUD User DeleteRequest
+    type: object
+    properties:
+      user_account_id:
+        required: true
+        displayName: user_account_id
+        type: integer
+        format: int32
+  Users  crud users createrequest:
+    example:
+      value:
+        user:
+          user_type_id: 1
+          membership_type_id: 2
+          username: PabloPicasso
+          password: P@ssw0rdq
+          first_name: Pablo
+          last_name: Picasso
+          email_address: Picasso@genevamedia.com
+          cell_phone: 8083991129
+          organization_id: 1
+    displayName: Users - CRUD Users CreateRequest
+    type: object
+    properties:
+      user:
+        required: true
+        displayName: user
+        type: User
+  User:
+    example:
+      value:
+        user_type_id: 1
+        membership_type_id: 2
+        username: PabloPicasso
+        password: P@ssw0rdq
+        first_name: Pablo
+        last_name: Picasso
+        email_address: Picasso@genevamedia.com
+        cell_phone: 8083991129
+        organization_id: 1
+    displayName: User
+    type: object
+    properties:
+      user_type_id:
+        required: true
+        displayName: user_type_id
+        type: integer
+        format: int32
+      membership_type_id:
+        required: true
+        displayName: membership_type_id
+        type: integer
+        format: int32
+      username:
+        required: true
+        displayName: username
+        type: string
+      password:
+        required: true
+        displayName: password
+        type: string
+      first_name:
+        required: true
+        displayName: first_name
+        type: string
+      last_name:
+        required: true
+        displayName: last_name
+        type: string
+      email_address:
+        required: true
+        displayName: email_address
+        type: string
+      cell_phone:
+        required: true
+        displayName: cell_phone
+        type: string
+      organization_id:
+        required: true
+        displayName: organization_id
+        type: integer
+        format: int32
   User  crud users put  updaterequest:
     example:
       value:
@@ -269,8 +537,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User
-  User:
+        type: User19
+  User19:
     example:
       value:
         user_account_id: 36
@@ -284,7 +552,7 @@ types:
         cell_phone: 555141448
         organization_id: 2
         new_password: ''
-    displayName: User
+    displayName: User19
     type: object
     properties:
       user_account_id:
@@ -351,6 +619,170 @@ types:
         required: true
         displayName: status
         type: boolean
+  UserCreate/sandeJonesrequest:
+    example:
+      value:
+        user:
+          user_type_id: 2
+          membership_type_id: 2
+          username: sandejones
+          password: P@ssw0rdSJ
+          first_name: Sande
+          last_name: Jones
+          email_address: sandejones@gmail.com
+          cell_phone: 614-679-2974
+          agreement_flag: 1
+          agreement_date: 02/16/2018
+          organization:
+            organization_name: Intelimatrix LLC
+            address_line1: 1323 Walshire Drive
+            address_line2: North
+            city: Columbus
+            state_province: OH
+            postal_code: 43232
+            country: United States of America
+            country_fips: US
+    displayName: User Create/Sande JonesRequest
+    type: object
+    properties:
+      user:
+        required: true
+        displayName: user
+        type: User22
+  User22:
+    example:
+      value:
+        user_type_id: 2
+        membership_type_id: 2
+        username: sandejones
+        password: P@ssw0rdSJ
+        first_name: Sande
+        last_name: Jones
+        email_address: sandejones@gmail.com
+        cell_phone: 614-679-2974
+        agreement_flag: 1
+        agreement_date: 02/16/2018
+        organization:
+          organization_name: Intelimatrix LLC
+          address_line1: 1323 Walshire Drive
+          address_line2: North
+          city: Columbus
+          state_province: OH
+          postal_code: 43232
+          country: United States of America
+          country_fips: US
+    displayName: User22
+    type: object
+    properties:
+      user_type_id:
+        required: true
+        displayName: user_type_id
+        type: integer
+        format: int32
+      membership_type_id:
+        required: true
+        displayName: membership_type_id
+        type: integer
+        format: int32
+      username:
+        required: true
+        displayName: username
+        type: string
+      password:
+        required: true
+        displayName: password
+        type: string
+      first_name:
+        required: true
+        displayName: first_name
+        type: string
+      last_name:
+        required: true
+        displayName: last_name
+        type: string
+      email_address:
+        required: true
+        displayName: email_address
+        type: string
+      cell_phone:
+        required: true
+        displayName: cell_phone
+        type: string
+      agreement_flag:
+        required: true
+        displayName: agreement_flag
+        type: integer
+        format: int32
+      agreement_date:
+        required: true
+        displayName: agreement_date
+        type: string
+      organization:
+        required: true
+        displayName: organization
+        type: Organization23
+  Organization23:
+    example:
+      value:
+        organization_name: Intelimatrix LLC
+        address_line1: 1323 Walshire Drive
+        address_line2: North
+        city: Columbus
+        state_province: OH
+        postal_code: 43232
+        country: United States of America
+        country_fips: US
+    displayName: Organization23
+    type: object
+    properties:
+      organization_name:
+        required: true
+        displayName: organization_name
+        type: string
+      address_line1:
+        required: true
+        displayName: address_line1
+        type: string
+      address_line2:
+        required: true
+        displayName: address_line2
+        type: string
+      city:
+        required: true
+        displayName: city
+        type: string
+      state_province:
+        required: true
+        displayName: state_province
+        type: string
+      postal_code:
+        required: true
+        displayName: postal_code
+        type: string
+      country:
+        required: true
+        displayName: country
+        type: string
+      country_fips:
+        required: true
+        displayName: country_fips
+        type: string
+  User  reset passwordrequest:
+    example:
+      value:
+        username: sandejones
+        email_address: sandejones@gmail.com
+    displayName: User - reset passwordRequest
+    type: object
+    properties:
+      username:
+        required: true
+        displayName: username
+        type: string
+      email_address:
+        required: true
+        displayName: email_address
+        type: string
   User  update settings/sandejonesrequest:
     example:
       value:
@@ -406,438 +838,6 @@ types:
         displayName: agreement_date
         type: integer
         format: int32
-  User  reset passwordrequest:
-    example:
-      value:
-        username: sandejones
-        email_address: sandejones@gmail.com
-    displayName: User - reset passwordRequest
-    type: object
-    properties:
-      username:
-        required: true
-        displayName: username
-        type: string
-      email_address:
-        required: true
-        displayName: email_address
-        type: string
-  UserCreate/sandeJonesrequest:
-    example:
-      value:
-        user:
-          user_type_id: 2
-          membership_type_id: 2
-          username: sandejones
-          password: P@ssw0rdSJ
-          first_name: Sande
-          last_name: Jones
-          email_address: sandejones@gmail.com
-          cell_phone: 614-679-2974
-          agreement_flag: 1
-          agreement_date: 02/16/2018
-          organization:
-            organization_name: Intelimatrix LLC
-            address_line1: 1323 Walshire Drive
-            address_line2: North
-            city: Columbus
-            state_province: OH
-            postal_code: 43232
-            country: United States of America
-            country_fips: US
-    displayName: User Create/Sande JonesRequest
-    type: object
-    properties:
-      user:
-        required: true
-        displayName: user
-        type: User14
-  User14:
-    example:
-      value:
-        user_type_id: 2
-        membership_type_id: 2
-        username: sandejones
-        password: P@ssw0rdSJ
-        first_name: Sande
-        last_name: Jones
-        email_address: sandejones@gmail.com
-        cell_phone: 614-679-2974
-        agreement_flag: 1
-        agreement_date: 02/16/2018
-        organization:
-          organization_name: Intelimatrix LLC
-          address_line1: 1323 Walshire Drive
-          address_line2: North
-          city: Columbus
-          state_province: OH
-          postal_code: 43232
-          country: United States of America
-          country_fips: US
-    displayName: User14
-    type: object
-    properties:
-      user_type_id:
-        required: true
-        displayName: user_type_id
-        type: integer
-        format: int32
-      membership_type_id:
-        required: true
-        displayName: membership_type_id
-        type: integer
-        format: int32
-      username:
-        required: true
-        displayName: username
-        type: string
-      password:
-        required: true
-        displayName: password
-        type: string
-      first_name:
-        required: true
-        displayName: first_name
-        type: string
-      last_name:
-        required: true
-        displayName: last_name
-        type: string
-      email_address:
-        required: true
-        displayName: email_address
-        type: string
-      cell_phone:
-        required: true
-        displayName: cell_phone
-        type: string
-      agreement_flag:
-        required: true
-        displayName: agreement_flag
-        type: integer
-        format: int32
-      agreement_date:
-        required: true
-        displayName: agreement_date
-        type: string
-      organization:
-        required: true
-        displayName: organization
-        type: Organization15
-  Organization15:
-    example:
-      value:
-        organization_name: Intelimatrix LLC
-        address_line1: 1323 Walshire Drive
-        address_line2: North
-        city: Columbus
-        state_province: OH
-        postal_code: 43232
-        country: United States of America
-        country_fips: US
-    displayName: Organization15
-    type: object
-    properties:
-      organization_name:
-        required: true
-        displayName: organization_name
-        type: string
-      address_line1:
-        required: true
-        displayName: address_line1
-        type: string
-      address_line2:
-        required: true
-        displayName: address_line2
-        type: string
-      city:
-        required: true
-        displayName: city
-        type: string
-      state_province:
-        required: true
-        displayName: state_province
-        type: string
-      postal_code:
-        required: true
-        displayName: postal_code
-        type: string
-      country:
-        required: true
-        displayName: country
-        type: string
-      country_fips:
-        required: true
-        displayName: country_fips
-        type: string
-  Users  crud user deleterequest:
-    example:
-      value:
-        user_account_id: 36
-    displayName: Users - CRUD User DeleteRequest
-    type: object
-    properties:
-      user_account_id:
-        required: true
-        displayName: user_account_id
-        type: integer
-        format: int32
-  Users  crud users createrequest:
-    example:
-      value:
-        user:
-          user_type_id: 1
-          membership_type_id: 2
-          username: PabloPicasso
-          password: P@ssw0rdq
-          first_name: Pablo
-          last_name: Picasso
-          email_address: Picasso@genevamedia.com
-          cell_phone: 8083991129
-          organization_id: 1
-    displayName: Users - CRUD Users CreateRequest
-    type: object
-    properties:
-      user:
-        required: true
-        displayName: user
-        type: User18
-  User18:
-    example:
-      value:
-        user_type_id: 1
-        membership_type_id: 2
-        username: PabloPicasso
-        password: P@ssw0rdq
-        first_name: Pablo
-        last_name: Picasso
-        email_address: Picasso@genevamedia.com
-        cell_phone: 8083991129
-        organization_id: 1
-    displayName: User18
-    type: object
-    properties:
-      user_type_id:
-        required: true
-        displayName: user_type_id
-        type: integer
-        format: int32
-      membership_type_id:
-        required: true
-        displayName: membership_type_id
-        type: integer
-        format: int32
-      username:
-        required: true
-        displayName: username
-        type: string
-      password:
-        required: true
-        displayName: password
-        type: string
-      first_name:
-        required: true
-        displayName: first_name
-        type: string
-      last_name:
-        required: true
-        displayName: last_name
-        type: string
-      email_address:
-        required: true
-        displayName: email_address
-        type: string
-      cell_phone:
-        required: true
-        displayName: cell_phone
-        type: string
-      organization_id:
-        required: true
-        displayName: organization_id
-        type: integer
-        format: int32
-  User  authenticaterequest:
-    example:
-      value:
-        login:
-          username: sandejones
-          password: T0zqa^Pk
-    displayName: User - AuthenticateRequest
-    type: object
-    properties:
-      login:
-        required: true
-        displayName: login
-        type: Login
-  Login:
-    example:
-      value:
-        username: sandejones
-        password: T0zqa^Pk
-    displayName: Login
-    type: object
-    properties:
-      username:
-        required: true
-        displayName: username
-        type: string
-      password:
-        required: true
-        displayName: password
-        type: string
-  User  authenticate:
-    example:
-      value:
-        message: Invalid username or password.
-        status: False
-        passwordcheck:
-          status: False
-          password:
-            PASSWORD: P@ssw0rdSJ
-            SALT: 8CC426699D408C25BA47CFDC753FCBC7BD5950C0ED600637C8A4F4B4B522252E
-            ALGORITHM: SHA384
-            PASSWORDHASH: 1AF876BBACB7CA55CA1BC1BCBC5B4B591B96DFD1880349BD4383856A3DD774F7F42BC44867CCE8E952961E3A532764EA
-          temp_password:
-            PASSWORD: P@ssw0rdSJ
-            SALT: 302031EB60CE1A89FB947E17EA8635D899BC6C4F6E1A1A73C4E55A6040858637
-            ALGORITHM: SHA384
-            PASSWORDHASH: 86A4A9CFA3726EF157963B756322EF5AF83FC3033723FB5BEB1B0D4158104A94CC0C4D5F99878F4E4F3F9C8EC8F0E0B3
-          test_password:
-            PASSWORD: P@ssw0rdSJ
-            SALT: 29E8E204593EBA6FFA9A0F8536CF30786E076A4A7946987145D8FECD05559B86
-            ALGORITHM: SHA384
-            PASSWORDHASH: 5E78F0A08CFC77835B89CD4FB4FC40C5ABD0A4A4C964AD8612C22EA220B133544953F9EF898A5B36F7D9366C69E7520E
-    displayName: User - Authenticate
-    type: object
-    properties:
-      message:
-        required: true
-        displayName: message
-        type: string
-      status:
-        required: true
-        displayName: status
-        type: boolean
-      passwordcheck:
-        required: true
-        displayName: passwordcheck
-        type: Passwordcheck
-  Passwordcheck:
-    example:
-      value:
-        status: False
-        password:
-          PASSWORD: P@ssw0rdSJ
-          SALT: 8CC426699D408C25BA47CFDC753FCBC7BD5950C0ED600637C8A4F4B4B522252E
-          ALGORITHM: SHA384
-          PASSWORDHASH: 1AF876BBACB7CA55CA1BC1BCBC5B4B591B96DFD1880349BD4383856A3DD774F7F42BC44867CCE8E952961E3A532764EA
-        temp_password:
-          PASSWORD: P@ssw0rdSJ
-          SALT: 302031EB60CE1A89FB947E17EA8635D899BC6C4F6E1A1A73C4E55A6040858637
-          ALGORITHM: SHA384
-          PASSWORDHASH: 86A4A9CFA3726EF157963B756322EF5AF83FC3033723FB5BEB1B0D4158104A94CC0C4D5F99878F4E4F3F9C8EC8F0E0B3
-        test_password:
-          PASSWORD: P@ssw0rdSJ
-          SALT: 29E8E204593EBA6FFA9A0F8536CF30786E076A4A7946987145D8FECD05559B86
-          ALGORITHM: SHA384
-          PASSWORDHASH: 5E78F0A08CFC77835B89CD4FB4FC40C5ABD0A4A4C964AD8612C22EA220B133544953F9EF898A5B36F7D9366C69E7520E
-    displayName: Passwordcheck
-    type: object
-    properties:
-      status:
-        required: true
-        displayName: status
-        type: boolean
-      password:
-        required: true
-        displayName: password
-        type: Password
-      temp_password:
-        required: true
-        displayName: temp_password
-        type: TempPassword
-      test_password:
-        required: true
-        displayName: test_password
-        type: TestPassword
-  Password:
-    example:
-      value:
-        PASSWORD: P@ssw0rdSJ
-        SALT: 8CC426699D408C25BA47CFDC753FCBC7BD5950C0ED600637C8A4F4B4B522252E
-        ALGORITHM: SHA384
-        PASSWORDHASH: 1AF876BBACB7CA55CA1BC1BCBC5B4B591B96DFD1880349BD4383856A3DD774F7F42BC44867CCE8E952961E3A532764EA
-    displayName: Password
-    type: object
-    properties:
-      PASSWORD:
-        required: true
-        displayName: PASSWORD
-        type: string
-      SALT:
-        required: true
-        displayName: SALT
-        type: string
-      ALGORITHM:
-        required: true
-        displayName: ALGORITHM
-        type: string
-      PASSWORDHASH:
-        required: true
-        displayName: PASSWORDHASH
-        type: string
-  TempPassword:
-    example:
-      value:
-        PASSWORD: P@ssw0rdSJ
-        SALT: 302031EB60CE1A89FB947E17EA8635D899BC6C4F6E1A1A73C4E55A6040858637
-        ALGORITHM: SHA384
-        PASSWORDHASH: 86A4A9CFA3726EF157963B756322EF5AF83FC3033723FB5BEB1B0D4158104A94CC0C4D5F99878F4E4F3F9C8EC8F0E0B3
-    displayName: TempPassword
-    type: object
-    properties:
-      PASSWORD:
-        required: true
-        displayName: PASSWORD
-        type: string
-      SALT:
-        required: true
-        displayName: SALT
-        type: string
-      ALGORITHM:
-        required: true
-        displayName: ALGORITHM
-        type: string
-      PASSWORDHASH:
-        required: true
-        displayName: PASSWORDHASH
-        type: string
-  TestPassword:
-    example:
-      value:
-        PASSWORD: P@ssw0rdSJ
-        SALT: 29E8E204593EBA6FFA9A0F8536CF30786E076A4A7946987145D8FECD05559B86
-        ALGORITHM: SHA384
-        PASSWORDHASH: 5E78F0A08CFC77835B89CD4FB4FC40C5ABD0A4A4C964AD8612C22EA220B133544953F9EF898A5B36F7D9366C69E7520E
-    displayName: TestPassword
-    type: object
-    properties:
-      PASSWORD:
-        required: true
-        displayName: PASSWORD
-        type: string
-      SALT:
-        required: true
-        displayName: SALT
-        type: string
-      ALGORITHM:
-        required: true
-        displayName: ALGORITHM
-        type: string
-      PASSWORDHASH:
-        required: true
-        displayName: PASSWORDHASH
-        type: string
   User  user agreement setrequest:
     example:
       value:
@@ -936,6 +936,248 @@ types:
         required: true
         displayName: status
         type: boolean
+  User  createrequest:
+    example:
+      value:
+        user:
+          user_type_id: 2
+          membership_type_id: 2
+          username: zfrankt
+          password: P@ssw0rdq
+          first_name: Brank
+          last_name: Rhomas
+          email_address: Brank@genevamedia.com
+          cell_phone: 7033991129
+          organization:
+            organization_name: zzz Arlington
+            address_line1: 3200 Columbia Pike
+            address_line2: ''
+            city: Arlington
+            state_province: VA
+            postal_code: 22204
+            country: United States of America
+            country_fips: US
+    displayName: User - CreateRequest
+    type: object
+    properties:
+      user:
+        required: true
+        displayName: user
+        type: User33
+  User33:
+    example:
+      value:
+        user_type_id: 2
+        membership_type_id: 2
+        username: zfrankt
+        password: P@ssw0rdq
+        first_name: Brank
+        last_name: Rhomas
+        email_address: Brank@genevamedia.com
+        cell_phone: 7033991129
+        organization:
+          organization_name: zzz Arlington
+          address_line1: 3200 Columbia Pike
+          address_line2: ''
+          city: Arlington
+          state_province: VA
+          postal_code: 22204
+          country: United States of America
+          country_fips: US
+    displayName: User33
+    type: object
+    properties:
+      user_type_id:
+        required: true
+        displayName: user_type_id
+        type: integer
+        format: int32
+      membership_type_id:
+        required: true
+        displayName: membership_type_id
+        type: integer
+        format: int32
+      username:
+        required: true
+        displayName: username
+        type: string
+      password:
+        required: true
+        displayName: password
+        type: string
+      first_name:
+        required: true
+        displayName: first_name
+        type: string
+      last_name:
+        required: true
+        displayName: last_name
+        type: string
+      email_address:
+        required: true
+        displayName: email_address
+        type: string
+      cell_phone:
+        required: true
+        displayName: cell_phone
+        type: string
+      organization:
+        required: true
+        displayName: organization
+        type: Organization23
+  User  create  test from gregrequest:
+    example:
+      value:
+        user:
+          user_type_id: 1
+          membership_type_id: 2
+          username: zzzyan2
+          password: p@ssw0rd
+          first_name: Jacasdk
+          last_name: Ryaasdn
+          password_changed_required: 0
+          email_address: jack.ryaddn@fake.com
+          cell_phone: 7035551212
+          organization:
+            organization_name: XYZ Corp.
+            address_line1: 500 Corporate Drive
+            address_line2: Suite 1000
+            city: Parsippany
+            state_province: NJ
+            postal_code: 07054
+            country: United States of America
+            country_fips: US
+    displayName: User - Create - test from GregRequest
+    type: object
+    properties:
+      user:
+        required: true
+        displayName: user
+        type: User36
+  User36:
+    example:
+      value:
+        user_type_id: 1
+        membership_type_id: 2
+        username: zzzyan2
+        password: p@ssw0rd
+        first_name: Jacasdk
+        last_name: Ryaasdn
+        password_changed_required: 0
+        email_address: jack.ryaddn@fake.com
+        cell_phone: 7035551212
+        organization:
+          organization_name: XYZ Corp.
+          address_line1: 500 Corporate Drive
+          address_line2: Suite 1000
+          city: Parsippany
+          state_province: NJ
+          postal_code: 07054
+          country: United States of America
+          country_fips: US
+    displayName: User36
+    type: object
+    properties:
+      user_type_id:
+        required: true
+        displayName: user_type_id
+        type: integer
+        format: int32
+      membership_type_id:
+        required: true
+        displayName: membership_type_id
+        type: integer
+        format: int32
+      username:
+        required: true
+        displayName: username
+        type: string
+      password:
+        required: true
+        displayName: password
+        type: string
+      first_name:
+        required: true
+        displayName: first_name
+        type: string
+      last_name:
+        required: true
+        displayName: last_name
+        type: string
+      password_changed_required:
+        required: true
+        displayName: password_changed_required
+        type: integer
+        format: int32
+      email_address:
+        required: true
+        displayName: email_address
+        type: string
+      cell_phone:
+        required: true
+        displayName: cell_phone
+        type: string
+      organization:
+        required: true
+        displayName: organization
+        type: Organization23
+  Account  create (fail because of duplicagte username):
+    example:
+      value:
+        STATUS: False
+        ERROR:
+          USERNAME: This username is already taken.
+    displayName: Account - Create (fail because of duplicagte username)
+    type: object
+    properties:
+      STATUS:
+        required: true
+        displayName: STATUS
+        type: boolean
+      ERROR:
+        required: true
+        displayName: ERROR
+        type: ERROR
+  ERROR:
+    example:
+      value:
+        USERNAME: This username is already taken.
+    displayName: ERROR
+    type: object
+    properties:
+      USERNAME:
+        required: true
+        displayName: USERNAME
+        type: string
+  User  create  test from greg new one with new fieldsrequest:
+    example:
+      value:
+        user:
+          user_type_id: 1
+          membership_type_id: 2
+          username: zzzyan2
+          password: p@ssw0rd
+          first_name: Jacasdk
+          last_name: Ryaasdn
+          password_changed_required: 0
+          email_address: jack.ryaddn@fake.com
+          cell_phone: 7035551212
+          organization:
+            organization_name: XYZ Corp.
+            address_line1: 500 Corporate Drive
+            address_line2: Suite 1000
+            city: Parsippany
+            state_province: NJ
+            postal_code: 07054
+            country: United States of America
+            country_fips: US
+    displayName: User - Create - test from Greg new one with new fieldsRequest
+    type: object
+    properties:
+      user:
+        required: true
+        displayName: user
+        type: User36
   Local:user  authenticaterequest:
     example:
       value:
@@ -1574,8 +1816,8 @@ types:
       searchParams:
         required: true
         displayName: searchParams
-        type: SearchParams48
-  SearchParams48:
+        type: SearchParams59
+  SearchParams59:
     example:
       value:
         dateTo: ''
@@ -1584,7 +1826,7 @@ types:
         dateFrom: ''
         vin: ''
         stockNum: ''
-    displayName: SearchParams48
+    displayName: SearchParams59
     type: object
     properties:
       dateTo:
@@ -1623,13 +1865,13 @@ types:
       searchParams:
         required: true
         displayName: searchParams
-        type: SearchParams50
-  SearchParams50:
+        type: SearchParams61
+  SearchParams61:
     example:
       value:
         originationTypeId: 1
         organizationName: ''
-    displayName: SearchParams50
+    displayName: SearchParams61
     type: object
     properties:
       originationTypeId:
@@ -1708,8 +1950,8 @@ types:
       asset_properties:
         required: true
         displayName: asset_properties
-        type: AssetProperties53
-  AssetProperties53:
+        type: AssetProperties64
+  AssetProperties64:
     example:
       value:
         msrp: ''
@@ -1729,7 +1971,7 @@ types:
         make: Toyota
         engine: Engine
         vehicle_type: Sedan
-    displayName: AssetProperties53
+    displayName: AssetProperties64
     type: object
     properties:
       msrp:
@@ -1801,95 +2043,6 @@ types:
         required: true
         displayName: vehicle_type
         type: string
-  User  createrequest:
-    example:
-      value:
-        user:
-          user_type_id: 2
-          membership_type_id: 2
-          username: zfrankt
-          password: P@ssw0rdq
-          first_name: Brank
-          last_name: Rhomas
-          email_address: Brank@genevamedia.com
-          cell_phone: 7033991129
-          organization:
-            organization_name: zzz Arlington
-            address_line1: 3200 Columbia Pike
-            address_line2: ''
-            city: Arlington
-            state_province: VA
-            postal_code: 22204
-            country: United States of America
-            country_fips: US
-    displayName: User - CreateRequest
-    type: object
-    properties:
-      user:
-        required: true
-        displayName: user
-        type: User55
-  User55:
-    example:
-      value:
-        user_type_id: 2
-        membership_type_id: 2
-        username: zfrankt
-        password: P@ssw0rdq
-        first_name: Brank
-        last_name: Rhomas
-        email_address: Brank@genevamedia.com
-        cell_phone: 7033991129
-        organization:
-          organization_name: zzz Arlington
-          address_line1: 3200 Columbia Pike
-          address_line2: ''
-          city: Arlington
-          state_province: VA
-          postal_code: 22204
-          country: United States of America
-          country_fips: US
-    displayName: User55
-    type: object
-    properties:
-      user_type_id:
-        required: true
-        displayName: user_type_id
-        type: integer
-        format: int32
-      membership_type_id:
-        required: true
-        displayName: membership_type_id
-        type: integer
-        format: int32
-      username:
-        required: true
-        displayName: username
-        type: string
-      password:
-        required: true
-        displayName: password
-        type: string
-      first_name:
-        required: true
-        displayName: first_name
-        type: string
-      last_name:
-        required: true
-        displayName: last_name
-        type: string
-      email_address:
-        required: true
-        displayName: email_address
-        type: string
-      cell_phone:
-        required: true
-        displayName: cell_phone
-        type: string
-      organization:
-        required: true
-        displayName: organization
-        type: Organization15
   Asset  checkIn  with origination idrequest:
     example:
       value:
@@ -1970,8 +2123,8 @@ types:
       asset_event:
         required: true
         displayName: asset_event
-        type: AssetEvent58
-  AssetEvent58:
+        type: AssetEvent66
+  AssetEvent66:
     example:
       value:
         asset_id: 480
@@ -2044,7 +2197,7 @@ types:
           vin_photo_img_url: https://s3.amazonaws.com/wparkw.assets/vin.png
           vin_decode_location_lat: 18.851031
           vin_decode_location_long: -57.366377
-    displayName: AssetEvent58
+    displayName: AssetEvent66
     type: object
     properties:
       asset_id:
@@ -2066,7 +2219,7 @@ types:
       asset_properties:
         required: true
         displayName: asset_properties
-        type: AssetProperties59
+        type: AssetProperties67
       asset_images:
         required: true
         displayName: asset_images
@@ -2107,7 +2260,7 @@ types:
         required: true
         displayName: vin_decode_log
         type: VinDecodeLog
-  AssetProperties59:
+  AssetProperties67:
     example:
       value:
         vin_num: WBA7F2C56HG422712
@@ -2126,7 +2279,7 @@ types:
         age: ''
         cost: ''
         msrp: ''
-    displayName: AssetProperties59
+    displayName: AssetProperties67
     type: object
     properties:
       vin_num:
@@ -2268,8 +2421,8 @@ types:
       asset_origination:
         required: true
         displayName: asset_origination
-        type: AssetOrigination70
-  AssetOrigination70:
+        type: AssetOrigination78
+  AssetOrigination78:
     example:
       value:
         origination_type_id: 4
@@ -2283,7 +2436,7 @@ types:
         address_line1: dhdjdhd AAAA
         postal_code: 07087
         country: ''
-    displayName: AssetOrigination70
+    displayName: AssetOrigination78
     type: object
     properties:
       origination_type_id:
@@ -2360,7 +2513,7 @@ types:
       user:
         required: true
         displayName: user
-        type: User14
+        type: User22
   User  authenticate  sanderequest:
     example:
       value:
@@ -2374,26 +2527,9 @@ types:
         required: true
         displayName: login
         type: Login
-/check-in-event-action-type/get:
-  post:
-    displayName: Event Action Types - List
-    description: 'TODO: Add Description'
-    headers:
-      Content-Type:
-        required: true
-        example:
-          value: application/json
-        displayName: Content-Type
-        type: string
-      Authorization:
-        required: true
-        example:
-          value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
-        displayName: Authorization
-        type: string
 /authenticate:
   post:
-    displayName: User - Authenticate1
+    displayName: User - Authenticate
     description: 'TODO: Add Description'
     body:
       application/json:
@@ -2418,6 +2554,23 @@ types:
         example:
           value: application/json
         displayName: Content-Type
+        type: string
+/check-in-event-action-type/get:
+  post:
+    displayName: Event Action Types - List
+    description: 'TODO: Add Description'
+    headers:
+      Content-Type:
+        required: true
+        example:
+          value: application/json
+        displayName: Content-Type
+        type: string
+      Authorization:
+        required: true
+        example:
+          value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+        displayName: Authorization
         type: string
 /asset-activity/search:
   post:
@@ -3353,7 +3506,7 @@ types:
               event_type_id: 1
               action_type: test
           displayName: Body
-          type: EventActionTypeCheckIn createrequest7
+          type: EventActionTypeCheckIn createrequest14
       queryParameters:
         fwreinit:
           required: true
@@ -3409,18 +3562,230 @@ types:
             value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
           displayName: Authorization
           type: string
-/account:
+/user:
   /list:
     get:
-      displayName: Users - List
+      displayName: Account- List
       description: 'TODO: Add Description'
       queryParameters:
-        token:
+        fwreinit:
+          required: true
+          example:
+            value: 1
+          displayName: fwreinit
+          type: integer
+          format: int32
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
           required: true
           example:
             value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
-          displayName: token
+          displayName: Authorization
           type: string
+  /get/35:
+    get:
+      displayName: User - CRUD get
+      description: 'TODO: Add Description'
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
+  /delete:
+    post:
+      displayName: Users - CRUD User Delete
+      description: 'TODO: Add Description'
+      body:
+        application/json:
+          example:
+            value:
+              user_account_id: 36
+          displayName: Body
+          type: Users  crud user deleterequest
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
+  /create:
+    post:
+      displayName: Users - CRUD Users Create
+      description: 'TODO: Add Description'
+      body:
+        application/json:
+          example:
+            value:
+              user:
+                user_type_id: 1
+                membership_type_id: 2
+                username: PabloPicasso
+                password: P@ssw0rdq
+                first_name: Pablo
+                last_name: Picasso
+                email_address: Picasso@genevamedia.com
+                cell_phone: 8083991129
+                organization_id: 1
+          displayName: Body
+          type: Users  crud users createrequest
+      queryParameters:
+        fwreinit:
+          required: true
+          example:
+            value: 1
+          displayName: fwreinit
+          type: integer
+          format: int32
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
+  /put:
+    post:
+      displayName: User - CRUD Users Put - Update
+      description: 'TODO: Add Description'
+      body:
+        application/json:
+          example:
+            value:
+              user:
+                user_account_id: 36
+                user_type_id: 1
+                membership_type_id: 2
+                username: PabloPicasso
+                password: P@ssw0rdq
+                first_name: Pablo
+                last_name: Picasso
+                email_address: Picasso@genevamedia.com
+                cell_phone: 555141448
+                organization_id: 2
+                new_password: ''
+          displayName: Body
+          type: User  crud users put  updaterequest
+      queryParameters:
+        fwreinit:
+          required: true
+          example:
+            value: 1
+          displayName: fwreinit
+          type: integer
+          format: int32
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
+      responses:
+        200:
+          description: Success
+          body:
+            application/json:
+              example:
+                value:
+                  message: The new username supplied is already in use.
+                  status: False
+              displayName: Users - CRUD Users Put - Update - fail dupe username
+              type: Users  crud users put  update  fail dupe username
+/account:
+  /create:
+    post:
+      displayName: User - belichick
+      description: 'TODO: Add Description'
+      body:
+        application/json:
+          example:
+            value:
+              user:
+                user_type_id: 2
+                membership_type_id: 2
+                username: billbell
+                password: P@ssw0rdBB
+                first_name: Bill
+                last_name: belichick
+                email_address: bbelichick@gmail.com
+                cell_phone: 541-202-4745
+                agreement_flag: 1
+                agreement_date: 02/11/2018
+                organization:
+                  organization_name: NFL
+                  address_line1: 123 NFL Lane
+                  address_line2: Suite 882
+                  city: Tampa
+                  state_province: FL
+                  postal_code: 78820
+                  country: United States of America
+                  country_fips: US
+          displayName: Body
+          type: User  belichickrequest
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        99:
+          required: true
+          displayName: 99
+          type: string
+  /resetpassword:
+    post:
+      displayName: User - User Reset Password
+      description: 'TODO: Add Description'
+      body:
+        application/json:
+          example:
+            value:
+              username: ''
+              email_address: sandejones@gmail.com
+          displayName: Body
+          type: User  user reset passwordrequest
+      queryParameters:
+        fwreinit:
+          required: true
+          example:
+            value: 1
+          displayName: fwreinit
+          type: integer
+          format: int32
       headers:
         Content-Type:
           required: true
@@ -3466,26 +3831,17 @@ types:
             value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
           displayName: Authorization
           type: string
-  /resetpassword:
-    post:
-      displayName: User - User Reset Password
+  /list:
+    get:
+      displayName: Users - List
       description: 'TODO: Add Description'
-      body:
-        application/json:
-          example:
-            value:
-              username: ''
-              email_address: sandejones@gmail.com
-          displayName: Body
-          type: User  user reset passwordrequest
       queryParameters:
-        fwreinit:
+        token:
           required: true
           example:
-            value: 1
-          displayName: fwreinit
-          type: integer
-          format: int32
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: token
+          type: string
       headers:
         Content-Type:
           required: true
@@ -3498,47 +3854,6 @@ types:
           example:
             value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
           displayName: Authorization
-          type: string
-  /create:
-    post:
-      displayName: User - belichick
-      description: 'TODO: Add Description'
-      body:
-        application/json:
-          example:
-            value:
-              user:
-                user_type_id: 2
-                membership_type_id: 2
-                username: billbell
-                password: P@ssw0rdBB
-                first_name: Bill
-                last_name: belichick
-                email_address: bbelichick@gmail.com
-                cell_phone: 541-202-4745
-                agreement_flag: 1
-                agreement_date: 02/11/2018
-                organization:
-                  organization_name: NFL
-                  address_line1: 123 NFL Lane
-                  address_line2: Suite 882
-                  city: Tampa
-                  state_province: FL
-                  postal_code: 78820
-                  country: United States of America
-                  country_fips: US
-          displayName: Body
-          type: User  belichickrequest
-      headers:
-        Content-Type:
-          required: true
-          example:
-            value: application/json
-          displayName: Content-Type
-          type: string
-        99:
-          required: true
-          displayName: 99
           type: string
   /agreement:
     post:
@@ -3652,168 +3967,6 @@ types:
                     status: False
               displayName: 'User - User Set New Password ( miss match : faile)'
               type: 'User  user set new password ( miss match : faile)'
-/user:
-  /list:
-    get:
-      displayName: Account- List
-      description: 'TODO: Add Description'
-      queryParameters:
-        fwreinit:
-          required: true
-          example:
-            value: 1
-          displayName: fwreinit
-          type: integer
-          format: int32
-      headers:
-        Content-Type:
-          required: true
-          example:
-            value: application/json
-          displayName: Content-Type
-          type: string
-        Authorization:
-          required: true
-          example:
-            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
-          displayName: Authorization
-          type: string
-  /put:
-    post:
-      displayName: User - CRUD Users Put - Update
-      description: 'TODO: Add Description'
-      body:
-        application/json:
-          example:
-            value:
-              user:
-                user_account_id: 36
-                user_type_id: 1
-                membership_type_id: 2
-                username: PabloPicasso
-                password: P@ssw0rdq
-                first_name: Pablo
-                last_name: Picasso
-                email_address: Picasso@genevamedia.com
-                cell_phone: 555141448
-                organization_id: 2
-                new_password: ''
-          displayName: Body
-          type: User  crud users put  updaterequest
-      queryParameters:
-        fwreinit:
-          required: true
-          example:
-            value: 1
-          displayName: fwreinit
-          type: integer
-          format: int32
-      headers:
-        Content-Type:
-          required: true
-          example:
-            value: application/json
-          displayName: Content-Type
-          type: string
-        Authorization:
-          required: true
-          example:
-            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
-          displayName: Authorization
-          type: string
-      responses:
-        200:
-          description: Success
-          body:
-            application/json:
-              example:
-                value:
-                  message: The new username supplied is already in use.
-                  status: False
-              displayName: Users - CRUD Users Put - Update - fail dupe username
-              type: Users  crud users put  update  fail dupe username
-  /get/35:
-    get:
-      displayName: User - CRUD get
-      description: 'TODO: Add Description'
-      headers:
-        Content-Type:
-          required: true
-          example:
-            value: application/json
-          displayName: Content-Type
-          type: string
-        Authorization:
-          required: true
-          example:
-            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
-          displayName: Authorization
-          type: string
-  /delete:
-    post:
-      displayName: Users - CRUD User Delete
-      description: 'TODO: Add Description'
-      body:
-        application/json:
-          example:
-            value:
-              user_account_id: 36
-          displayName: Body
-          type: Users  crud user deleterequest
-      headers:
-        Content-Type:
-          required: true
-          example:
-            value: application/json
-          displayName: Content-Type
-          type: string
-        Authorization:
-          required: true
-          example:
-            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
-          displayName: Authorization
-          type: string
-  /create:
-    post:
-      displayName: Users - CRUD Users Create
-      description: 'TODO: Add Description'
-      body:
-        application/json:
-          example:
-            value:
-              user:
-                user_type_id: 1
-                membership_type_id: 2
-                username: PabloPicasso
-                password: P@ssw0rdq
-                first_name: Pablo
-                last_name: Picasso
-                email_address: Picasso@genevamedia.com
-                cell_phone: 8083991129
-                organization_id: 1
-          displayName: Body
-          type: Users  crud users createrequest
-      queryParameters:
-        fwreinit:
-          required: true
-          example:
-            value: 1
-          displayName: fwreinit
-          type: integer
-          format: int32
-      headers:
-        Content-Type:
-          required: true
-          example:
-            value: application/json
-          displayName: Content-Type
-          type: string
-        Authorization:
-          required: true
-          example:
-            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
-          displayName: Authorization
-          type: string
 /asset-event:
   /check-in:
     post:
