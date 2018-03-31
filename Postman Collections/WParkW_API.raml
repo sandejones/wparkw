@@ -2555,10 +2555,18 @@ types:
           value: application/json
         displayName: Content-Type
         type: string
-/check-in-event-action-type/get:
+/check-in-event-action-type/list:
   post:
     displayName: Event Action Types - List
     description: 'TODO: Add Description'
+    queryParameters:
+      fwreinit:
+        required: true
+        example:
+          value: 1
+        displayName: fwreinit
+        type: integer
+        format: int32
     headers:
       Content-Type:
         required: true
@@ -2790,7 +2798,7 @@ types:
             value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
           displayName: Authorization
           type: string
-  /serialnumber/0:
+  /serialnumber/:
     get:
       displayName: organization/serialnumber/get
       description: 'TODO: Add Description'
@@ -3855,6 +3863,23 @@ types:
             value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
           displayName: Authorization
           type: string
+    /5:
+      get:
+        displayName: Users - List Copy
+        description: 'TODO: Add Description'
+        headers:
+          Content-Type:
+            required: true
+            example:
+              value: application/json
+            displayName: Content-Type
+            type: string
+          Authorization:
+            required: true
+            example:
+              value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+            displayName: Authorization
+            type: string
   /agreement:
     post:
       displayName: User - User Agreement set
