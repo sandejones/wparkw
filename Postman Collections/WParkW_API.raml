@@ -619,30 +619,28 @@ types:
         required: true
         displayName: status
         type: boolean
-  UserCreate/sandeJonesrequest:
+  User  createrequest:
     example:
       value:
         user:
           user_type_id: 2
           membership_type_id: 2
-          username: sandejones
-          password: P@ssw0rdSJ
-          first_name: Sande
-          last_name: Jones
-          email_address: sandejones@gmail.com
-          cell_phone: 614-679-2974
-          agreement_flag: 1
-          agreement_date: 02/16/2018
+          username: zfrankt
+          password: P@ssw0rdq
+          first_name: Brank
+          last_name: Rhomas
+          email_address: Brank@genevamedia.com
+          cell_phone: 7033991129
           organization:
-            organization_name: Intelimatrix LLC
-            address_line1: 1323 Walshire Drive
-            address_line2: North
-            city: Columbus
-            state_province: OH
-            postal_code: 43232
+            organization_name: zzz Arlington
+            address_line1: 3200 Columbia Pike
+            address_line2: ''
+            city: Arlington
+            state_province: VA
+            postal_code: 22204
             country: United States of America
             country_fips: US
-    displayName: User Create/Sande JonesRequest
+    displayName: User - CreateRequest
     type: object
     properties:
       user:
@@ -654,21 +652,19 @@ types:
       value:
         user_type_id: 2
         membership_type_id: 2
-        username: sandejones
-        password: P@ssw0rdSJ
-        first_name: Sande
-        last_name: Jones
-        email_address: sandejones@gmail.com
-        cell_phone: 614-679-2974
-        agreement_flag: 1
-        agreement_date: 02/16/2018
+        username: zfrankt
+        password: P@ssw0rdq
+        first_name: Brank
+        last_name: Rhomas
+        email_address: Brank@genevamedia.com
+        cell_phone: 7033991129
         organization:
-          organization_name: Intelimatrix LLC
-          address_line1: 1323 Walshire Drive
-          address_line2: North
-          city: Columbus
-          state_province: OH
-          postal_code: 43232
+          organization_name: zzz Arlington
+          address_line1: 3200 Columbia Pike
+          address_line2: ''
+          city: Arlington
+          state_province: VA
+          postal_code: 22204
           country: United States of America
           country_fips: US
     displayName: User22
@@ -708,15 +704,6 @@ types:
         required: true
         displayName: cell_phone
         type: string
-      agreement_flag:
-        required: true
-        displayName: agreement_flag
-        type: integer
-        format: int32
-      agreement_date:
-        required: true
-        displayName: agreement_date
-        type: string
       organization:
         required: true
         displayName: organization
@@ -724,12 +711,12 @@ types:
   Organization23:
     example:
       value:
-        organization_name: Intelimatrix LLC
-        address_line1: 1323 Walshire Drive
-        address_line2: North
-        city: Columbus
-        state_province: OH
-        postal_code: 43232
+        organization_name: zzz Arlington
+        address_line1: 3200 Columbia Pike
+        address_line2: ''
+        city: Arlington
+        state_province: VA
+        postal_code: 22204
         country: United States of America
         country_fips: US
     displayName: Organization23
@@ -766,115 +753,6 @@ types:
       country_fips:
         required: true
         displayName: country_fips
-        type: string
-  User  reset passwordrequest:
-    example:
-      value:
-        username: sandejones
-        email_address: sandejones@gmail.com
-    displayName: User - reset passwordRequest
-    type: object
-    properties:
-      username:
-        required: true
-        displayName: username
-        type: string
-      email_address:
-        required: true
-        displayName: email_address
-        type: string
-  User  update settings/sandejonesrequest:
-    example:
-      value:
-        first_name: Sande
-        last_name: Jones
-        text_notif_flag: 1
-        email_notif_flag: 1
-        email_address: sandejones@gmail.com
-        cell_phone: 6145551212
-        profile_img_url: https://wparkw.s3.amazonaws.com/profile/1/sandejones.jpg
-        agreement_flag: 1
-        agreement_date: 1
-    displayName: User - Update Settings/sandejonesRequest
-    type: object
-    properties:
-      first_name:
-        required: true
-        displayName: first_name
-        type: string
-      last_name:
-        required: true
-        displayName: last_name
-        type: string
-      text_notif_flag:
-        required: true
-        displayName: text_notif_flag
-        type: integer
-        format: int32
-      email_notif_flag:
-        required: true
-        displayName: email_notif_flag
-        type: integer
-        format: int32
-      email_address:
-        required: true
-        displayName: email_address
-        type: string
-      cell_phone:
-        required: true
-        displayName: cell_phone
-        type: string
-      profile_img_url:
-        required: true
-        displayName: profile_img_url
-        type: string
-      agreement_flag:
-        required: true
-        displayName: agreement_flag
-        type: integer
-        format: int32
-      agreement_date:
-        required: true
-        displayName: agreement_date
-        type: integer
-        format: int32
-  User  user agreement setrequest:
-    example:
-      value:
-        user_account_id: 32
-    displayName: User - User Agreement setRequest
-    type: object
-    properties:
-      user_account_id:
-        required: true
-        displayName: user_account_id
-        type: string
-  User  user reset passwordrequest:
-    example:
-      value:
-        username: ''
-        email_address: sandejones@gmail.com
-    displayName: User - User Reset PasswordRequest
-    type: object
-    properties:
-      username:
-        required: true
-        displayName: username
-        type: string
-      email_address:
-        required: true
-        displayName: email_address
-        type: string
-  User  user clear password resetrequest:
-    example:
-      value:
-        user_account_id: 35
-    displayName: User - User Clear Password ResetRequest
-    type: object
-    properties:
-      user_account_id:
-        required: true
-        displayName: user_account_id
         type: string
   User  user set new passwordrequest:
     example:
@@ -936,28 +814,139 @@ types:
         required: true
         displayName: status
         type: boolean
-  User  createrequest:
+  User  user clear password resetrequest:
+    example:
+      value:
+        user_account_id: 35
+    displayName: User - User Clear Password ResetRequest
+    type: object
+    properties:
+      user_account_id:
+        required: true
+        displayName: user_account_id
+        type: string
+  User  user reset passwordrequest:
+    example:
+      value:
+        username: ''
+        email_address: sandejones@gmail.com
+    displayName: User - User Reset PasswordRequest
+    type: object
+    properties:
+      username:
+        required: true
+        displayName: username
+        type: string
+      email_address:
+        required: true
+        displayName: email_address
+        type: string
+  User  user agreement setrequest:
+    example:
+      value:
+        user_account_id: 32
+    displayName: User - User Agreement setRequest
+    type: object
+    properties:
+      user_account_id:
+        required: true
+        displayName: user_account_id
+        type: string
+  User  update settings/sandejonesrequest:
+    example:
+      value:
+        first_name: Sande
+        last_name: Jones
+        text_notif_flag: 1
+        email_notif_flag: 1
+        email_address: sandejones@gmail.com
+        cell_phone: 6145551212
+        profile_img_url: https://wparkw.s3.amazonaws.com/profile/1/sandejones.jpg
+        agreement_flag: 1
+        agreement_date: 1
+    displayName: User - Update Settings/sandejonesRequest
+    type: object
+    properties:
+      first_name:
+        required: true
+        displayName: first_name
+        type: string
+      last_name:
+        required: true
+        displayName: last_name
+        type: string
+      text_notif_flag:
+        required: true
+        displayName: text_notif_flag
+        type: integer
+        format: int32
+      email_notif_flag:
+        required: true
+        displayName: email_notif_flag
+        type: integer
+        format: int32
+      email_address:
+        required: true
+        displayName: email_address
+        type: string
+      cell_phone:
+        required: true
+        displayName: cell_phone
+        type: string
+      profile_img_url:
+        required: true
+        displayName: profile_img_url
+        type: string
+      agreement_flag:
+        required: true
+        displayName: agreement_flag
+        type: integer
+        format: int32
+      agreement_date:
+        required: true
+        displayName: agreement_date
+        type: integer
+        format: int32
+  User  reset passwordrequest:
+    example:
+      value:
+        username: sandejones
+        email_address: sandejones@gmail.com
+    displayName: User - reset passwordRequest
+    type: object
+    properties:
+      username:
+        required: true
+        displayName: username
+        type: string
+      email_address:
+        required: true
+        displayName: email_address
+        type: string
+  UserCreate/sandeJonesrequest:
     example:
       value:
         user:
           user_type_id: 2
           membership_type_id: 2
-          username: zfrankt
-          password: P@ssw0rdq
-          first_name: Brank
-          last_name: Rhomas
-          email_address: Brank@genevamedia.com
-          cell_phone: 7033991129
+          username: sandejones
+          password: P@ssw0rdSJ
+          first_name: Sande
+          last_name: Jones
+          email_address: sandejones@gmail.com
+          cell_phone: 614-679-2974
+          agreement_flag: 1
+          agreement_date: 02/16/2018
           organization:
-            organization_name: zzz Arlington
-            address_line1: 3200 Columbia Pike
-            address_line2: ''
-            city: Arlington
-            state_province: VA
-            postal_code: 22204
+            organization_name: Intelimatrix LLC
+            address_line1: 1323 Walshire Drive
+            address_line2: North
+            city: Columbus
+            state_province: OH
+            postal_code: 43232
             country: United States of America
             country_fips: US
-    displayName: User - CreateRequest
+    displayName: User Create/Sande JonesRequest
     type: object
     properties:
       user:
@@ -969,19 +958,21 @@ types:
       value:
         user_type_id: 2
         membership_type_id: 2
-        username: zfrankt
-        password: P@ssw0rdq
-        first_name: Brank
-        last_name: Rhomas
-        email_address: Brank@genevamedia.com
-        cell_phone: 7033991129
+        username: sandejones
+        password: P@ssw0rdSJ
+        first_name: Sande
+        last_name: Jones
+        email_address: sandejones@gmail.com
+        cell_phone: 614-679-2974
+        agreement_flag: 1
+        agreement_date: 02/16/2018
         organization:
-          organization_name: zzz Arlington
-          address_line1: 3200 Columbia Pike
-          address_line2: ''
-          city: Arlington
-          state_province: VA
-          postal_code: 22204
+          organization_name: Intelimatrix LLC
+          address_line1: 1323 Walshire Drive
+          address_line2: North
+          city: Columbus
+          state_province: OH
+          postal_code: 43232
           country: United States of America
           country_fips: US
     displayName: User33
@@ -1020,6 +1011,15 @@ types:
       cell_phone:
         required: true
         displayName: cell_phone
+        type: string
+      agreement_flag:
+        required: true
+        displayName: agreement_flag
+        type: integer
+        format: int32
+      agreement_date:
+        required: true
+        displayName: agreement_date
         type: string
       organization:
         required: true
@@ -2513,7 +2513,7 @@ types:
       user:
         required: true
         displayName: user
-        type: User22
+        type: User33
   User  authenticate  sanderequest:
     example:
       value:
@@ -3774,18 +3774,122 @@ types:
           required: true
           displayName: 99
           type: string
-  /resetpassword:
+  /setpassword:
     post:
-      displayName: User - User Reset Password
+      displayName: User - User Set New Password
       description: 'TODO: Add Description'
       body:
         application/json:
           example:
             value:
-              username: ''
+              email_address: sandejones@gmail.com
+              username: sandejones
+              current_password: 5#WjddZ&
+              new_password: ABCDEFG
+              confirm_new_password: ABCDEFG
+          displayName: Body
+          type: User  user set new passwordrequest
+      queryParameters:
+        fwreinit:
+          required: true
+          example:
+            value: 1
+          displayName: fwreinit
+          type: integer
+          format: int32
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
+      responses:
+        200:
+          description: Success
+          body:
+            application/json:
+              example:
+                value:
+                  MESSAGE:
+                    message: Old Password provided does not match.
+                    status: False
+              displayName: 'User - User Set New Password ( miss match : faile)'
+              type: 'User  user set new password ( miss match : faile)'
+  /clearpasswordreset:
+    post:
+      displayName: User - User Clear Password Reset
+      description: 'TODO: Add Description'
+      body:
+        application/json:
+          example:
+            value:
+              user_account_id: 35
+          displayName: Body
+          type: User  user clear password resetrequest
+      queryParameters:
+        fwreinit:
+          required: true
+          example:
+            value: 1
+          displayName: fwreinit
+          type: integer
+          format: int32
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
+  /resetpassword:
+    post:
+      displayName: User - reset password
+      description: 'TODO: Add Description'
+      body:
+        application/json:
+          example:
+            value:
+              username: sandejones
               email_address: sandejones@gmail.com
           displayName: Body
-          type: User  user reset passwordrequest
+          type: User  reset passwordrequest
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+        Authorization:
+          required: true
+          example:
+            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
+          displayName: Authorization
+          type: string
+  /agreement:
+    post:
+      displayName: User - User Agreement set
+      description: 'TODO: Add Description'
+      body:
+        application/json:
+          example:
+            value:
+              user_account_id: 32
+          displayName: Body
+          type: User  user agreement setrequest
       queryParameters:
         fwreinit:
           required: true
@@ -3880,118 +3984,6 @@ types:
               value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
             displayName: Authorization
             type: string
-  /agreement:
-    post:
-      displayName: User - User Agreement set
-      description: 'TODO: Add Description'
-      body:
-        application/json:
-          example:
-            value:
-              user_account_id: 32
-          displayName: Body
-          type: User  user agreement setrequest
-      queryParameters:
-        fwreinit:
-          required: true
-          example:
-            value: 1
-          displayName: fwreinit
-          type: integer
-          format: int32
-      headers:
-        Content-Type:
-          required: true
-          example:
-            value: application/json
-          displayName: Content-Type
-          type: string
-        Authorization:
-          required: true
-          example:
-            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
-          displayName: Authorization
-          type: string
-  /clearpasswordreset:
-    post:
-      displayName: User - User Clear Password Reset
-      description: 'TODO: Add Description'
-      body:
-        application/json:
-          example:
-            value:
-              user_account_id: 35
-          displayName: Body
-          type: User  user clear password resetrequest
-      queryParameters:
-        fwreinit:
-          required: true
-          example:
-            value: 1
-          displayName: fwreinit
-          type: integer
-          format: int32
-      headers:
-        Content-Type:
-          required: true
-          example:
-            value: application/json
-          displayName: Content-Type
-          type: string
-        Authorization:
-          required: true
-          example:
-            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
-          displayName: Authorization
-          type: string
-  /setpassword:
-    post:
-      displayName: User - User Set New Password
-      description: 'TODO: Add Description'
-      body:
-        application/json:
-          example:
-            value:
-              email_address: sandejones@gmail.com
-              username: sandejones
-              current_password: 5#WjddZ&
-              new_password: ABCDEFG
-              confirm_new_password: ABCDEFG
-          displayName: Body
-          type: User  user set new passwordrequest
-      queryParameters:
-        fwreinit:
-          required: true
-          example:
-            value: 1
-          displayName: fwreinit
-          type: integer
-          format: int32
-      headers:
-        Content-Type:
-          required: true
-          example:
-            value: application/json
-          displayName: Content-Type
-          type: string
-        Authorization:
-          required: true
-          example:
-            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
-          displayName: Authorization
-          type: string
-      responses:
-        200:
-          description: Success
-          body:
-            application/json:
-              example:
-                value:
-                  MESSAGE:
-                    message: Old Password provided does not match.
-                    status: False
-              displayName: 'User - User Set New Password ( miss match : faile)'
-              type: 'User  user set new password ( miss match : faile)'
 /asset-event:
   /check-in:
     post:
