@@ -2574,6 +2574,25 @@ types:
           value: application/json
         displayName: Content-Type
         type: string
+  /1/1:
+    post:
+      displayName: Event Action Types - /chec out event-action-type/list/:eventTypeId/:originationTypeId
+      description: ' /event-action-type/list/:eventTypeId/:originationTypeId'
+      queryParameters:
+        fwreinit:
+          required: true
+          example:
+            value: 1
+          displayName: fwreinit
+          type: integer
+          format: int32
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
 /asset-activity/search:
   post:
     displayName: Asset Activity - Search
@@ -3500,17 +3519,6 @@ types:
             value: application/json
           displayName: Content-Type
           type: string
-  /get/35:
-    get:
-      displayName: User - CRUD get
-      description: 'TODO: Add Description'
-      headers:
-        Content-Type:
-          required: true
-          example:
-            value: application/json
-          displayName: Content-Type
-          type: string
   /delete:
     post:
       displayName: Users - CRUD User Delete
@@ -3612,6 +3620,28 @@ types:
                   status: False
               displayName: Users - CRUD Users Put - Update - fail dupe username
               type: Users  crud users put  update  fail dupe username
+  /get:
+    get:
+      displayName: User - CRUD get Copy
+      description: 'TODO: Add Description'
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+    /35:
+      get:
+        displayName: User - CRUD get
+        description: 'TODO: Add Description'
+        headers:
+          Content-Type:
+            required: true
+            example:
+              value: application/json
+            displayName: Content-Type
+            type: string
 /account:
   /create:
     post:
