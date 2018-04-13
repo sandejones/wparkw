@@ -619,6 +619,28 @@ types:
         required: true
         displayName: status
         type: boolean
+  User  crud users put  update copyrequest:
+    example:
+      value:
+        user:
+          user_account_id: 36
+          user_type_id: 1
+          membership_type_id: 2
+          username: PabloPicasso
+          password: P@ssw0rdq
+          first_name: Pablo
+          last_name: Picasso
+          email_address: Picasso@genevamedia.com
+          cell_phone: 555141448
+          organization_id: 2
+          new_password: ''
+    displayName: User - CRUD Users Put - Update CopyRequest
+    type: object
+    properties:
+      user:
+        required: true
+        displayName: user
+        type: User19
   User  createrequest:
     example:
       value:
@@ -646,8 +668,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User22
-  User22:
+        type: User24
+  User24:
     example:
       value:
         user_type_id: 2
@@ -667,7 +689,7 @@ types:
           postal_code: 22204
           country: United States of America
           country_fips: US
-    displayName: User22
+    displayName: User24
     type: object
     properties:
       user_type_id:
@@ -707,8 +729,8 @@ types:
       organization:
         required: true
         displayName: organization
-        type: Organization23
-  Organization23:
+        type: Organization25
+  Organization25:
     example:
       value:
         organization_name: zzz Arlington
@@ -719,7 +741,7 @@ types:
         postal_code: 22204
         country: United States of America
         country_fips: US
-    displayName: Organization23
+    displayName: Organization25
     type: object
     properties:
       organization_name:
@@ -952,8 +974,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User33
-  User33:
+        type: User35
+  User35:
     example:
       value:
         user_type_id: 2
@@ -975,7 +997,7 @@ types:
           postal_code: 43232
           country: United States of America
           country_fips: US
-    displayName: User33
+    displayName: User35
     type: object
     properties:
       user_type_id:
@@ -1024,7 +1046,7 @@ types:
       organization:
         required: true
         displayName: organization
-        type: Organization23
+        type: Organization25
   User  create  test from gregrequest:
     example:
       value:
@@ -1053,8 +1075,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User36
-  User36:
+        type: User38
+  User38:
     example:
       value:
         user_type_id: 1
@@ -1075,7 +1097,7 @@ types:
           postal_code: 07054
           country: United States of America
           country_fips: US
-    displayName: User36
+    displayName: User38
     type: object
     properties:
       user_type_id:
@@ -1120,7 +1142,7 @@ types:
       organization:
         required: true
         displayName: organization
-        type: Organization23
+        type: Organization25
   Account  create (fail because of duplicagte username):
     example:
       value:
@@ -1177,7 +1199,7 @@ types:
       user:
         required: true
         displayName: user
-        type: User36
+        type: User38
   Local:user  authenticaterequest:
     example:
       value:
@@ -1816,8 +1838,8 @@ types:
       searchParams:
         required: true
         displayName: searchParams
-        type: SearchParams59
-  SearchParams59:
+        type: SearchParams61
+  SearchParams61:
     example:
       value:
         dateTo: ''
@@ -1826,7 +1848,7 @@ types:
         dateFrom: ''
         vin: ''
         stockNum: ''
-    displayName: SearchParams59
+    displayName: SearchParams61
     type: object
     properties:
       dateTo:
@@ -1865,13 +1887,13 @@ types:
       searchParams:
         required: true
         displayName: searchParams
-        type: SearchParams61
-  SearchParams61:
+        type: SearchParams63
+  SearchParams63:
     example:
       value:
         originationTypeId: 1
         organizationName: ''
-    displayName: SearchParams61
+    displayName: SearchParams63
     type: object
     properties:
       originationTypeId:
@@ -1950,8 +1972,8 @@ types:
       asset_properties:
         required: true
         displayName: asset_properties
-        type: AssetProperties64
-  AssetProperties64:
+        type: AssetProperties66
+  AssetProperties66:
     example:
       value:
         msrp: ''
@@ -1971,7 +1993,7 @@ types:
         make: Toyota
         engine: Engine
         vehicle_type: Sedan
-    displayName: AssetProperties64
+    displayName: AssetProperties66
     type: object
     properties:
       msrp:
@@ -2123,8 +2145,8 @@ types:
       asset_event:
         required: true
         displayName: asset_event
-        type: AssetEvent66
-  AssetEvent66:
+        type: AssetEvent68
+  AssetEvent68:
     example:
       value:
         asset_id: 480
@@ -2197,7 +2219,7 @@ types:
           vin_photo_img_url: https://s3.amazonaws.com/wparkw.assets/vin.png
           vin_decode_location_lat: 18.851031
           vin_decode_location_long: -57.366377
-    displayName: AssetEvent66
+    displayName: AssetEvent68
     type: object
     properties:
       asset_id:
@@ -2219,7 +2241,7 @@ types:
       asset_properties:
         required: true
         displayName: asset_properties
-        type: AssetProperties67
+        type: AssetProperties69
       asset_images:
         required: true
         displayName: asset_images
@@ -2260,7 +2282,7 @@ types:
         required: true
         displayName: vin_decode_log
         type: VinDecodeLog
-  AssetProperties67:
+  AssetProperties69:
     example:
       value:
         vin_num: WBA7F2C56HG422712
@@ -2279,7 +2301,7 @@ types:
         age: ''
         cost: ''
         msrp: ''
-    displayName: AssetProperties67
+    displayName: AssetProperties69
     type: object
     properties:
       vin_num:
@@ -2421,8 +2443,8 @@ types:
       asset_origination:
         required: true
         displayName: asset_origination
-        type: AssetOrigination78
-  AssetOrigination78:
+        type: AssetOrigination80
+  AssetOrigination80:
     example:
       value:
         origination_type_id: 4
@@ -2436,7 +2458,7 @@ types:
         address_line1: dhdjdhd AAAA
         postal_code: 07087
         country: ''
-    displayName: AssetOrigination78
+    displayName: AssetOrigination80
     type: object
     properties:
       origination_type_id:
@@ -2513,7 +2535,7 @@ types:
       user:
         required: true
         displayName: user
-        type: User33
+        type: User35
   User  authenticate  sanderequest:
     example:
       value:
@@ -2576,7 +2598,7 @@ types:
         type: string
   /1/1:
     post:
-      displayName: Event Action Types - /chec out event-action-type/list/:eventTypeId/:originationTypeId
+      displayName: Event Action Types - /event-action-type/list/:eventTypeId/:originationTypeId
       description: ' /event-action-type/list/:eventTypeId/:originationTypeId'
       queryParameters:
         fwreinit:
@@ -2586,6 +2608,17 @@ types:
           displayName: fwreinit
           type: integer
           format: int32
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+  /7:
+    post:
+      displayName: Event Action Types - /chec out event-action-type/list/:eventTypeId/:originationTypeId
+      description: ' /event-action-type/list/:eventTypeId/:originationTypeId'
       headers:
         Content-Type:
           required: true
@@ -2661,7 +2694,7 @@ types:
           value: application/json
         displayName: Content-Type
         type: string
-/event-action-type/list/1/2:
+/event-action-type/list:
   get:
     displayName: Event Action Types - List
     description: 'TODO: Add Description'
@@ -3502,16 +3535,8 @@ types:
 /user:
   /list:
     get:
-      displayName: Account- List
+      displayName: User CRUD - List
       description: 'TODO: Add Description'
-      queryParameters:
-        fwreinit:
-          required: true
-          example:
-            value: 1
-          displayName: fwreinit
-          type: integer
-          format: int32
       headers:
         Content-Type:
           required: true
@@ -3539,32 +3564,96 @@ types:
           type: string
   /create:
     post:
-      displayName: Users - CRUD Users Create
+      displayName: User - CRUD create
       description: 'TODO: Add Description'
       body:
-        application/json:
-          example:
-            value:
-              user:
-                user_type_id: 1
-                membership_type_id: 2
-                username: PabloPicasso
-                password: P@ssw0rdq
-                first_name: Pablo
-                last_name: Picasso
-                email_address: Picasso@genevamedia.com
-                cell_phone: 8083991129
-                organization_id: 1
-          displayName: Body
-          type: Users  crud users createrequest
-      queryParameters:
-        fwreinit:
-          required: true
-          example:
-            value: 1
-          displayName: fwreinit
-          type: integer
-          format: int32
+        multipart/form-data:
+          type: object
+          properties:
+            active_flag:
+              required: true
+              example:
+                value: 1
+              displayName: active_flag
+              type: string
+            created_date:
+              required: true
+              example:
+                value: April, 10 2018 03:27:32
+              displayName: created_date
+              type: string
+            membership_type_id:
+              required: true
+              example:
+                value: 1
+              displayName: membership_type_id
+              type: string
+            last_name:
+              required: true
+              example:
+                value: Stardusk
+              displayName: last_name
+              type: string
+            first_name:
+              required: true
+              example:
+                value: Zifeesius
+              displayName: first_name
+              type: string
+            organization_id:
+              required: true
+              example:
+                value: 2
+              displayName: organization_id
+              type: string
+            email_notif_flag:
+              required: true
+              example:
+                value: 1
+              displayName: email_notif_flag
+              type: string
+            cell_phone:
+              required: true
+              example:
+                value: +247 874 5697
+              displayName: cell_phone
+              type: string
+            email_address:
+              required: true
+              example:
+                value: Zifeesius.Stardusk@gmail.com
+              displayName: email_address
+              type: string
+            user_type_id:
+              required: true
+              example:
+                value: 1
+              displayName: user_type_id
+              type: string
+            profile_img_url:
+              required: true
+              example:
+                value: https://s3.amazonaws.com/wparkw.dev.assets/users/photo/user_photo_F1710122-5847-4760-AA78-D81AB91295D1.jpg
+              displayName: profile_img_url
+              type: string
+            username:
+              required: true
+              example:
+                value: Xros
+              displayName: username
+              type: string
+            text_notif_flag:
+              required: true
+              example:
+                value: 1
+              displayName: text_notif_flag
+              type: string
+            agreement_flag:
+              required: true
+              example:
+                value: 1
+              displayName: agreement_flag
+              type: string
       headers:
         Content-Type:
           required: true
@@ -3574,7 +3663,7 @@ types:
           type: string
   /put:
     post:
-      displayName: User - CRUD Users Put - Update
+      displayName: User - CRUD Users Put - Update Copy
       description: 'TODO: Add Description'
       body:
         application/json:
@@ -3593,7 +3682,7 @@ types:
                 organization_id: 2
                 new_password: ''
           displayName: Body
-          type: User  crud users put  updaterequest
+          type: User  crud users put  update copyrequest
       queryParameters:
         fwreinit:
           required: true
@@ -3609,17 +3698,6 @@ types:
             value: application/json
           displayName: Content-Type
           type: string
-      responses:
-        200:
-          description: Success
-          body:
-            application/json:
-              example:
-                value:
-                  message: The new username supplied is already in use.
-                  status: False
-              displayName: Users - CRUD Users Put - Update - fail dupe username
-              type: Users  crud users put  update  fail dupe username
   /get:
     get:
       displayName: User - CRUD get Copy
@@ -3825,15 +3903,8 @@ types:
           type: string
   /list:
     get:
-      displayName: Users - List
+      displayName: Account- List
       description: 'TODO: Add Description'
-      queryParameters:
-        token:
-          required: true
-          example:
-            value: 59625d9e49a460904a44e67b9c9bf12eb62aaf18ed45bb3c39e12abfa58e811afe0d178f44096ba4c70459aebcf3c0f7e0b4d38344b08a18f48b7a1ca87cf459
-          displayName: token
-          type: string
       headers:
         Content-Type:
           required: true
