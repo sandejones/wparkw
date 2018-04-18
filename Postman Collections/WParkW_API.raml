@@ -212,7 +212,7 @@ types:
         required: true
         displayName: PASSWORDHASH
         type: string
-  Organization  createrequest:
+  Organization  create  greg's datarequest:
     example:
       value:
         organization:
@@ -223,7 +223,7 @@ types:
           state_province: NY
           postal_code: 11205
           country: U
-    displayName: organization - createRequest
+    displayName: organization - create - Greg's DataRequest
     type: object
     properties:
       organization:
@@ -271,6 +271,24 @@ types:
         required: true
         displayName: country
         type: string
+  Organization  createrequest:
+    example:
+      value:
+        organization:
+          organization_name: Gravilson and Sons
+          address_line1: 5441 Thompson Road
+          address_line2: suite 1304
+          city: Brooklyn
+          state_province: NY
+          postal_code: 11205
+          country: U
+    displayName: organization - createRequest
+    type: object
+    properties:
+      organization:
+        required: true
+        displayName: organization
+        type: Organization
   Organization  putrequest:
     example:
       value:
@@ -407,13 +425,13 @@ types:
         displayName: origination_type_id
         type: integer
         format: int32
-  EventActionTypeCheckIn createrequest14:
+  EventActionTypeCheckIn createrequest16:
     example:
       value:
         origination_type_id: 7
         event_type_id: 1
         action_type: test
-    displayName: event-action-type-check-in CREATERequest14
+    displayName: event-action-type-check-in CREATERequest16
     type: object
     properties:
       origination_type_id:
@@ -537,8 +555,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User19
-  User19:
+        type: User21
+  User21:
     example:
       value:
         user_account_id: 36
@@ -552,7 +570,7 @@ types:
         cell_phone: 555141448
         organization_id: 2
         new_password: ''
-    displayName: User19
+    displayName: User21
     type: object
     properties:
       user_account_id:
@@ -640,7 +658,7 @@ types:
       user:
         required: true
         displayName: user
-        type: User19
+        type: User21
   User  createrequest:
     example:
       value:
@@ -668,8 +686,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User24
-  User24:
+        type: User26
+  User26:
     example:
       value:
         user_type_id: 2
@@ -689,7 +707,7 @@ types:
           postal_code: 22204
           country: United States of America
           country_fips: US
-    displayName: User24
+    displayName: User26
     type: object
     properties:
       user_type_id:
@@ -729,8 +747,8 @@ types:
       organization:
         required: true
         displayName: organization
-        type: Organization25
-  Organization25:
+        type: Organization27
+  Organization27:
     example:
       value:
         organization_name: zzz Arlington
@@ -741,7 +759,7 @@ types:
         postal_code: 22204
         country: United States of America
         country_fips: US
-    displayName: Organization25
+    displayName: Organization27
     type: object
     properties:
       organization_name:
@@ -974,8 +992,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User35
-  User35:
+        type: User37
+  User37:
     example:
       value:
         user_type_id: 2
@@ -997,7 +1015,7 @@ types:
           postal_code: 43232
           country: United States of America
           country_fips: US
-    displayName: User35
+    displayName: User37
     type: object
     properties:
       user_type_id:
@@ -1046,7 +1064,7 @@ types:
       organization:
         required: true
         displayName: organization
-        type: Organization25
+        type: Organization27
   User  create  test from gregrequest:
     example:
       value:
@@ -1075,8 +1093,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User38
-  User38:
+        type: User40
+  User40:
     example:
       value:
         user_type_id: 1
@@ -1097,7 +1115,7 @@ types:
           postal_code: 07054
           country: United States of America
           country_fips: US
-    displayName: User38
+    displayName: User40
     type: object
     properties:
       user_type_id:
@@ -1142,7 +1160,7 @@ types:
       organization:
         required: true
         displayName: organization
-        type: Organization25
+        type: Organization27
   Account  create (fail because of duplicagte username):
     example:
       value:
@@ -1199,7 +1217,7 @@ types:
       user:
         required: true
         displayName: user
-        type: User38
+        type: User40
   Local:user  authenticaterequest:
     example:
       value:
@@ -1838,8 +1856,8 @@ types:
       searchParams:
         required: true
         displayName: searchParams
-        type: SearchParams61
-  SearchParams61:
+        type: SearchParams63
+  SearchParams63:
     example:
       value:
         dateTo: ''
@@ -1848,7 +1866,7 @@ types:
         dateFrom: ''
         vin: ''
         stockNum: ''
-    displayName: SearchParams61
+    displayName: SearchParams63
     type: object
     properties:
       dateTo:
@@ -1887,13 +1905,13 @@ types:
       searchParams:
         required: true
         displayName: searchParams
-        type: SearchParams63
-  SearchParams63:
+        type: SearchParams65
+  SearchParams65:
     example:
       value:
         originationTypeId: 1
         organizationName: ''
-    displayName: SearchParams63
+    displayName: SearchParams65
     type: object
     properties:
       originationTypeId:
@@ -1972,8 +1990,8 @@ types:
       asset_properties:
         required: true
         displayName: asset_properties
-        type: AssetProperties66
-  AssetProperties66:
+        type: AssetProperties68
+  AssetProperties68:
     example:
       value:
         msrp: ''
@@ -1993,7 +2011,7 @@ types:
         make: Toyota
         engine: Engine
         vehicle_type: Sedan
-    displayName: AssetProperties66
+    displayName: AssetProperties68
     type: object
     properties:
       msrp:
@@ -2145,8 +2163,8 @@ types:
       asset_event:
         required: true
         displayName: asset_event
-        type: AssetEvent68
-  AssetEvent68:
+        type: AssetEvent70
+  AssetEvent70:
     example:
       value:
         asset_id: 480
@@ -2219,7 +2237,7 @@ types:
           vin_photo_img_url: https://s3.amazonaws.com/wparkw.assets/vin.png
           vin_decode_location_lat: 18.851031
           vin_decode_location_long: -57.366377
-    displayName: AssetEvent68
+    displayName: AssetEvent70
     type: object
     properties:
       asset_id:
@@ -2241,7 +2259,7 @@ types:
       asset_properties:
         required: true
         displayName: asset_properties
-        type: AssetProperties69
+        type: AssetProperties71
       asset_images:
         required: true
         displayName: asset_images
@@ -2282,7 +2300,7 @@ types:
         required: true
         displayName: vin_decode_log
         type: VinDecodeLog
-  AssetProperties69:
+  AssetProperties71:
     example:
       value:
         vin_num: WBA7F2C56HG422712
@@ -2301,7 +2319,7 @@ types:
         age: ''
         cost: ''
         msrp: ''
-    displayName: AssetProperties69
+    displayName: AssetProperties71
     type: object
     properties:
       vin_num:
@@ -2443,8 +2461,8 @@ types:
       asset_origination:
         required: true
         displayName: asset_origination
-        type: AssetOrigination80
-  AssetOrigination80:
+        type: AssetOrigination82
+  AssetOrigination82:
     example:
       value:
         origination_type_id: 4
@@ -2458,7 +2476,7 @@ types:
         address_line1: dhdjdhd AAAA
         postal_code: 07087
         country: ''
-    displayName: AssetOrigination80
+    displayName: AssetOrigination82
     type: object
     properties:
       origination_type_id:
@@ -2535,7 +2553,7 @@ types:
       user:
         required: true
         displayName: user
-        type: User35
+        type: User37
   User  authenticate  sanderequest:
     example:
       value:
@@ -3460,6 +3478,27 @@ types:
               type: array
               items:
                 type: Organization  list (full list)
+  /delete:
+    post:
+      displayName: organization - delete - Greg's Data
+      description: 'TODO: Add Description'
+      body:
+        multipart/form-data:
+          type: object
+          properties:
+            organization_id:
+              required: true
+              example:
+                value: 54
+              displayName: organization_id
+              type: string
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
 /event-action-type-check-in:
   /list/:
     get:
@@ -3488,7 +3527,7 @@ types:
               event_type_id: 1
               action_type: test
           displayName: Body
-          type: EventActionTypeCheckIn createrequest14
+          type: EventActionTypeCheckIn createrequest16
       queryParameters:
         fwreinit:
           required: true
