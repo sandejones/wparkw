@@ -659,6 +659,18 @@ types:
         required: true
         displayName: user
         type: User21
+  Organization  delete  greg's datarequest:
+    example:
+      value:
+        organization_id: 54
+    displayName: organization - delete - Greg's DataRequest
+    type: object
+    properties:
+      organization_id:
+        required: true
+        displayName: organization_id
+        type: integer
+        format: int32
   User  createrequest:
     example:
       value:
@@ -686,8 +698,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User26
-  User26:
+        type: User27
+  User27:
     example:
       value:
         user_type_id: 2
@@ -707,7 +719,7 @@ types:
           postal_code: 22204
           country: United States of America
           country_fips: US
-    displayName: User26
+    displayName: User27
     type: object
     properties:
       user_type_id:
@@ -747,8 +759,8 @@ types:
       organization:
         required: true
         displayName: organization
-        type: Organization27
-  Organization27:
+        type: Organization28
+  Organization28:
     example:
       value:
         organization_name: zzz Arlington
@@ -759,7 +771,7 @@ types:
         postal_code: 22204
         country: United States of America
         country_fips: US
-    displayName: Organization27
+    displayName: Organization28
     type: object
     properties:
       organization_name:
@@ -992,8 +1004,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User37
-  User37:
+        type: User38
+  User38:
     example:
       value:
         user_type_id: 2
@@ -1015,7 +1027,7 @@ types:
           postal_code: 43232
           country: United States of America
           country_fips: US
-    displayName: User37
+    displayName: User38
     type: object
     properties:
       user_type_id:
@@ -1064,7 +1076,7 @@ types:
       organization:
         required: true
         displayName: organization
-        type: Organization27
+        type: Organization28
   User  create  test from gregrequest:
     example:
       value:
@@ -1093,8 +1105,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User40
-  User40:
+        type: User41
+  User41:
     example:
       value:
         user_type_id: 1
@@ -1115,7 +1127,7 @@ types:
           postal_code: 07054
           country: United States of America
           country_fips: US
-    displayName: User40
+    displayName: User41
     type: object
     properties:
       user_type_id:
@@ -1160,7 +1172,7 @@ types:
       organization:
         required: true
         displayName: organization
-        type: Organization27
+        type: Organization28
   Account  create (fail because of duplicagte username):
     example:
       value:
@@ -1217,7 +1229,7 @@ types:
       user:
         required: true
         displayName: user
-        type: User40
+        type: User41
   Local:user  authenticaterequest:
     example:
       value:
@@ -1856,8 +1868,8 @@ types:
       searchParams:
         required: true
         displayName: searchParams
-        type: SearchParams63
-  SearchParams63:
+        type: SearchParams64
+  SearchParams64:
     example:
       value:
         dateTo: ''
@@ -1866,7 +1878,7 @@ types:
         dateFrom: ''
         vin: ''
         stockNum: ''
-    displayName: SearchParams63
+    displayName: SearchParams64
     type: object
     properties:
       dateTo:
@@ -1905,13 +1917,13 @@ types:
       searchParams:
         required: true
         displayName: searchParams
-        type: SearchParams65
-  SearchParams65:
+        type: SearchParams66
+  SearchParams66:
     example:
       value:
         originationTypeId: 1
         organizationName: ''
-    displayName: SearchParams65
+    displayName: SearchParams66
     type: object
     properties:
       originationTypeId:
@@ -1990,8 +2002,8 @@ types:
       asset_properties:
         required: true
         displayName: asset_properties
-        type: AssetProperties68
-  AssetProperties68:
+        type: AssetProperties69
+  AssetProperties69:
     example:
       value:
         msrp: ''
@@ -2011,7 +2023,7 @@ types:
         make: Toyota
         engine: Engine
         vehicle_type: Sedan
-    displayName: AssetProperties68
+    displayName: AssetProperties69
     type: object
     properties:
       msrp:
@@ -2163,8 +2175,8 @@ types:
       asset_event:
         required: true
         displayName: asset_event
-        type: AssetEvent70
-  AssetEvent70:
+        type: AssetEvent71
+  AssetEvent71:
     example:
       value:
         asset_id: 480
@@ -2237,7 +2249,7 @@ types:
           vin_photo_img_url: https://s3.amazonaws.com/wparkw.assets/vin.png
           vin_decode_location_lat: 18.851031
           vin_decode_location_long: -57.366377
-    displayName: AssetEvent70
+    displayName: AssetEvent71
     type: object
     properties:
       asset_id:
@@ -2259,7 +2271,7 @@ types:
       asset_properties:
         required: true
         displayName: asset_properties
-        type: AssetProperties71
+        type: AssetProperties72
       asset_images:
         required: true
         displayName: asset_images
@@ -2300,7 +2312,7 @@ types:
         required: true
         displayName: vin_decode_log
         type: VinDecodeLog
-  AssetProperties71:
+  AssetProperties72:
     example:
       value:
         vin_num: WBA7F2C56HG422712
@@ -2319,7 +2331,7 @@ types:
         age: ''
         cost: ''
         msrp: ''
-    displayName: AssetProperties71
+    displayName: AssetProperties72
     type: object
     properties:
       vin_num:
@@ -2461,8 +2473,8 @@ types:
       asset_origination:
         required: true
         displayName: asset_origination
-        type: AssetOrigination82
-  AssetOrigination82:
+        type: AssetOrigination83
+  AssetOrigination83:
     example:
       value:
         origination_type_id: 4
@@ -2476,7 +2488,7 @@ types:
         address_line1: dhdjdhd AAAA
         postal_code: 07087
         country: ''
-    displayName: AssetOrigination82
+    displayName: AssetOrigination83
     type: object
     properties:
       origination_type_id:
@@ -2553,7 +2565,7 @@ types:
       user:
         required: true
         displayName: user
-        type: User37
+        type: User38
   User  authenticate  sanderequest:
     example:
       value:
@@ -3483,15 +3495,20 @@ types:
       displayName: organization - delete - Greg's Data
       description: 'TODO: Add Description'
       body:
-        multipart/form-data:
-          type: object
-          properties:
-            organization_id:
-              required: true
-              example:
-                value: 54
-              displayName: organization_id
-              type: string
+        application/json:
+          example:
+            value:
+              organization_id: 54
+          displayName: Body
+          type: Organization  delete  greg's datarequest
+      queryParameters:
+        fwreinit:
+          required: true
+          example:
+            value: 1
+          displayName: fwreinit
+          type: integer
+          format: int32
       headers:
         Content-Type:
           required: true
