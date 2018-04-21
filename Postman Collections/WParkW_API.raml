@@ -538,6 +538,161 @@ types:
     example:
       value:
         user:
+          user_account_id: 35
+          created_by: me
+          active_flag: 1
+          membership_type_id: 1
+          last_name: Dimedenko
+          temp_account_flag: 0
+          first_name: Bohdan
+          organization_id: ''
+          email_notif_flag: 0
+          status: True
+          cell_phone: +380679876645
+          password_changed_required: 0
+          email_address: bohdan.dimedenko@gmail.com
+          updated_by: Dohdan Bimedenko
+          profile_img_url: https://s3.amazonaws.com/wparkw.dev.assets/users/photo/non_user_photo_F1710122-5847-4760-AC78-D81AB91295D1.jpg
+          agreement_date: ''
+          username: Xros
+          text_notif_flag: 0
+          agreement_flag: 1
+    displayName: User - CRUD Users Put - UpdateRequest
+    type: object
+    properties:
+      user:
+        required: true
+        displayName: user
+        type: User21
+  User21:
+    example:
+      value:
+        user_account_id: 35
+        created_by: me
+        active_flag: 1
+        membership_type_id: 1
+        last_name: Dimedenko
+        temp_account_flag: 0
+        first_name: Bohdan
+        organization_id: ''
+        email_notif_flag: 0
+        status: True
+        cell_phone: +380679876645
+        password_changed_required: 0
+        email_address: bohdan.dimedenko@gmail.com
+        updated_by: Dohdan Bimedenko
+        profile_img_url: https://s3.amazonaws.com/wparkw.dev.assets/users/photo/non_user_photo_F1710122-5847-4760-AC78-D81AB91295D1.jpg
+        agreement_date: ''
+        username: Xros
+        text_notif_flag: 0
+        agreement_flag: 1
+    displayName: User21
+    type: object
+    properties:
+      user_account_id:
+        required: true
+        displayName: user_account_id
+        type: integer
+        format: int32
+      created_by:
+        required: true
+        displayName: created_by
+        type: string
+      active_flag:
+        required: true
+        displayName: active_flag
+        type: integer
+        format: int32
+      membership_type_id:
+        required: true
+        displayName: membership_type_id
+        type: integer
+        format: int32
+      last_name:
+        required: true
+        displayName: last_name
+        type: string
+      temp_account_flag:
+        required: true
+        displayName: temp_account_flag
+        type: integer
+        format: int32
+      first_name:
+        required: true
+        displayName: first_name
+        type: string
+      organization_id:
+        required: true
+        displayName: organization_id
+        type: string
+      email_notif_flag:
+        required: true
+        displayName: email_notif_flag
+        type: integer
+        format: int32
+      status:
+        required: true
+        displayName: status
+        type: boolean
+      cell_phone:
+        required: true
+        displayName: cell_phone
+        type: string
+      password_changed_required:
+        required: true
+        displayName: password_changed_required
+        type: integer
+        format: int32
+      email_address:
+        required: true
+        displayName: email_address
+        type: string
+      updated_by:
+        required: true
+        displayName: updated_by
+        type: string
+      profile_img_url:
+        required: true
+        displayName: profile_img_url
+        type: string
+      agreement_date:
+        required: true
+        displayName: agreement_date
+        type: string
+      username:
+        required: true
+        displayName: username
+        type: string
+      text_notif_flag:
+        required: true
+        displayName: text_notif_flag
+        type: integer
+        format: int32
+      agreement_flag:
+        required: true
+        displayName: agreement_flag
+        type: integer
+        format: int32
+  Users  crud users put  update  fail dupe username:
+    example:
+      value:
+        message: The new username supplied is already in use.
+        status: False
+    displayName: Users - CRUD Users Put - Update - fail dupe username
+    type: object
+    properties:
+      message:
+        required: true
+        displayName: message
+        type: string
+      status:
+        required: true
+        displayName: status
+        type: boolean
+  User  crud users put  update copyrequest:
+    example:
+      value:
+        user:
           user_account_id: 36
           user_type_id: 1
           membership_type_id: 2
@@ -549,14 +704,14 @@ types:
           cell_phone: 555141448
           organization_id: 2
           new_password: ''
-    displayName: User - CRUD Users Put - UpdateRequest
+    displayName: User - CRUD Users Put - Update CopyRequest
     type: object
     properties:
       user:
         required: true
         displayName: user
-        type: User21
-  User21:
+        type: User24
+  User24:
     example:
       value:
         user_account_id: 36
@@ -570,7 +725,7 @@ types:
         cell_phone: 555141448
         organization_id: 2
         new_password: ''
-    displayName: User21
+    displayName: User24
     type: object
     properties:
       user_account_id:
@@ -621,44 +776,6 @@ types:
         required: true
         displayName: new_password
         type: string
-  Users  crud users put  update  fail dupe username:
-    example:
-      value:
-        message: The new username supplied is already in use.
-        status: False
-    displayName: Users - CRUD Users Put - Update - fail dupe username
-    type: object
-    properties:
-      message:
-        required: true
-        displayName: message
-        type: string
-      status:
-        required: true
-        displayName: status
-        type: boolean
-  User  crud users put  update copyrequest:
-    example:
-      value:
-        user:
-          user_account_id: 36
-          user_type_id: 1
-          membership_type_id: 2
-          username: PabloPicasso
-          password: P@ssw0rdq
-          first_name: Pablo
-          last_name: Picasso
-          email_address: Picasso@genevamedia.com
-          cell_phone: 555141448
-          organization_id: 2
-          new_password: ''
-    displayName: User - CRUD Users Put - Update CopyRequest
-    type: object
-    properties:
-      user:
-        required: true
-        displayName: user
-        type: User21
   Organization  delete  greg's datarequest:
     example:
       value:
@@ -2620,9 +2737,20 @@ types:
           value: application/json
         displayName: Content-Type
         type: string
+/check-out-event-action-type/get/1/1:
+  get:
+    displayName: check-out-event-action-type - list
+    description: ' /check-out-event-action-type/list/:eventTypeId/:originationTypeId'
+    headers:
+      Content-Type:
+        required: true
+        example:
+          value: application/json
+        displayName: Content-Type
+        type: string
 /check-in-event-action-type/list:
   post:
-    displayName: Event Action Types - List
+    displayName: event-action-type-check-in - List
     description: 'TODO: Add Description'
     queryParameters:
       fwreinit:
@@ -2641,7 +2769,7 @@ types:
         type: string
   /1/1:
     post:
-      displayName: Event Action Types - /event-action-type/list/:eventTypeId/:originationTypeId
+      displayName: event-action-type-check-in - get
       description: ' /event-action-type/list/:eventTypeId/:originationTypeId'
       queryParameters:
         fwreinit:
