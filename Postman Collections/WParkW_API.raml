@@ -801,6 +801,23 @@ types:
         required: true
         displayName: login
         type: Login
+  EventActionTypeCheckIn  createrequest28:
+    example:
+      value:
+        event_action_type: Sold to City
+        origination_type_id: 2
+    displayName: event-action-type-check-in - createRequest28
+    type: object
+    properties:
+      event_action_type:
+        required: true
+        displayName: event_action_type
+        type: string
+      origination_type_id:
+        required: true
+        displayName: origination_type_id
+        type: integer
+        format: int32
   User  createrequest:
     example:
       value:
@@ -828,8 +845,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User29
-  User29:
+        type: User30
+  User30:
     example:
       value:
         user_type_id: 2
@@ -849,7 +866,7 @@ types:
           postal_code: 22204
           country: United States of America
           country_fips: US
-    displayName: User29
+    displayName: User30
     type: object
     properties:
       user_type_id:
@@ -889,8 +906,8 @@ types:
       organization:
         required: true
         displayName: organization
-        type: Organization30
-  Organization30:
+        type: Organization31
+  Organization31:
     example:
       value:
         organization_name: zzz Arlington
@@ -901,7 +918,7 @@ types:
         postal_code: 22204
         country: United States of America
         country_fips: US
-    displayName: Organization30
+    displayName: Organization31
     type: object
     properties:
       organization_name:
@@ -1134,8 +1151,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User40
-  User40:
+        type: User41
+  User41:
     example:
       value:
         user_type_id: 2
@@ -1157,7 +1174,7 @@ types:
           postal_code: 43232
           country: United States of America
           country_fips: US
-    displayName: User40
+    displayName: User41
     type: object
     properties:
       user_type_id:
@@ -1206,7 +1223,7 @@ types:
       organization:
         required: true
         displayName: organization
-        type: Organization30
+        type: Organization31
   User  create  test from gregrequest:
     example:
       value:
@@ -1235,8 +1252,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User43
-  User43:
+        type: User44
+  User44:
     example:
       value:
         user_type_id: 1
@@ -1257,7 +1274,7 @@ types:
           postal_code: 07054
           country: United States of America
           country_fips: US
-    displayName: User43
+    displayName: User44
     type: object
     properties:
       user_type_id:
@@ -1302,7 +1319,7 @@ types:
       organization:
         required: true
         displayName: organization
-        type: Organization30
+        type: Organization31
   Account  create (fail because of duplicagte username):
     example:
       value:
@@ -1359,7 +1376,7 @@ types:
       user:
         required: true
         displayName: user
-        type: User43
+        type: User44
   Local:user  authenticaterequest:
     example:
       value:
@@ -1998,8 +2015,8 @@ types:
       searchParams:
         required: true
         displayName: searchParams
-        type: SearchParams66
-  SearchParams66:
+        type: SearchParams67
+  SearchParams67:
     example:
       value:
         dateTo: ''
@@ -2008,7 +2025,7 @@ types:
         dateFrom: ''
         vin: ''
         stockNum: ''
-    displayName: SearchParams66
+    displayName: SearchParams67
     type: object
     properties:
       dateTo:
@@ -2047,13 +2064,13 @@ types:
       searchParams:
         required: true
         displayName: searchParams
-        type: SearchParams68
-  SearchParams68:
+        type: SearchParams69
+  SearchParams69:
     example:
       value:
         originationTypeId: 1
         organizationName: ''
-    displayName: SearchParams68
+    displayName: SearchParams69
     type: object
     properties:
       originationTypeId:
@@ -2132,8 +2149,8 @@ types:
       asset_properties:
         required: true
         displayName: asset_properties
-        type: AssetProperties71
-  AssetProperties71:
+        type: AssetProperties72
+  AssetProperties72:
     example:
       value:
         msrp: ''
@@ -2153,7 +2170,7 @@ types:
         make: Toyota
         engine: Engine
         vehicle_type: Sedan
-    displayName: AssetProperties71
+    displayName: AssetProperties72
     type: object
     properties:
       msrp:
@@ -2305,8 +2322,8 @@ types:
       asset_event:
         required: true
         displayName: asset_event
-        type: AssetEvent73
-  AssetEvent73:
+        type: AssetEvent74
+  AssetEvent74:
     example:
       value:
         asset_id: 480
@@ -2379,7 +2396,7 @@ types:
           vin_photo_img_url: https://s3.amazonaws.com/wparkw.assets/vin.png
           vin_decode_location_lat: 18.851031
           vin_decode_location_long: -57.366377
-    displayName: AssetEvent73
+    displayName: AssetEvent74
     type: object
     properties:
       asset_id:
@@ -2401,7 +2418,7 @@ types:
       asset_properties:
         required: true
         displayName: asset_properties
-        type: AssetProperties74
+        type: AssetProperties75
       asset_images:
         required: true
         displayName: asset_images
@@ -2442,7 +2459,7 @@ types:
         required: true
         displayName: vin_decode_log
         type: VinDecodeLog
-  AssetProperties74:
+  AssetProperties75:
     example:
       value:
         vin_num: WBA7F2C56HG422712
@@ -2461,7 +2478,7 @@ types:
         age: ''
         cost: ''
         msrp: ''
-    displayName: AssetProperties74
+    displayName: AssetProperties75
     type: object
     properties:
       vin_num:
@@ -2603,8 +2620,8 @@ types:
       asset_origination:
         required: true
         displayName: asset_origination
-        type: AssetOrigination85
-  AssetOrigination85:
+        type: AssetOrigination86
+  AssetOrigination86:
     example:
       value:
         origination_type_id: 4
@@ -2618,7 +2635,7 @@ types:
         address_line1: dhdjdhd AAAA
         postal_code: 07087
         country: ''
-    displayName: AssetOrigination85
+    displayName: AssetOrigination86
     type: object
     properties:
       origination_type_id:
@@ -2695,7 +2712,7 @@ types:
       user:
         required: true
         displayName: user
-        type: User40
+        type: User41
   User  authenticate  sanderequest:
     example:
       value:
@@ -2737,66 +2754,6 @@ types:
           value: application/json
         displayName: Content-Type
         type: string
-/check-out-event-action-type/get/1/1:
-  get:
-    displayName: check-out-event-action-type - list
-    description: ' /check-out-event-action-type/list/:eventTypeId/:originationTypeId'
-    headers:
-      Content-Type:
-        required: true
-        example:
-          value: application/json
-        displayName: Content-Type
-        type: string
-/check-in-event-action-type/list:
-  post:
-    displayName: event-action-type-check-in - List
-    description: 'TODO: Add Description'
-    queryParameters:
-      fwreinit:
-        required: true
-        example:
-          value: 1
-        displayName: fwreinit
-        type: integer
-        format: int32
-    headers:
-      Content-Type:
-        required: true
-        example:
-          value: application/json
-        displayName: Content-Type
-        type: string
-  /1/1:
-    post:
-      displayName: event-action-type-check-in - get
-      description: ' /event-action-type/list/:eventTypeId/:originationTypeId'
-      queryParameters:
-        fwreinit:
-          required: true
-          example:
-            value: 1
-          displayName: fwreinit
-          type: integer
-          format: int32
-      headers:
-        Content-Type:
-          required: true
-          example:
-            value: application/json
-          displayName: Content-Type
-          type: string
-  /7:
-    post:
-      displayName: Event Action Types - /chec out event-action-type/list/:eventTypeId/:originationTypeId
-      description: ' /event-action-type/list/:eventTypeId/:originationTypeId'
-      headers:
-        Content-Type:
-          required: true
-          example:
-            value: application/json
-          displayName: Content-Type
-          type: string
 /asset-activity/search:
   post:
     displayName: Asset Activity - Search
@@ -2961,10 +2918,18 @@ types:
             value: application/x-www-form-urlencoded
           displayName: Content-Type
           type: string
-  /serialnumber/:
+  /stocknumber/17:
     get:
       displayName: organization/serialnumber/get
       description: 'TODO: Add Description'
+      queryParameters:
+        fwreinit:
+          required: true
+          example:
+            value: 1
+          displayName: fwreinit
+          type: integer
+          format: int32
       headers:
         Content-Type:
           required: true
@@ -3649,6 +3614,48 @@ types:
             value: application/json
           displayName: Content-Type
           type: string
+/check-out-event-action-type:
+  /list:
+    get:
+      displayName: check-out-event-action-type - list
+      description: ' /check-out-event-action-type/list/:eventTypeId/:originationTypeId'
+      queryParameters:
+        fwreinit:
+          required: true
+          example:
+            value: 1
+          displayName: fwreinit
+          type: integer
+          format: int32
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+    /:
+      post:
+        displayName: event-action-type-check-in - create
+        description: ' /event-action-type/list/:eventTypeId/:originationTypeId'
+        headers:
+          Content-Type:
+            required: true
+            example:
+              value: application/json
+            displayName: Content-Type
+            type: string
+  /create:
+    post:
+      displayName: event-action-type-check-out - create
+      description: event-action-type-check-out/create
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
 /event-action-type-check-in:
   /list/:
     get:
@@ -3763,101 +3770,6 @@ types:
     post:
       displayName: User - CRUD create
       description: 'TODO: Add Description'
-      body:
-        multipart/form-data:
-          type: object
-          properties:
-            active_flag:
-              required: true
-              example:
-                value: 1
-              displayName: active_flag
-              type: string
-            created_date:
-              required: true
-              example:
-                value: April, 10 2018 03:27:32
-              displayName: created_date
-              type: string
-            membership_type_id:
-              required: true
-              example:
-                value: 1
-              displayName: membership_type_id
-              type: string
-            last_name:
-              required: true
-              example:
-                value: Stardusk
-              displayName: last_name
-              type: string
-            first_name:
-              required: true
-              example:
-                value: Zifeesius
-              displayName: first_name
-              type: string
-            organization_id:
-              required: true
-              example:
-                value: 2
-              displayName: organization_id
-              type: string
-            email_notif_flag:
-              required: true
-              example:
-                value: 1
-              displayName: email_notif_flag
-              type: string
-            cell_phone:
-              required: true
-              example:
-                value: +247 874 5697
-              displayName: cell_phone
-              type: string
-            email_address:
-              required: true
-              example:
-                value: Zifeesius.Stardusk@gmail.com
-              displayName: email_address
-              type: string
-            user_type_id:
-              required: true
-              example:
-                value: 1
-              displayName: user_type_id
-              type: string
-            profile_img_url:
-              required: true
-              example:
-                value: https://s3.amazonaws.com/wparkw.dev.assets/users/photo/user_photo_F1710122-5847-4760-AA78-D81AB91295D1.jpg
-              displayName: profile_img_url
-              type: string
-            username:
-              required: true
-              example:
-                value: Xros
-              displayName: username
-              type: string
-            text_notif_flag:
-              required: true
-              example:
-                value: 1
-              displayName: text_notif_flag
-              type: string
-            agreement_flag:
-              required: true
-              example:
-                value: 1
-              displayName: agreement_flag
-              type: string
-      headers:
-        Content-Type:
-          required: true
-          example:
-            value: application/json
-          displayName: Content-Type
-          type: string
   /put:
     post:
       displayName: User - CRUD Users Put - Update Copy
@@ -4109,10 +4021,53 @@ types:
             value: application/json
           displayName: Content-Type
           type: string
-    /5:
+    /35:
       get:
         displayName: Users - List Copy
         description: 'TODO: Add Description'
+        headers:
+          Content-Type:
+            required: true
+            example:
+              value: application/json
+            displayName: Content-Type
+            type: string
+/check-in-event-action-type:
+  /create:
+    post:
+      displayName: event-action-type-check-in - create
+      description: ' /event-action-type/list/:eventTypeId/:originationTypeId'
+      body:
+        application/json:
+          example:
+            value:
+              event_action_type: Sold to City
+              origination_type_id: 2
+          displayName: Body
+          type: EventActionTypeCheckIn  createrequest28
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+  /list:
+    /:
+      get:
+        displayName: event-action-type-check-in - List
+        description: 'TODO: Add Description'
+        headers:
+          Content-Type:
+            required: true
+            example:
+              value: application/json
+            displayName: Content-Type
+            type: string
+    /7:
+      post:
+        displayName: Event Action Types - /chec out event-action-type/list/:eventTypeId/:originationTypeId
+        description: ' /event-action-type/list/:eventTypeId/:originationTypeId'
         headers:
           Content-Type:
             required: true
