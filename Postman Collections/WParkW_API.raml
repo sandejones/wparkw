@@ -282,13 +282,72 @@ types:
           state_province: NY
           postal_code: 11205
           country: U
+          phone: 574-214-2147
+          email: frankg@gravilsonandson.com
+          product: Ford Dealer
     displayName: organization - createRequest
     type: object
     properties:
       organization:
         required: true
         displayName: organization
-        type: Organization
+        type: Organization10
+  Organization10:
+    example:
+      value:
+        organization_name: Gravilson and Sons
+        address_line1: 5441 Thompson Road
+        address_line2: suite 1304
+        city: Brooklyn
+        state_province: NY
+        postal_code: 11205
+        country: U
+        phone: 574-214-2147
+        email: frankg@gravilsonandson.com
+        product: Ford Dealer
+    displayName: Organization10
+    type: object
+    properties:
+      organization_name:
+        required: true
+        displayName: organization_name
+        type: string
+      address_line1:
+        required: true
+        displayName: address_line1
+        type: string
+      address_line2:
+        required: true
+        displayName: address_line2
+        type: string
+      city:
+        required: true
+        displayName: city
+        type: string
+      state_province:
+        required: true
+        displayName: state_province
+        type: string
+      postal_code:
+        required: true
+        displayName: postal_code
+        type: string
+      country:
+        required: true
+        displayName: country
+        type: string
+      phone:
+        required: true
+        displayName: phone
+        type: string
+      email:
+        required: true
+        displayName: email
+        type: string
+      product:
+        required: true
+        displayName: product
+        type: string
   Organization  putrequest:
     example:
       value:
@@ -2726,6 +2785,18 @@ types:
         required: true
         displayName: login
         type: Login
+  Organization  deleterequest:
+    example:
+      value:
+        organizationid: 22
+    displayName: organization - deleteRequest
+    type: object
+    properties:
+      organizationid:
+        required: true
+        displayName: organizationid
+        type: integer
+        format: int32
 /authenticate:
   post:
     displayName: User - Authenticate
@@ -2876,6 +2947,9 @@ types:
                 state_province: NY
                 postal_code: 11205
                 country: U
+                phone: 574-214-2147
+                email: frankg@gravilsonandson.com
+                product: Ford Dealer
           displayName: Body
           type: Organization  createrequest
       queryParameters:
@@ -3614,6 +3688,24 @@ types:
             value: application/json
           displayName: Content-Type
           type: string
+    /:
+      post:
+        displayName: organization - delete
+        description: 'TODO: Add Description'
+        body:
+          application/json:
+            example:
+              value:
+                organizationid: 22
+            displayName: Body
+            type: Organization  deleterequest
+        headers:
+          Content-Type:
+            required: true
+            example:
+              value: application/json
+            displayName: Content-Type
+            type: string
 /check-out-event-action-type:
   /list:
     get:
