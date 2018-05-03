@@ -352,20 +352,92 @@ types:
     example:
       value:
         organization:
-          organization_name: test1
-          address_line1: 123 Cherry Lane
-          address_line2: suite 212
-          city: Tampa
+          address_line1: 5441 Thompson Road, suite 1304
+          address_line2: Suite -91981e-1
+          city: Baah Bha Lue
+          country: US
+          postal_code: 74241
+          country_fips: US
+          product: Ford Truck Dealer
+          phone: 574-214-2147
+          organization_name: Gravilson and Sons
           state_province: FL
-          postal_code: 33617
-          country: U
+          email: frankg@gravilsonandson.com
+          organization_id: 119
     displayName: organization - putRequest
     type: object
     properties:
       organization:
         required: true
         displayName: organization
-        type: Organization
+        type: Organization12
+  Organization12:
+    example:
+      value:
+        address_line1: 5441 Thompson Road, suite 1304
+        address_line2: Suite -91981e-1
+        city: Baah Bha Lue
+        country: US
+        postal_code: 74241
+        country_fips: US
+        product: Ford Truck Dealer
+        phone: 574-214-2147
+        organization_name: Gravilson and Sons
+        state_province: FL
+        email: frankg@gravilsonandson.com
+        organization_id: 119
+    displayName: Organization12
+    type: object
+    properties:
+      address_line1:
+        required: true
+        displayName: address_line1
+        type: string
+      address_line2:
+        required: true
+        displayName: address_line2
+        type: string
+      city:
+        required: true
+        displayName: city
+        type: string
+      country:
+        required: true
+        displayName: country
+        type: string
+      postal_code:
+        required: true
+        displayName: postal_code
+        type: string
+      country_fips:
+        required: true
+        displayName: country_fips
+        type: string
+      product:
+        required: true
+        displayName: product
+        type: string
+      phone:
+        required: true
+        displayName: phone
+        type: string
+      organization_name:
+        required: true
+        displayName: organization_name
+        type: string
+      state_province:
+        required: true
+        displayName: state_province
+        type: string
+      email:
+        required: true
+        displayName: email
+        type: string
+      organization_id:
+        required: true
+        displayName: organization_id
+        type: integer
+        format: int32
   Organization  list (full list):
     example:
       value:
@@ -438,6 +510,18 @@ types:
         required: true
         displayName: UPDATED_DATE
         type: string
+  Organization  deleterequest:
+    example:
+      value:
+        organization_id: 22
+    displayName: organization - deleteRequest
+    type: object
+    properties:
+      organization_id:
+        required: true
+        displayName: organization_id
+        type: integer
+        format: int32
   EventActionTypeCheckIn/createrequest:
     example:
       value:
@@ -484,13 +568,13 @@ types:
         displayName: origination_type_id
         type: integer
         format: int32
-  EventActionTypeCheckIn createrequest16:
+  EventActionTypeCheckIn createrequest17:
     example:
       value:
         origination_type_id: 7
         event_type_id: 1
         action_type: test
-    displayName: event-action-type-check-in CREATERequest16
+    displayName: event-action-type-check-in CREATERequest17
     type: object
     properties:
       origination_type_id:
@@ -622,8 +706,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User21
-  User21:
+        type: User22
+  User22:
     example:
       value:
         user_account_id: 35
@@ -645,7 +729,7 @@ types:
         username: Xros
         text_notif_flag: 0
         agreement_flag: 1
-    displayName: User21
+    displayName: User22
     type: object
     properties:
       user_account_id:
@@ -769,8 +853,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User24
-  User24:
+        type: User25
+  User25:
     example:
       value:
         user_account_id: 36
@@ -784,7 +868,7 @@ types:
         cell_phone: 555141448
         organization_id: 2
         new_password: ''
-    displayName: User24
+    displayName: User25
     type: object
     properties:
       user_account_id:
@@ -860,12 +944,12 @@ types:
         required: true
         displayName: login
         type: Login
-  EventActionTypeCheckIn  createrequest28:
+  EventActionTypeCheckIn  createrequest29:
     example:
       value:
-        event_action_type: Sold to City
+        event_action_type: Sold to City of fresno california
         origination_type_id: 2
-    displayName: event-action-type-check-in - createRequest28
+    displayName: event-action-type-check-in - createRequest29
     type: object
     properties:
       event_action_type:
@@ -904,8 +988,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User30
-  User30:
+        type: User31
+  User31:
     example:
       value:
         user_type_id: 2
@@ -925,7 +1009,7 @@ types:
           postal_code: 22204
           country: United States of America
           country_fips: US
-    displayName: User30
+    displayName: User31
     type: object
     properties:
       user_type_id:
@@ -965,8 +1049,8 @@ types:
       organization:
         required: true
         displayName: organization
-        type: Organization31
-  Organization31:
+        type: Organization32
+  Organization32:
     example:
       value:
         organization_name: zzz Arlington
@@ -977,7 +1061,7 @@ types:
         postal_code: 22204
         country: United States of America
         country_fips: US
-    displayName: Organization31
+    displayName: Organization32
     type: object
     properties:
       organization_name:
@@ -1210,8 +1294,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User41
-  User41:
+        type: User42
+  User42:
     example:
       value:
         user_type_id: 2
@@ -1233,7 +1317,7 @@ types:
           postal_code: 43232
           country: United States of America
           country_fips: US
-    displayName: User41
+    displayName: User42
     type: object
     properties:
       user_type_id:
@@ -1282,7 +1366,7 @@ types:
       organization:
         required: true
         displayName: organization
-        type: Organization31
+        type: Organization32
   User  create  test from gregrequest:
     example:
       value:
@@ -1311,8 +1395,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User44
-  User44:
+        type: User45
+  User45:
     example:
       value:
         user_type_id: 1
@@ -1333,7 +1417,7 @@ types:
           postal_code: 07054
           country: United States of America
           country_fips: US
-    displayName: User44
+    displayName: User45
     type: object
     properties:
       user_type_id:
@@ -1378,7 +1462,7 @@ types:
       organization:
         required: true
         displayName: organization
-        type: Organization31
+        type: Organization32
   Account  create (fail because of duplicagte username):
     example:
       value:
@@ -1435,7 +1519,7 @@ types:
       user:
         required: true
         displayName: user
-        type: User44
+        type: User45
   Local:user  authenticaterequest:
     example:
       value:
@@ -2074,8 +2158,8 @@ types:
       searchParams:
         required: true
         displayName: searchParams
-        type: SearchParams67
-  SearchParams67:
+        type: SearchParams68
+  SearchParams68:
     example:
       value:
         dateTo: ''
@@ -2084,7 +2168,7 @@ types:
         dateFrom: ''
         vin: ''
         stockNum: ''
-    displayName: SearchParams67
+    displayName: SearchParams68
     type: object
     properties:
       dateTo:
@@ -2123,13 +2207,13 @@ types:
       searchParams:
         required: true
         displayName: searchParams
-        type: SearchParams69
-  SearchParams69:
+        type: SearchParams70
+  SearchParams70:
     example:
       value:
         originationTypeId: 1
         organizationName: ''
-    displayName: SearchParams69
+    displayName: SearchParams70
     type: object
     properties:
       originationTypeId:
@@ -2208,8 +2292,8 @@ types:
       asset_properties:
         required: true
         displayName: asset_properties
-        type: AssetProperties72
-  AssetProperties72:
+        type: AssetProperties73
+  AssetProperties73:
     example:
       value:
         msrp: ''
@@ -2229,7 +2313,7 @@ types:
         make: Toyota
         engine: Engine
         vehicle_type: Sedan
-    displayName: AssetProperties72
+    displayName: AssetProperties73
     type: object
     properties:
       msrp:
@@ -2381,8 +2465,8 @@ types:
       asset_event:
         required: true
         displayName: asset_event
-        type: AssetEvent74
-  AssetEvent74:
+        type: AssetEvent75
+  AssetEvent75:
     example:
       value:
         asset_id: 480
@@ -2455,7 +2539,7 @@ types:
           vin_photo_img_url: https://s3.amazonaws.com/wparkw.assets/vin.png
           vin_decode_location_lat: 18.851031
           vin_decode_location_long: -57.366377
-    displayName: AssetEvent74
+    displayName: AssetEvent75
     type: object
     properties:
       asset_id:
@@ -2477,7 +2561,7 @@ types:
       asset_properties:
         required: true
         displayName: asset_properties
-        type: AssetProperties75
+        type: AssetProperties76
       asset_images:
         required: true
         displayName: asset_images
@@ -2518,7 +2602,7 @@ types:
         required: true
         displayName: vin_decode_log
         type: VinDecodeLog
-  AssetProperties75:
+  AssetProperties76:
     example:
       value:
         vin_num: WBA7F2C56HG422712
@@ -2537,7 +2621,7 @@ types:
         age: ''
         cost: ''
         msrp: ''
-    displayName: AssetProperties75
+    displayName: AssetProperties76
     type: object
     properties:
       vin_num:
@@ -2679,8 +2763,8 @@ types:
       asset_origination:
         required: true
         displayName: asset_origination
-        type: AssetOrigination86
-  AssetOrigination86:
+        type: AssetOrigination87
+  AssetOrigination87:
     example:
       value:
         origination_type_id: 4
@@ -2694,7 +2778,7 @@ types:
         address_line1: dhdjdhd AAAA
         postal_code: 07087
         country: ''
-    displayName: AssetOrigination86
+    displayName: AssetOrigination87
     type: object
     properties:
       origination_type_id:
@@ -2771,7 +2855,7 @@ types:
       user:
         required: true
         displayName: user
-        type: User41
+        type: User42
   User  authenticate  sanderequest:
     example:
       value:
@@ -2785,18 +2869,6 @@ types:
         required: true
         displayName: login
         type: Login
-  Organization  deleterequest:
-    example:
-      value:
-        organizationid: 22
-    displayName: organization - deleteRequest
-    type: object
-    properties:
-      organizationid:
-        required: true
-        displayName: organizationid
-        type: integer
-        format: int32
 /authenticate:
   post:
     displayName: User - Authenticate
@@ -2933,25 +3005,8 @@ types:
 /organization:
   /create:
     post:
-      displayName: organization - create
+      displayName: organization - put
       description: 'TODO: Add Description'
-      body:
-        application/json:
-          example:
-            value:
-              organization:
-                organization_name: Gravilson and Sons
-                address_line1: 5441 Thompson Road
-                address_line2: suite 1304
-                city: Brooklyn
-                state_province: NY
-                postal_code: 11205
-                country: U
-                phone: 574-214-2147
-                email: frankg@gravilsonandson.com
-                product: Ford Dealer
-          displayName: Body
-          type: Organization  createrequest
       queryParameters:
         fwreinit:
           required: true
@@ -2976,23 +3031,36 @@ types:
           example:
             value:
               organization:
-                organization_name: test1
-                address_line1: 123 Cherry Lane
-                address_line2: suite 212
-                city: Tampa
+                address_line1: 5441 Thompson Road, suite 1304
+                address_line2: Suite -91981e-1
+                city: Baah Bha Lue
+                country: US
+                postal_code: 74241
+                country_fips: US
+                product: Ford Truck Dealer
+                phone: 574-214-2147
+                organization_name: Gravilson and Sons
                 state_province: FL
-                postal_code: 33617
-                country: U
+                email: frankg@gravilsonandson.com
+                organization_id: 119
           displayName: Body
           type: Organization  putrequest
+      queryParameters:
+        fwreinit:
+          required: true
+          example:
+            value: 1
+          displayName: fwreinit
+          type: integer
+          format: int32
       headers:
         Content-Type:
           required: true
           example:
-            value: application/x-www-form-urlencoded
+            value: application/json
           displayName: Content-Type
           type: string
-  /stocknumber/17:
+  /stocknumber/17/U:
     get:
       displayName: organization/serialnumber/get
       description: 'TODO: Add Description'
@@ -3696,7 +3764,7 @@ types:
           application/json:
             example:
               value:
-                organizationid: 22
+                organization_id: 22
             displayName: Body
             type: Organization  deleterequest
         headers:
@@ -3776,7 +3844,7 @@ types:
               event_type_id: 1
               action_type: test
           displayName: Body
-          type: EventActionTypeCheckIn createrequest16
+          type: EventActionTypeCheckIn createrequest17
       queryParameters:
         fwreinit:
           required: true
@@ -4133,10 +4201,18 @@ types:
         application/json:
           example:
             value:
-              event_action_type: Sold to City
+              event_action_type: Sold to City of fresno california
               origination_type_id: 2
           displayName: Body
-          type: EventActionTypeCheckIn  createrequest28
+          type: EventActionTypeCheckIn  createrequest29
+      queryParameters:
+        fwreinit:
+          required: true
+          example:
+            value: 1
+          displayName: fwreinit
+          type: integer
+          format: int32
       headers:
         Content-Type:
           required: true
