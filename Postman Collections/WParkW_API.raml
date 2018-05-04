@@ -609,13 +609,14 @@ types:
         user:
           user_type_id: 1
           membership_type_id: 2
-          username: PabloPicasso
+          username: JimSanto
           password: P@ssw0rdq
-          first_name: Pablo
-          last_name: Picasso
-          email_address: Picasso@genevamedia.com
-          cell_phone: 8083991129
-          organization_id: 1
+          first_name: Jimmy
+          last_name: Santos
+          email_address: jsantos@genevamedia.com
+          cell_phone: 5442452251
+          organization_id: 120
+          profile_id_img_url: www.amazon.fabric.com/adfeajsklfalfjal
     displayName: Users - CRUD Users CreateRequest
     type: object
     properties:
@@ -628,13 +629,14 @@ types:
       value:
         user_type_id: 1
         membership_type_id: 2
-        username: PabloPicasso
+        username: JimSanto
         password: P@ssw0rdq
-        first_name: Pablo
-        last_name: Picasso
-        email_address: Picasso@genevamedia.com
-        cell_phone: 8083991129
-        organization_id: 1
+        first_name: Jimmy
+        last_name: Santos
+        email_address: jsantos@genevamedia.com
+        cell_phone: 5442452251
+        organization_id: 120
+        profile_id_img_url: www.amazon.fabric.com/adfeajsklfalfjal
     displayName: User
     type: object
     properties:
@@ -677,6 +679,10 @@ types:
         displayName: organization_id
         type: integer
         format: int32
+      profile_id_img_url:
+        required: true
+        displayName: profile_id_img_url
+        type: string
   User  crud users put  updaterequest:
     example:
       value:
