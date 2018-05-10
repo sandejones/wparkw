@@ -1203,6 +1203,7 @@ types:
   User  update settings/sandejonesrequest:
     example:
       value:
+        user_account_id: 37
         first_name: Sande
         last_name: Jones
         text_notif_flag: 1
@@ -1210,11 +1211,14 @@ types:
         email_address: sandejones@gmail.com
         cell_phone: 6145551212
         profile_img_url: https://wparkw.s3.amazonaws.com/profile/1/sandejones.jpg
-        agreement_flag: 1
-        agreement_date: 1
     displayName: User - Update Settings/sandejonesRequest
     type: object
     properties:
+      user_account_id:
+        required: true
+        displayName: user_account_id
+        type: integer
+        format: int32
       first_name:
         required: true
         displayName: first_name
@@ -1245,16 +1249,22 @@ types:
         required: true
         displayName: profile_img_url
         type: string
-      agreement_flag:
+  User  update settings/sandejones  with no last name:
+    example:
+      value:
+        message: user account updated
+        status: True
+    displayName: User - Update Settings/sandejones - with no last name
+    type: object
+    properties:
+      message:
         required: true
-        displayName: agreement_flag
-        type: integer
-        format: int32
-      agreement_date:
+        displayName: message
+        type: string
+      status:
         required: true
-        displayName: agreement_date
-        type: integer
-        format: int32
+        displayName: status
+        type: boolean
   User  reset passwordrequest:
     example:
       value:
@@ -1300,8 +1310,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User42
-  User42:
+        type: User43
+  User43:
     example:
       value:
         user_type_id: 2
@@ -1323,7 +1333,7 @@ types:
           postal_code: 43232
           country: United States of America
           country_fips: US
-    displayName: User42
+    displayName: User43
     type: object
     properties:
       user_type_id:
@@ -1401,8 +1411,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User45
-  User45:
+        type: User46
+  User46:
     example:
       value:
         user_type_id: 1
@@ -1423,7 +1433,7 @@ types:
           postal_code: 07054
           country: United States of America
           country_fips: US
-    displayName: User45
+    displayName: User46
     type: object
     properties:
       user_type_id:
@@ -1525,7 +1535,7 @@ types:
       user:
         required: true
         displayName: user
-        type: User45
+        type: User46
   Local:user  authenticaterequest:
     example:
       value:
@@ -2164,8 +2174,8 @@ types:
       searchParams:
         required: true
         displayName: searchParams
-        type: SearchParams68
-  SearchParams68:
+        type: SearchParams69
+  SearchParams69:
     example:
       value:
         dateTo: ''
@@ -2174,7 +2184,7 @@ types:
         dateFrom: ''
         vin: ''
         stockNum: ''
-    displayName: SearchParams68
+    displayName: SearchParams69
     type: object
     properties:
       dateTo:
@@ -2213,13 +2223,13 @@ types:
       searchParams:
         required: true
         displayName: searchParams
-        type: SearchParams70
-  SearchParams70:
+        type: SearchParams71
+  SearchParams71:
     example:
       value:
         originationTypeId: 1
         organizationName: ''
-    displayName: SearchParams70
+    displayName: SearchParams71
     type: object
     properties:
       originationTypeId:
@@ -2298,8 +2308,8 @@ types:
       asset_properties:
         required: true
         displayName: asset_properties
-        type: AssetProperties73
-  AssetProperties73:
+        type: AssetProperties74
+  AssetProperties74:
     example:
       value:
         msrp: ''
@@ -2319,7 +2329,7 @@ types:
         make: Toyota
         engine: Engine
         vehicle_type: Sedan
-    displayName: AssetProperties73
+    displayName: AssetProperties74
     type: object
     properties:
       msrp:
@@ -2471,8 +2481,8 @@ types:
       asset_event:
         required: true
         displayName: asset_event
-        type: AssetEvent75
-  AssetEvent75:
+        type: AssetEvent76
+  AssetEvent76:
     example:
       value:
         asset_id: 480
@@ -2545,7 +2555,7 @@ types:
           vin_photo_img_url: https://s3.amazonaws.com/wparkw.assets/vin.png
           vin_decode_location_lat: 18.851031
           vin_decode_location_long: -57.366377
-    displayName: AssetEvent75
+    displayName: AssetEvent76
     type: object
     properties:
       asset_id:
@@ -2567,7 +2577,7 @@ types:
       asset_properties:
         required: true
         displayName: asset_properties
-        type: AssetProperties76
+        type: AssetProperties77
       asset_images:
         required: true
         displayName: asset_images
@@ -2608,7 +2618,7 @@ types:
         required: true
         displayName: vin_decode_log
         type: VinDecodeLog
-  AssetProperties76:
+  AssetProperties77:
     example:
       value:
         vin_num: WBA7F2C56HG422712
@@ -2627,7 +2637,7 @@ types:
         age: ''
         cost: ''
         msrp: ''
-    displayName: AssetProperties76
+    displayName: AssetProperties77
     type: object
     properties:
       vin_num:
@@ -2769,8 +2779,8 @@ types:
       asset_origination:
         required: true
         displayName: asset_origination
-        type: AssetOrigination87
-  AssetOrigination87:
+        type: AssetOrigination88
+  AssetOrigination88:
     example:
       value:
         origination_type_id: 4
@@ -2784,7 +2794,7 @@ types:
         address_line1: dhdjdhd AAAA
         postal_code: 07087
         country: ''
-    displayName: AssetOrigination87
+    displayName: AssetOrigination88
     type: object
     properties:
       origination_type_id:
@@ -2861,7 +2871,7 @@ types:
       user:
         required: true
         displayName: user
-        type: User42
+        type: User43
   User  authenticate  sanderequest:
     example:
       value:
@@ -4260,7 +4270,7 @@ types:
             value: application/json
           displayName: Content-Type
           type: string
-  /update-settings/:
+  /update-settings:
     post:
       displayName: User - Update Settings/sandejones
       description: 'TODO: Add Description'
@@ -4268,6 +4278,7 @@ types:
         application/json:
           example:
             value:
+              user_account_id: 37
               first_name: Sande
               last_name: Jones
               text_notif_flag: 1
@@ -4275,10 +4286,16 @@ types:
               email_address: sandejones@gmail.com
               cell_phone: 6145551212
               profile_img_url: https://wparkw.s3.amazonaws.com/profile/1/sandejones.jpg
-              agreement_flag: 1
-              agreement_date: 1
           displayName: Body
           type: User  update settings/sandejonesrequest
+      queryParameters:
+        fwreinit:
+          required: true
+          example:
+            value: 1
+          displayName: fwreinit
+          type: integer
+          format: int32
       headers:
         Content-Type:
           required: true
@@ -4286,6 +4303,17 @@ types:
             value: application/json
           displayName: Content-Type
           type: string
+      responses:
+        200:
+          description: Success
+          body:
+            application/json:
+              example:
+                value:
+                  message: user account updated
+                  status: True
+              displayName: User - Update Settings/sandejones - with no last name
+              type: User  update settings/sandejones  with no last name
   /list:
     get:
       displayName: Account- List
