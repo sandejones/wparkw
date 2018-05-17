@@ -522,6 +522,23 @@ types:
         displayName: organization_id
         type: integer
         format: int32
+  EventActionTypeCheckOut  createrequest:
+    example:
+      value:
+        event_action_type: Sold to City of Austin
+        origination_type_id: 2
+    displayName: event-action-type-check-out - createRequest
+    type: object
+    properties:
+      event_action_type:
+        required: true
+        displayName: event_action_type
+        type: string
+      origination_type_id:
+        required: true
+        displayName: origination_type_id
+        type: integer
+        format: int32
   EventActionTypeCheckIn/createrequest:
     example:
       value:
@@ -568,13 +585,13 @@ types:
         displayName: origination_type_id
         type: integer
         format: int32
-  EventActionTypeCheckIn createrequest17:
+  EventActionTypeCheckIn createrequest18:
     example:
       value:
         origination_type_id: 7
         event_type_id: 1
         action_type: test
-    displayName: event-action-type-check-in CREATERequest17
+    displayName: event-action-type-check-in CREATERequest18
     type: object
     properties:
       origination_type_id:
@@ -712,8 +729,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User22
-  User22:
+        type: User23
+  User23:
     example:
       value:
         user_account_id: 35
@@ -735,7 +752,7 @@ types:
         username: Xros
         text_notif_flag: 0
         agreement_flag: 1
-    displayName: User22
+    displayName: User23
     type: object
     properties:
       user_account_id:
@@ -859,8 +876,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User25
-  User25:
+        type: User26
+  User26:
     example:
       value:
         user_account_id: 36
@@ -874,7 +891,7 @@ types:
         cell_phone: 555141448
         organization_id: 2
         new_password: ''
-    displayName: User25
+    displayName: User26
     type: object
     properties:
       user_account_id:
@@ -950,12 +967,12 @@ types:
         required: true
         displayName: login
         type: Login
-  EventActionTypeCheckIn  createrequest29:
+  EventActionTypeCheckIn  createrequest30:
     example:
       value:
-        event_action_type: Sold to City of fresno california
+        event_action_type: Sold to City of Austin
         origination_type_id: 2
-    displayName: event-action-type-check-in - createRequest29
+    displayName: event-action-type-check-in - createRequest30
     type: object
     properties:
       event_action_type:
@@ -965,6 +982,18 @@ types:
       origination_type_id:
         required: true
         displayName: origination_type_id
+        type: integer
+        format: int32
+  EventActionTypeCheckIn  deleterequest:
+    example:
+      value:
+        EVENT_ACTION_TYPE_ID: 19
+    displayName: event-action-type-check-in - deleteRequest
+    type: object
+    properties:
+      EVENT_ACTION_TYPE_ID:
+        required: true
+        displayName: EVENT_ACTION_TYPE_ID
         type: integer
         format: int32
   User  createrequest:
@@ -994,8 +1023,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User31
-  User31:
+        type: User33
+  User33:
     example:
       value:
         user_type_id: 2
@@ -1015,7 +1044,7 @@ types:
           postal_code: 22204
           country: United States of America
           country_fips: US
-    displayName: User31
+    displayName: User33
     type: object
     properties:
       user_type_id:
@@ -1055,8 +1084,8 @@ types:
       organization:
         required: true
         displayName: organization
-        type: Organization32
-  Organization32:
+        type: Organization34
+  Organization34:
     example:
       value:
         organization_name: zzz Arlington
@@ -1067,7 +1096,7 @@ types:
         postal_code: 22204
         country: United States of America
         country_fips: US
-    displayName: Organization32
+    displayName: Organization34
     type: object
     properties:
       organization_name:
@@ -1310,8 +1339,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User43
-  User43:
+        type: User45
+  User45:
     example:
       value:
         user_type_id: 2
@@ -1333,7 +1362,7 @@ types:
           postal_code: 43232
           country: United States of America
           country_fips: US
-    displayName: User43
+    displayName: User45
     type: object
     properties:
       user_type_id:
@@ -1382,7 +1411,7 @@ types:
       organization:
         required: true
         displayName: organization
-        type: Organization32
+        type: Organization34
   User  create  test from gregrequest:
     example:
       value:
@@ -1411,8 +1440,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User46
-  User46:
+        type: User48
+  User48:
     example:
       value:
         user_type_id: 1
@@ -1433,7 +1462,7 @@ types:
           postal_code: 07054
           country: United States of America
           country_fips: US
-    displayName: User46
+    displayName: User48
     type: object
     properties:
       user_type_id:
@@ -1478,7 +1507,7 @@ types:
       organization:
         required: true
         displayName: organization
-        type: Organization32
+        type: Organization34
   Account  create (fail because of duplicagte username):
     example:
       value:
@@ -1535,7 +1564,7 @@ types:
       user:
         required: true
         displayName: user
-        type: User46
+        type: User48
   Local:user  authenticaterequest:
     example:
       value:
@@ -2174,8 +2203,8 @@ types:
       searchParams:
         required: true
         displayName: searchParams
-        type: SearchParams69
-  SearchParams69:
+        type: SearchParams71
+  SearchParams71:
     example:
       value:
         dateTo: ''
@@ -2184,7 +2213,7 @@ types:
         dateFrom: ''
         vin: ''
         stockNum: ''
-    displayName: SearchParams69
+    displayName: SearchParams71
     type: object
     properties:
       dateTo:
@@ -2223,13 +2252,13 @@ types:
       searchParams:
         required: true
         displayName: searchParams
-        type: SearchParams71
-  SearchParams71:
+        type: SearchParams73
+  SearchParams73:
     example:
       value:
         originationTypeId: 1
         organizationName: ''
-    displayName: SearchParams71
+    displayName: SearchParams73
     type: object
     properties:
       originationTypeId:
@@ -2308,8 +2337,8 @@ types:
       asset_properties:
         required: true
         displayName: asset_properties
-        type: AssetProperties74
-  AssetProperties74:
+        type: AssetProperties76
+  AssetProperties76:
     example:
       value:
         msrp: ''
@@ -2329,7 +2358,7 @@ types:
         make: Toyota
         engine: Engine
         vehicle_type: Sedan
-    displayName: AssetProperties74
+    displayName: AssetProperties76
     type: object
     properties:
       msrp:
@@ -2481,8 +2510,8 @@ types:
       asset_event:
         required: true
         displayName: asset_event
-        type: AssetEvent76
-  AssetEvent76:
+        type: AssetEvent78
+  AssetEvent78:
     example:
       value:
         asset_id: 480
@@ -2555,7 +2584,7 @@ types:
           vin_photo_img_url: https://s3.amazonaws.com/wparkw.assets/vin.png
           vin_decode_location_lat: 18.851031
           vin_decode_location_long: -57.366377
-    displayName: AssetEvent76
+    displayName: AssetEvent78
     type: object
     properties:
       asset_id:
@@ -2577,7 +2606,7 @@ types:
       asset_properties:
         required: true
         displayName: asset_properties
-        type: AssetProperties77
+        type: AssetProperties79
       asset_images:
         required: true
         displayName: asset_images
@@ -2618,7 +2647,7 @@ types:
         required: true
         displayName: vin_decode_log
         type: VinDecodeLog
-  AssetProperties77:
+  AssetProperties79:
     example:
       value:
         vin_num: WBA7F2C56HG422712
@@ -2637,7 +2666,7 @@ types:
         age: ''
         cost: ''
         msrp: ''
-    displayName: AssetProperties77
+    displayName: AssetProperties79
     type: object
     properties:
       vin_num:
@@ -2779,8 +2808,8 @@ types:
       asset_origination:
         required: true
         displayName: asset_origination
-        type: AssetOrigination88
-  AssetOrigination88:
+        type: AssetOrigination90
+  AssetOrigination90:
     example:
       value:
         origination_type_id: 4
@@ -2794,7 +2823,7 @@ types:
         address_line1: dhdjdhd AAAA
         postal_code: 07087
         country: ''
-    displayName: AssetOrigination88
+    displayName: AssetOrigination90
     type: object
     properties:
       origination_type_id:
@@ -2871,7 +2900,7 @@ types:
       user:
         required: true
         displayName: user
-        type: User43
+        type: User45
   User  authenticate  sanderequest:
     example:
       value:
@@ -3928,7 +3957,23 @@ types:
   /create:
     post:
       displayName: event-action-type-check-out - create
-      description: event-action-type-check-out/create
+      description: ' /event-action-type-check-out/:originationTypeId'
+      body:
+        application/json:
+          example:
+            value:
+              event_action_type: Sold to City of Austin
+              origination_type_id: 2
+          displayName: Body
+          type: EventActionTypeCheckOut  createrequest
+      queryParameters:
+        fwreinit:
+          required: true
+          example:
+            value: 1
+          displayName: fwreinit
+          type: integer
+          format: int32
       headers:
         Content-Type:
           required: true
@@ -3964,7 +4009,7 @@ types:
               event_type_id: 1
               action_type: test
           displayName: Body
-          type: EventActionTypeCheckIn createrequest17
+          type: EventActionTypeCheckIn createrequest18
       queryParameters:
         fwreinit:
           required: true
@@ -4345,10 +4390,36 @@ types:
         application/json:
           example:
             value:
-              event_action_type: Sold to City of fresno california
+              event_action_type: Sold to City of Austin
               origination_type_id: 2
           displayName: Body
-          type: EventActionTypeCheckIn  createrequest29
+          type: EventActionTypeCheckIn  createrequest30
+      queryParameters:
+        fwreinit:
+          required: true
+          example:
+            value: 1
+          displayName: fwreinit
+          type: integer
+          format: int32
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+  /delete:
+    post:
+      displayName: event-action-type-check-in - delete
+      description: ' /event-action-type/delete'
+      body:
+        application/json:
+          example:
+            value:
+              EVENT_ACTION_TYPE_ID: 19
+          displayName: Body
+          type: EventActionTypeCheckIn  deleterequest
       queryParameters:
         fwreinit:
           required: true
@@ -4365,10 +4436,18 @@ types:
           displayName: Content-Type
           type: string
   /list:
-    /:
+    /5:
       get:
         displayName: event-action-type-check-in - List
         description: 'TODO: Add Description'
+        queryParameters:
+          fwreinit:
+            required: true
+            example:
+              value: 1
+            displayName: fwreinit
+            type: integer
+            format: int32
         headers:
           Content-Type:
             required: true
