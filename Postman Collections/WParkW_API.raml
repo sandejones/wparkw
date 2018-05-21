@@ -354,7 +354,7 @@ types:
         organization:
           address_line1: 5441 Thompson Road, suite 1304
           address_line2: Suite -91981e-1
-          city: Baah Bha Lue
+          city: Baah Bha Liiue
           country: US
           postal_code: 74241
           country_fips: US
@@ -363,7 +363,7 @@ types:
           organization_name: Gravilson and Sons
           state_province: FL
           email: frankg@gravilsonandson.com
-          organization_id: 119
+          organization_id: 124
     displayName: organization - putRequest
     type: object
     properties:
@@ -376,7 +376,7 @@ types:
       value:
         address_line1: 5441 Thompson Road, suite 1304
         address_line2: Suite -91981e-1
-        city: Baah Bha Lue
+        city: Baah Bha Liiue
         country: US
         postal_code: 74241
         country_fips: US
@@ -385,7 +385,7 @@ types:
         organization_name: Gravilson and Sons
         state_province: FL
         email: frankg@gravilsonandson.com
-        organization_id: 119
+        organization_id: 124
     displayName: Organization12
     type: object
     properties:
@@ -626,14 +626,13 @@ types:
         user:
           user_type_id: 1
           membership_type_id: 2
-          username: JimSanto
+          username: JimSant2o
           password: P@ssw0rdq
           first_name: Jimmy
           last_name: Santos
           email_address: jsantos@genevamedia.com
           cell_phone: 5442452251
           organization_id: 120
-          profile_id_img_url: www.amazon.fabric.com/adfeajsklfalfjal
     displayName: Users - CRUD Users CreateRequest
     type: object
     properties:
@@ -646,14 +645,13 @@ types:
       value:
         user_type_id: 1
         membership_type_id: 2
-        username: JimSanto
+        username: JimSant2o
         password: P@ssw0rdq
         first_name: Jimmy
         last_name: Santos
         email_address: jsantos@genevamedia.com
         cell_phone: 5442452251
         organization_id: 120
-        profile_id_img_url: www.amazon.fabric.com/adfeajsklfalfjal
     displayName: User
     type: object
     properties:
@@ -696,10 +694,6 @@ types:
         displayName: organization_id
         type: integer
         format: int32
-      profile_id_img_url:
-        required: true
-        displayName: profile_id_img_url
-        type: string
   User  crud users put  updaterequest:
     example:
       value:
@@ -967,12 +961,119 @@ types:
         required: true
         displayName: login
         type: Login
-  EventActionTypeCheckIn  createrequest30:
+  User  crud create v2request:
+    example:
+      value:
+        user:
+          user_type_id: 2
+          membership_type_id: 2
+          username: vvvva
+          password: P@ssw0rdq
+          first_name: 54
+          last_name: gh
+          email_address: 521@genevamedia.com
+          cell_phone: 8033991129
+          organization_id: 138
+    displayName: User - CRUD create V2Request
+    type: object
+    properties:
+      user:
+        required: true
+        displayName: user
+        type: User
+  User  crud getrequest:
+    example:
+      value:
+        user_account_id: 38
+        first_name: Tester
+        organization_id: 138
+        email_notif_flag: 0
+        status: True
+        cell_phone: +380679473123
+        password_changed_required: 0
+        email_address: tester4@nail.com
+        user_type_id: 1
+        updated_date: ''
+        profile_img_url: ''
+        agreement_date: ''
+        username: tester4
+        text_notif_flag: 0
+        agreement_flag: 0
+    displayName: User - CRUD getRequest
+    type: object
+    properties:
+      user_account_id:
+        required: true
+        displayName: user_account_id
+        type: integer
+        format: int32
+      first_name:
+        required: true
+        displayName: first_name
+        type: string
+      organization_id:
+        required: true
+        displayName: organization_id
+        type: string
+      email_notif_flag:
+        required: true
+        displayName: email_notif_flag
+        type: integer
+        format: int32
+      status:
+        required: true
+        displayName: status
+        type: boolean
+      cell_phone:
+        required: true
+        displayName: cell_phone
+        type: string
+      password_changed_required:
+        required: true
+        displayName: password_changed_required
+        type: integer
+        format: int32
+      email_address:
+        required: true
+        displayName: email_address
+        type: string
+      user_type_id:
+        required: true
+        displayName: user_type_id
+        type: integer
+        format: int32
+      updated_date:
+        required: true
+        displayName: updated_date
+        type: string
+      profile_img_url:
+        required: true
+        displayName: profile_img_url
+        type: string
+      agreement_date:
+        required: true
+        displayName: agreement_date
+        type: string
+      username:
+        required: true
+        displayName: username
+        type: string
+      text_notif_flag:
+        required: true
+        displayName: text_notif_flag
+        type: integer
+        format: int32
+      agreement_flag:
+        required: true
+        displayName: agreement_flag
+        type: integer
+        format: int32
+  EventActionTypeCheckIn  createrequest33:
     example:
       value:
         event_action_type: Sold to City of Austin
         origination_type_id: 2
-    displayName: event-action-type-check-in - createRequest30
+    displayName: event-action-type-check-in - createRequest33
     type: object
     properties:
       event_action_type:
@@ -987,15 +1088,97 @@ types:
   EventActionTypeCheckIn  deleterequest:
     example:
       value:
-        EVENT_ACTION_TYPE_ID: 19
+        event_action_type_id: 20
     displayName: event-action-type-check-in - deleteRequest
     type: object
     properties:
-      EVENT_ACTION_TYPE_ID:
+      event_action_type_id:
         required: true
-        displayName: EVENT_ACTION_TYPE_ID
-        type: integer
-        format: int32
+        displayName: event_action_type_id
+        type: string
+  Organization  create  v2request:
+    example:
+      value:
+        organization:
+          address_line1: 5441 Street Road, suite 90810
+          address_line2: Suite 689
+          city: Kingsonton
+          country: UK
+          postal_code: 4745-8854
+          country_fips: OK
+          product: Ford Dealer
+          phone: 09 574-214-2147
+          organization_name: 'Nosie and Jummping '
+          state_province: N/A
+          email: googlemex@nosejummping.com
+    displayName: organization - create - v2Request
+    type: object
+    properties:
+      organization:
+        required: true
+        displayName: organization
+        type: Organization36
+  Organization36:
+    example:
+      value:
+        address_line1: 5441 Street Road, suite 90810
+        address_line2: Suite 689
+        city: Kingsonton
+        country: UK
+        postal_code: 4745-8854
+        country_fips: OK
+        product: Ford Dealer
+        phone: 09 574-214-2147
+        organization_name: 'Nosie and Jummping '
+        state_province: N/A
+        email: googlemex@nosejummping.com
+    displayName: Organization36
+    type: object
+    properties:
+      address_line1:
+        required: true
+        displayName: address_line1
+        type: string
+      address_line2:
+        required: true
+        displayName: address_line2
+        type: string
+      city:
+        required: true
+        displayName: city
+        type: string
+      country:
+        required: true
+        displayName: country
+        type: string
+      postal_code:
+        required: true
+        displayName: postal_code
+        type: string
+      country_fips:
+        required: true
+        displayName: country_fips
+        type: string
+      product:
+        required: true
+        displayName: product
+        type: string
+      phone:
+        required: true
+        displayName: phone
+        type: string
+      organization_name:
+        required: true
+        displayName: organization_name
+        type: string
+      state_province:
+        required: true
+        displayName: state_province
+        type: string
+      email:
+        required: true
+        displayName: email
+        type: string
   User  createrequest:
     example:
       value:
@@ -1023,8 +1206,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User33
-  User33:
+        type: User38
+  User38:
     example:
       value:
         user_type_id: 2
@@ -1044,7 +1227,7 @@ types:
           postal_code: 22204
           country: United States of America
           country_fips: US
-    displayName: User33
+    displayName: User38
     type: object
     properties:
       user_type_id:
@@ -1084,8 +1267,8 @@ types:
       organization:
         required: true
         displayName: organization
-        type: Organization34
-  Organization34:
+        type: Organization39
+  Organization39:
     example:
       value:
         organization_name: zzz Arlington
@@ -1096,7 +1279,7 @@ types:
         postal_code: 22204
         country: United States of America
         country_fips: US
-    displayName: Organization34
+    displayName: Organization39
     type: object
     properties:
       organization_name:
@@ -1239,7 +1422,6 @@ types:
         email_notif_flag: 1
         email_address: sandejones@gmail.com
         cell_phone: 6145551212
-        profile_img_url: https://wparkw.s3.amazonaws.com/profile/1/sandejones.jpg
     displayName: User - Update Settings/sandejonesRequest
     type: object
     properties:
@@ -1273,10 +1455,6 @@ types:
       cell_phone:
         required: true
         displayName: cell_phone
-        type: string
-      profile_img_url:
-        required: true
-        displayName: profile_img_url
         type: string
   User  update settings/sandejones  with no last name:
     example:
@@ -1339,8 +1517,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User45
-  User45:
+        type: User50
+  User50:
     example:
       value:
         user_type_id: 2
@@ -1362,7 +1540,7 @@ types:
           postal_code: 43232
           country: United States of America
           country_fips: US
-    displayName: User45
+    displayName: User50
     type: object
     properties:
       user_type_id:
@@ -1411,7 +1589,7 @@ types:
       organization:
         required: true
         displayName: organization
-        type: Organization34
+        type: Organization39
   User  create  test from gregrequest:
     example:
       value:
@@ -1440,8 +1618,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User48
-  User48:
+        type: User53
+  User53:
     example:
       value:
         user_type_id: 1
@@ -1462,7 +1640,7 @@ types:
           postal_code: 07054
           country: United States of America
           country_fips: US
-    displayName: User48
+    displayName: User53
     type: object
     properties:
       user_type_id:
@@ -1507,7 +1685,7 @@ types:
       organization:
         required: true
         displayName: organization
-        type: Organization34
+        type: Organization39
   Account  create (fail because of duplicagte username):
     example:
       value:
@@ -1564,7 +1742,7 @@ types:
       user:
         required: true
         displayName: user
-        type: User48
+        type: User53
   Local:user  authenticaterequest:
     example:
       value:
@@ -2203,8 +2381,8 @@ types:
       searchParams:
         required: true
         displayName: searchParams
-        type: SearchParams71
-  SearchParams71:
+        type: SearchParams76
+  SearchParams76:
     example:
       value:
         dateTo: ''
@@ -2213,7 +2391,7 @@ types:
         dateFrom: ''
         vin: ''
         stockNum: ''
-    displayName: SearchParams71
+    displayName: SearchParams76
     type: object
     properties:
       dateTo:
@@ -2252,13 +2430,13 @@ types:
       searchParams:
         required: true
         displayName: searchParams
-        type: SearchParams73
-  SearchParams73:
+        type: SearchParams78
+  SearchParams78:
     example:
       value:
         originationTypeId: 1
         organizationName: ''
-    displayName: SearchParams73
+    displayName: SearchParams78
     type: object
     properties:
       originationTypeId:
@@ -2337,8 +2515,8 @@ types:
       asset_properties:
         required: true
         displayName: asset_properties
-        type: AssetProperties76
-  AssetProperties76:
+        type: AssetProperties81
+  AssetProperties81:
     example:
       value:
         msrp: ''
@@ -2358,7 +2536,7 @@ types:
         make: Toyota
         engine: Engine
         vehicle_type: Sedan
-    displayName: AssetProperties76
+    displayName: AssetProperties81
     type: object
     properties:
       msrp:
@@ -2510,8 +2688,8 @@ types:
       asset_event:
         required: true
         displayName: asset_event
-        type: AssetEvent78
-  AssetEvent78:
+        type: AssetEvent83
+  AssetEvent83:
     example:
       value:
         asset_id: 480
@@ -2584,7 +2762,7 @@ types:
           vin_photo_img_url: https://s3.amazonaws.com/wparkw.assets/vin.png
           vin_decode_location_lat: 18.851031
           vin_decode_location_long: -57.366377
-    displayName: AssetEvent78
+    displayName: AssetEvent83
     type: object
     properties:
       asset_id:
@@ -2606,7 +2784,7 @@ types:
       asset_properties:
         required: true
         displayName: asset_properties
-        type: AssetProperties79
+        type: AssetProperties84
       asset_images:
         required: true
         displayName: asset_images
@@ -2647,7 +2825,7 @@ types:
         required: true
         displayName: vin_decode_log
         type: VinDecodeLog
-  AssetProperties79:
+  AssetProperties84:
     example:
       value:
         vin_num: WBA7F2C56HG422712
@@ -2666,7 +2844,7 @@ types:
         age: ''
         cost: ''
         msrp: ''
-    displayName: AssetProperties79
+    displayName: AssetProperties84
     type: object
     properties:
       vin_num:
@@ -2808,8 +2986,8 @@ types:
       asset_origination:
         required: true
         displayName: asset_origination
-        type: AssetOrigination90
-  AssetOrigination90:
+        type: AssetOrigination95
+  AssetOrigination95:
     example:
       value:
         origination_type_id: 4
@@ -2823,7 +3001,7 @@ types:
         address_line1: dhdjdhd AAAA
         postal_code: 07087
         country: ''
-    displayName: AssetOrigination90
+    displayName: AssetOrigination95
     type: object
     properties:
       origination_type_id:
@@ -2900,7 +3078,7 @@ types:
       user:
         required: true
         displayName: user
-        type: User45
+        type: User50
   User  authenticate  sanderequest:
     example:
       value:
@@ -2924,17 +3102,15 @@ types:
         last_name: Dimedenko
         temp_account_flag: 0
         first_name: Bohdan
-        organization_id: ''
+        organization_id: 138
         email_notif_flag: 0
         status: True
-        cell_phone: +380679876645
+        cell_phone: 380679876645
         password_changed_required: 0
         email_address: bohdan.dimedenko@gmail.com
         updated_by: Dohdan Bimedenko
         profile_img_url: https://s3.amazonaws.com/wparkw.dev.assets/users/photo/non_user_photo_F1710122-5847-4760-AC78-D81AB91295D1.jpg
-        agreement_date: 12/18/2017
         text_notif_flag: 0
-        agreement_flag: 1
     displayName: User - CRUD Users Put - Update V2Request
     type: object
     properties:
@@ -2973,7 +3149,8 @@ types:
       organization_id:
         required: true
         displayName: organization_id
-        type: string
+        type: integer
+        format: int32
       email_notif_flag:
         required: true
         displayName: email_notif_flag
@@ -3004,18 +3181,9 @@ types:
         required: true
         displayName: profile_img_url
         type: string
-      agreement_date:
-        required: true
-        displayName: agreement_date
-        type: string
       text_notif_flag:
         required: true
         displayName: text_notif_flag
-        type: integer
-        format: int32
-      agreement_flag:
-        required: true
-        displayName: agreement_flag
         type: integer
         format: int32
 /authenticate:
@@ -3154,14 +3322,32 @@ types:
 /organization:
   /create:
     post:
-      displayName: organization - put
+      displayName: organization - create - v2
       description: 'TODO: Add Description'
+      body:
+        application/json:
+          example:
+            value:
+              organization:
+                address_line1: 5441 Street Road, suite 90810
+                address_line2: Suite 689
+                city: Kingsonton
+                country: UK
+                postal_code: 4745-8854
+                country_fips: OK
+                product: Ford Dealer
+                phone: 09 574-214-2147
+                organization_name: 'Nosie and Jummping '
+                state_province: N/A
+                email: googlemex@nosejummping.com
+          displayName: Body
+          type: Organization  create  v2request
       queryParameters:
-        fwreinit:
+        /fwreinit:
           required: true
           example:
             value: 1
-          displayName: fwreinit
+          displayName: /fwreinit
           type: integer
           format: int32
       headers:
@@ -3182,7 +3368,7 @@ types:
               organization:
                 address_line1: 5441 Thompson Road, suite 1304
                 address_line2: Suite -91981e-1
-                city: Baah Bha Lue
+                city: Baah Bha Liiue
                 country: US
                 postal_code: 74241
                 country_fips: US
@@ -3191,7 +3377,7 @@ types:
                 organization_name: Gravilson and Sons
                 state_province: FL
                 email: frankg@gravilsonandson.com
-                organization_id: 119
+                organization_id: 124
           displayName: Body
           type: Organization  putrequest
       queryParameters:
@@ -3928,6 +4114,14 @@ types:
     get:
       displayName: check-out-event-action-type - list
       description: ' /check-out-event-action-type/list/:eventTypeId/:originationTypeId'
+      queryParameters:
+        fwreinit:
+          required: true
+          example:
+            value: 1
+          displayName: fwreinit
+          type: integer
+          format: int32
       headers:
         Content-Type:
           required: true
@@ -4085,8 +4279,32 @@ types:
           type: string
   /create:
     post:
-      displayName: User - CRUD create
+      displayName: User - CRUD create V2
       description: 'TODO: Add Description'
+      body:
+        application/json:
+          example:
+            value:
+              user:
+                user_type_id: 2
+                membership_type_id: 2
+                username: vvvva
+                password: P@ssw0rdq
+                first_name: 54
+                last_name: gh
+                email_address: 521@genevamedia.com
+                cell_phone: 8033991129
+                organization_id: 138
+          displayName: Body
+          type: User  crud create v2request
+      queryParameters:
+        fwreinit:
+          required: true
+          example:
+            value: 1
+          displayName: fwreinit
+          type: integer
+          format: int32
   /put:
     post:
       displayName: User - CRUD Users Put - Update V2
@@ -4102,17 +4320,15 @@ types:
               last_name: Dimedenko
               temp_account_flag: 0
               first_name: Bohdan
-              organization_id: ''
+              organization_id: 138
               email_notif_flag: 0
               status: True
-              cell_phone: +380679876645
+              cell_phone: 380679876645
               password_changed_required: 0
               email_address: bohdan.dimedenko@gmail.com
               updated_by: Dohdan Bimedenko
               profile_img_url: https://s3.amazonaws.com/wparkw.dev.assets/users/photo/non_user_photo_F1710122-5847-4760-AC78-D81AB91295D1.jpg
-              agreement_date: 12/18/2017
               text_notif_flag: 0
-              agreement_flag: 1
           displayName: Body
           type: User  crud users put  update v2request
       queryParameters:
@@ -4141,9 +4357,9 @@ types:
             value: application/json
           displayName: Content-Type
           type: string
-    /35:
+    /38:
       get:
-        displayName: User - CRUD get
+        displayName: User - CRUD put
         description: 'TODO: Add Description'
         headers:
           Content-Type:
@@ -4322,7 +4538,6 @@ types:
               email_notif_flag: 1
               email_address: sandejones@gmail.com
               cell_phone: 6145551212
-              profile_img_url: https://wparkw.s3.amazonaws.com/profile/1/sandejones.jpg
           displayName: Body
           type: User  update settings/sandejonesrequest
       queryParameters:
@@ -4374,79 +4589,17 @@ types:
             displayName: Content-Type
             type: string
 /check-in-event-action-type:
-  /create:
-    post:
-      displayName: event-action-type-check-in - create
-      description: ' /event-action-type/list/:eventTypeId/:originationTypeId'
-      body:
-        application/json:
-          example:
-            value:
-              event_action_type: Sold to City of Austin
-              origination_type_id: 2
-          displayName: Body
-          type: EventActionTypeCheckIn  createrequest30
-      queryParameters:
-        fwreinit:
-          required: true
-          example:
-            value: 1
-          displayName: fwreinit
-          type: integer
-          format: int32
-      headers:
-        Content-Type:
-          required: true
-          example:
-            value: application/json
-          displayName: Content-Type
-          type: string
-  /delete:
-    post:
-      displayName: event-action-type-check-in - delete
-      description: ' /event-action-type/delete'
-      body:
-        application/json:
-          example:
-            value:
-              EVENT_ACTION_TYPE_ID: 19
-          displayName: Body
-          type: EventActionTypeCheckIn  deleterequest
-      queryParameters:
-        fwreinit:
-          required: true
-          example:
-            value: 1
-          displayName: fwreinit
-          type: integer
-          format: int32
-      headers:
-        Content-Type:
-          required: true
-          example:
-            value: application/json
-          displayName: Content-Type
-          type: string
   /list:
-    /5:
-      get:
-        displayName: event-action-type-check-in - List
-        description: 'TODO: Add Description'
-        queryParameters:
-          fwreinit:
-            required: true
-            example:
-              value: 1
-            displayName: fwreinit
-            type: integer
-            format: int32
-        headers:
-          Content-Type:
-            required: true
-            example:
-              value: application/json
-            displayName: Content-Type
-            type: string
+    get:
+      displayName: event-action-type-check-in - List
+      description: 'TODO: Add Description'
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
     /7:
       post:
         displayName: Event Action Types - /chec out event-action-type/list/:eventTypeId/:originationTypeId
@@ -4458,6 +4611,51 @@ types:
               value: application/json
             displayName: Content-Type
             type: string
+  /create:
+    post:
+      displayName: event-action-type-check-in - create
+      description: ' /event-action-type/list/:eventTypeId/:originationTypeId'
+      body:
+        application/json:
+          example:
+            value:
+              event_action_type: Sold to City of Austin
+              origination_type_id: 2
+          displayName: Body
+          type: EventActionTypeCheckIn  createrequest33
+      queryParameters:
+        fwreinit:
+          required: true
+          example:
+            value: 1
+          displayName: fwreinit
+          type: integer
+          format: int32
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
+  /delete/21:
+    post:
+      displayName: event-action-type-check-in - delete
+      description: ' /event-action-type/delete'
+      body:
+        application/json:
+          example:
+            value:
+              event_action_type_id: 20
+          displayName: Body
+          type: EventActionTypeCheckIn  deleterequest
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
 /asset-event:
   /check-in:
     post:
