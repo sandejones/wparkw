@@ -1068,12 +1068,278 @@ types:
         displayName: agreement_flag
         type: integer
         format: int32
-  EventActionTypeCheckIn  createrequest33:
+  User  crud create nrwrequest:
+    example:
+      value:
+        last_name: Zalabmim
+        first_name: Zimm
+        organization_id: 138
+        email_notif_flag: 0
+        status: True
+        cell_phone: +525-884-2000
+        password_changed_required: 0
+        email_address: zz@ghostrunners.com
+        user_type_id: 1
+        updated_date: ''
+        profile_img_url: ''
+        agreement_date: 05/21/2018
+        username: zzim
+        text_notif_flag: 0
+        agreement_flag: 1
+    displayName: User - CRUD create nrwRequest
+    type: object
+    properties:
+      last_name:
+        required: true
+        displayName: last_name
+        type: string
+      first_name:
+        required: true
+        displayName: first_name
+        type: string
+      organization_id:
+        required: true
+        displayName: organization_id
+        type: string
+      email_notif_flag:
+        required: true
+        displayName: email_notif_flag
+        type: integer
+        format: int32
+      status:
+        required: true
+        displayName: status
+        type: boolean
+      cell_phone:
+        required: true
+        displayName: cell_phone
+        type: string
+      password_changed_required:
+        required: true
+        displayName: password_changed_required
+        type: integer
+        format: int32
+      email_address:
+        required: true
+        displayName: email_address
+        type: string
+      user_type_id:
+        required: true
+        displayName: user_type_id
+        type: integer
+        format: int32
+      updated_date:
+        required: true
+        displayName: updated_date
+        type: string
+      profile_img_url:
+        required: true
+        displayName: profile_img_url
+        type: string
+      agreement_date:
+        required: true
+        displayName: agreement_date
+        type: string
+      username:
+        required: true
+        displayName: username
+        type: string
+      text_notif_flag:
+        required: true
+        displayName: text_notif_flag
+        type: integer
+        format: int32
+      agreement_flag:
+        required: true
+        displayName: agreement_flag
+        type: integer
+        format: int32
+  User  crud create new 1request:
+    example:
+      value:
+        last_name: Zalabmim
+        first_name: Zimm
+        organization_id: 138
+        email_notif_flag: 0
+        status: True
+        cell_phone: +525-884-2000
+        password_changed_required: 0
+        email_address: zz@ghostrunners.com
+        user_type_id: 1
+        updated_date: ''
+        profile_img_url: ''
+        agreement_date: 05/21/2018
+        username: zzim
+        text_notif_flag: 0
+        agreement_flag: 1
+    displayName: User - CRUD create new 1Request
+    type: object
+    properties:
+      last_name:
+        required: true
+        displayName: last_name
+        type: string
+      first_name:
+        required: true
+        displayName: first_name
+        type: string
+      organization_id:
+        required: true
+        displayName: organization_id
+        type: string
+      email_notif_flag:
+        required: true
+        displayName: email_notif_flag
+        type: integer
+        format: int32
+      status:
+        required: true
+        displayName: status
+        type: boolean
+      cell_phone:
+        required: true
+        displayName: cell_phone
+        type: string
+      password_changed_required:
+        required: true
+        displayName: password_changed_required
+        type: integer
+        format: int32
+      email_address:
+        required: true
+        displayName: email_address
+        type: string
+      user_type_id:
+        required: true
+        displayName: user_type_id
+        type: integer
+        format: int32
+      updated_date:
+        required: true
+        displayName: updated_date
+        type: string
+      profile_img_url:
+        required: true
+        displayName: profile_img_url
+        type: string
+      agreement_date:
+        required: true
+        displayName: agreement_date
+        type: string
+      username:
+        required: true
+        displayName: username
+        type: string
+      text_notif_flag:
+        required: true
+        displayName: text_notif_flag
+        type: integer
+        format: int32
+      agreement_flag:
+        required: true
+        displayName: agreement_flag
+        type: integer
+        format: int32
+  User  crud users get  newrequest:
+    example:
+      value:
+        user_account_id: 35
+        created_by: me
+        active_flag: 1
+        membership_type_id: 1
+        last_name: Dimedenko
+        temp_account_flag: 0
+        first_name: Crohdan
+        organization_id: 138
+        email_notif_flag: 0
+        status: True
+        cell_phone: 380679876645
+        password_changed_required: 0
+        email_address: bohdan.dimedenko@gmail.com
+        updated_by: Cohdan Bimedenko
+        profile_img_url: https://s3.amazonaws.com/wparkw.dev.assets/users/photo/non_user_photo_F1710122-5847-4760-AC78-D81AB91295D1.jpg
+        text_notif_flag: 0
+    displayName: User - CRUD Users Get  newRequest
+    type: object
+    properties:
+      user_account_id:
+        required: true
+        displayName: user_account_id
+        type: integer
+        format: int32
+      created_by:
+        required: true
+        displayName: created_by
+        type: string
+      active_flag:
+        required: true
+        displayName: active_flag
+        type: integer
+        format: int32
+      membership_type_id:
+        required: true
+        displayName: membership_type_id
+        type: integer
+        format: int32
+      last_name:
+        required: true
+        displayName: last_name
+        type: string
+      temp_account_flag:
+        required: true
+        displayName: temp_account_flag
+        type: integer
+        format: int32
+      first_name:
+        required: true
+        displayName: first_name
+        type: string
+      organization_id:
+        required: true
+        displayName: organization_id
+        type: integer
+        format: int32
+      email_notif_flag:
+        required: true
+        displayName: email_notif_flag
+        type: integer
+        format: int32
+      status:
+        required: true
+        displayName: status
+        type: boolean
+      cell_phone:
+        required: true
+        displayName: cell_phone
+        type: string
+      password_changed_required:
+        required: true
+        displayName: password_changed_required
+        type: integer
+        format: int32
+      email_address:
+        required: true
+        displayName: email_address
+        type: string
+      updated_by:
+        required: true
+        displayName: updated_by
+        type: string
+      profile_img_url:
+        required: true
+        displayName: profile_img_url
+        type: string
+      text_notif_flag:
+        required: true
+        displayName: text_notif_flag
+        type: integer
+        format: int32
+  EventActionTypeCheckIn  createrequest36:
     example:
       value:
         event_action_type: Sold to City of Austin
         origination_type_id: 2
-    displayName: event-action-type-check-in - createRequest33
+    displayName: event-action-type-check-in - createRequest36
     type: object
     properties:
       event_action_type:
@@ -1117,8 +1383,8 @@ types:
       organization:
         required: true
         displayName: organization
-        type: Organization36
-  Organization36:
+        type: Organization39
+  Organization39:
     example:
       value:
         address_line1: 5441 Street Road, suite 90810
@@ -1132,7 +1398,7 @@ types:
         organization_name: 'Nosie and Jummping '
         state_province: N/A
         email: googlemex@nosejummping.com
-    displayName: Organization36
+    displayName: Organization39
     type: object
     properties:
       address_line1:
@@ -1206,8 +1472,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User38
-  User38:
+        type: User41
+  User41:
     example:
       value:
         user_type_id: 2
@@ -1227,7 +1493,7 @@ types:
           postal_code: 22204
           country: United States of America
           country_fips: US
-    displayName: User38
+    displayName: User41
     type: object
     properties:
       user_type_id:
@@ -1267,8 +1533,8 @@ types:
       organization:
         required: true
         displayName: organization
-        type: Organization39
-  Organization39:
+        type: Organization42
+  Organization42:
     example:
       value:
         organization_name: zzz Arlington
@@ -1279,7 +1545,7 @@ types:
         postal_code: 22204
         country: United States of America
         country_fips: US
-    displayName: Organization39
+    displayName: Organization42
     type: object
     properties:
       organization_name:
@@ -1517,8 +1783,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User50
-  User50:
+        type: User53
+  User53:
     example:
       value:
         user_type_id: 2
@@ -1540,7 +1806,7 @@ types:
           postal_code: 43232
           country: United States of America
           country_fips: US
-    displayName: User50
+    displayName: User53
     type: object
     properties:
       user_type_id:
@@ -1589,7 +1855,7 @@ types:
       organization:
         required: true
         displayName: organization
-        type: Organization39
+        type: Organization42
   User  create  test from gregrequest:
     example:
       value:
@@ -1618,8 +1884,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User53
-  User53:
+        type: User56
+  User56:
     example:
       value:
         user_type_id: 1
@@ -1640,7 +1906,7 @@ types:
           postal_code: 07054
           country: United States of America
           country_fips: US
-    displayName: User53
+    displayName: User56
     type: object
     properties:
       user_type_id:
@@ -1685,7 +1951,7 @@ types:
       organization:
         required: true
         displayName: organization
-        type: Organization39
+        type: Organization42
   Account  create (fail because of duplicagte username):
     example:
       value:
@@ -1742,7 +2008,7 @@ types:
       user:
         required: true
         displayName: user
-        type: User53
+        type: User56
   Local:user  authenticaterequest:
     example:
       value:
@@ -2381,8 +2647,8 @@ types:
       searchParams:
         required: true
         displayName: searchParams
-        type: SearchParams76
-  SearchParams76:
+        type: SearchParams79
+  SearchParams79:
     example:
       value:
         dateTo: ''
@@ -2391,7 +2657,7 @@ types:
         dateFrom: ''
         vin: ''
         stockNum: ''
-    displayName: SearchParams76
+    displayName: SearchParams79
     type: object
     properties:
       dateTo:
@@ -2430,13 +2696,13 @@ types:
       searchParams:
         required: true
         displayName: searchParams
-        type: SearchParams78
-  SearchParams78:
+        type: SearchParams81
+  SearchParams81:
     example:
       value:
         originationTypeId: 1
         organizationName: ''
-    displayName: SearchParams78
+    displayName: SearchParams81
     type: object
     properties:
       originationTypeId:
@@ -2515,8 +2781,8 @@ types:
       asset_properties:
         required: true
         displayName: asset_properties
-        type: AssetProperties81
-  AssetProperties81:
+        type: AssetProperties84
+  AssetProperties84:
     example:
       value:
         msrp: ''
@@ -2536,7 +2802,7 @@ types:
         make: Toyota
         engine: Engine
         vehicle_type: Sedan
-    displayName: AssetProperties81
+    displayName: AssetProperties84
     type: object
     properties:
       msrp:
@@ -2688,8 +2954,8 @@ types:
       asset_event:
         required: true
         displayName: asset_event
-        type: AssetEvent83
-  AssetEvent83:
+        type: AssetEvent86
+  AssetEvent86:
     example:
       value:
         asset_id: 480
@@ -2762,7 +3028,7 @@ types:
           vin_photo_img_url: https://s3.amazonaws.com/wparkw.assets/vin.png
           vin_decode_location_lat: 18.851031
           vin_decode_location_long: -57.366377
-    displayName: AssetEvent83
+    displayName: AssetEvent86
     type: object
     properties:
       asset_id:
@@ -2784,7 +3050,7 @@ types:
       asset_properties:
         required: true
         displayName: asset_properties
-        type: AssetProperties84
+        type: AssetProperties87
       asset_images:
         required: true
         displayName: asset_images
@@ -2825,7 +3091,7 @@ types:
         required: true
         displayName: vin_decode_log
         type: VinDecodeLog
-  AssetProperties84:
+  AssetProperties87:
     example:
       value:
         vin_num: WBA7F2C56HG422712
@@ -2844,7 +3110,7 @@ types:
         age: ''
         cost: ''
         msrp: ''
-    displayName: AssetProperties84
+    displayName: AssetProperties87
     type: object
     properties:
       vin_num:
@@ -2986,8 +3252,8 @@ types:
       asset_origination:
         required: true
         displayName: asset_origination
-        type: AssetOrigination95
-  AssetOrigination95:
+        type: AssetOrigination98
+  AssetOrigination98:
     example:
       value:
         origination_type_id: 4
@@ -3001,7 +3267,7 @@ types:
         address_line1: dhdjdhd AAAA
         postal_code: 07087
         country: ''
-    displayName: AssetOrigination95
+    displayName: AssetOrigination98
     type: object
     properties:
       origination_type_id:
@@ -3078,7 +3344,7 @@ types:
       user:
         required: true
         displayName: user
-        type: User50
+        type: User53
   User  authenticate  sanderequest:
     example:
       value:
@@ -4279,24 +4545,29 @@ types:
           type: string
   /create:
     post:
-      displayName: User - CRUD create V2
+      displayName: User - CRUD create new 1
       description: 'TODO: Add Description'
       body:
         application/json:
           example:
             value:
-              user:
-                user_type_id: 2
-                membership_type_id: 2
-                username: vvvva
-                password: P@ssw0rdq
-                first_name: 54
-                last_name: gh
-                email_address: 521@genevamedia.com
-                cell_phone: 8033991129
-                organization_id: 138
+              last_name: Zalabmim
+              first_name: Zimm
+              organization_id: 138
+              email_notif_flag: 0
+              status: True
+              cell_phone: +525-884-2000
+              password_changed_required: 0
+              email_address: zz@ghostrunners.com
+              user_type_id: 1
+              updated_date: ''
+              profile_img_url: ''
+              agreement_date: 05/21/2018
+              username: zzim
+              text_notif_flag: 0
+              agreement_flag: 1
           displayName: Body
-          type: User  crud create v2request
+          type: User  crud create new 1request
       queryParameters:
         fwreinit:
           required: true
@@ -4305,6 +4576,13 @@ types:
           displayName: fwreinit
           type: integer
           format: int32
+      headers:
+        Content-Type:
+          required: true
+          example:
+            value: application/json
+          displayName: Content-Type
+          type: string
   /put:
     post:
       displayName: User - CRUD Users Put - Update V2
@@ -4622,7 +4900,7 @@ types:
               event_action_type: Sold to City of Austin
               origination_type_id: 2
           displayName: Body
-          type: EventActionTypeCheckIn  createrequest33
+          type: EventActionTypeCheckIn  createrequest36
       queryParameters:
         fwreinit:
           required: true
