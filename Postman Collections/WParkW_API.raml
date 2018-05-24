@@ -964,23 +964,57 @@ types:
   User  crud create v2request:
     example:
       value:
-        user:
-          user_type_id: 2
-          membership_type_id: 2
-          username: vvvva
-          password: P@ssw0rdq
-          first_name: 54
-          last_name: gh
-          email_address: 521@genevamedia.com
-          cell_phone: 8033991129
-          organization_id: 138
+        user_type_id: 2
+        membership_type_id: 2
+        username: bebebe
+        password: P@ssw0rdq
+        first_name: Jimmy
+        last_name: John
+        email_address: jimmyjohn@genevamedia.com
+        cell_phone: 752-541-8541
+        organization_id: 138
     displayName: User - CRUD create V2Request
     type: object
     properties:
-      user:
+      user_type_id:
         required: true
-        displayName: user
-        type: User
+        displayName: user_type_id
+        type: integer
+        format: int32
+      membership_type_id:
+        required: true
+        displayName: membership_type_id
+        type: integer
+        format: int32
+      username:
+        required: true
+        displayName: username
+        type: string
+      password:
+        required: true
+        displayName: password
+        type: string
+      first_name:
+        required: true
+        displayName: first_name
+        type: string
+      last_name:
+        required: true
+        displayName: last_name
+        type: string
+      email_address:
+        required: true
+        displayName: email_address
+        type: string
+      cell_phone:
+        required: true
+        displayName: cell_phone
+        type: string
+      organization_id:
+        required: true
+        displayName: organization_id
+        type: integer
+        format: int32
   User  crud getrequest:
     example:
       value:
@@ -1334,12 +1368,12 @@ types:
         displayName: text_notif_flag
         type: integer
         format: int32
-  EventActionTypeCheckIn  createrequest36:
+  EventActionTypeCheckIn  createrequest35:
     example:
       value:
         event_action_type: Sold to City of Austin
         origination_type_id: 2
-    displayName: event-action-type-check-in - createRequest36
+    displayName: event-action-type-check-in - createRequest35
     type: object
     properties:
       event_action_type:
@@ -1383,8 +1417,8 @@ types:
       organization:
         required: true
         displayName: organization
-        type: Organization39
-  Organization39:
+        type: Organization38
+  Organization38:
     example:
       value:
         address_line1: 5441 Street Road, suite 90810
@@ -1398,7 +1432,7 @@ types:
         organization_name: 'Nosie and Jummping '
         state_province: N/A
         email: googlemex@nosejummping.com
-    displayName: Organization39
+    displayName: Organization38
     type: object
     properties:
       address_line1:
@@ -1472,8 +1506,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User41
-  User41:
+        type: User40
+  User40:
     example:
       value:
         user_type_id: 2
@@ -1493,7 +1527,7 @@ types:
           postal_code: 22204
           country: United States of America
           country_fips: US
-    displayName: User41
+    displayName: User40
     type: object
     properties:
       user_type_id:
@@ -1533,8 +1567,8 @@ types:
       organization:
         required: true
         displayName: organization
-        type: Organization42
-  Organization42:
+        type: Organization41
+  Organization41:
     example:
       value:
         organization_name: zzz Arlington
@@ -1545,7 +1579,7 @@ types:
         postal_code: 22204
         country: United States of America
         country_fips: US
-    displayName: Organization42
+    displayName: Organization41
     type: object
     properties:
       organization_name:
@@ -1783,8 +1817,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User53
-  User53:
+        type: User52
+  User52:
     example:
       value:
         user_type_id: 2
@@ -1806,7 +1840,7 @@ types:
           postal_code: 43232
           country: United States of America
           country_fips: US
-    displayName: User53
+    displayName: User52
     type: object
     properties:
       user_type_id:
@@ -1855,7 +1889,7 @@ types:
       organization:
         required: true
         displayName: organization
-        type: Organization42
+        type: Organization41
   User  create  test from gregrequest:
     example:
       value:
@@ -1884,8 +1918,8 @@ types:
       user:
         required: true
         displayName: user
-        type: User56
-  User56:
+        type: User55
+  User55:
     example:
       value:
         user_type_id: 1
@@ -1906,7 +1940,7 @@ types:
           postal_code: 07054
           country: United States of America
           country_fips: US
-    displayName: User56
+    displayName: User55
     type: object
     properties:
       user_type_id:
@@ -1951,7 +1985,7 @@ types:
       organization:
         required: true
         displayName: organization
-        type: Organization42
+        type: Organization41
   Account  create (fail because of duplicagte username):
     example:
       value:
@@ -2008,7 +2042,7 @@ types:
       user:
         required: true
         displayName: user
-        type: User56
+        type: User55
   Local:user  authenticaterequest:
     example:
       value:
@@ -2647,8 +2681,8 @@ types:
       searchParams:
         required: true
         displayName: searchParams
-        type: SearchParams79
-  SearchParams79:
+        type: SearchParams78
+  SearchParams78:
     example:
       value:
         dateTo: ''
@@ -2657,7 +2691,7 @@ types:
         dateFrom: ''
         vin: ''
         stockNum: ''
-    displayName: SearchParams79
+    displayName: SearchParams78
     type: object
     properties:
       dateTo:
@@ -2696,13 +2730,13 @@ types:
       searchParams:
         required: true
         displayName: searchParams
-        type: SearchParams81
-  SearchParams81:
+        type: SearchParams80
+  SearchParams80:
     example:
       value:
         originationTypeId: 1
         organizationName: ''
-    displayName: SearchParams81
+    displayName: SearchParams80
     type: object
     properties:
       originationTypeId:
@@ -2781,8 +2815,8 @@ types:
       asset_properties:
         required: true
         displayName: asset_properties
-        type: AssetProperties84
-  AssetProperties84:
+        type: AssetProperties83
+  AssetProperties83:
     example:
       value:
         msrp: ''
@@ -2802,7 +2836,7 @@ types:
         make: Toyota
         engine: Engine
         vehicle_type: Sedan
-    displayName: AssetProperties84
+    displayName: AssetProperties83
     type: object
     properties:
       msrp:
@@ -2954,8 +2988,8 @@ types:
       asset_event:
         required: true
         displayName: asset_event
-        type: AssetEvent86
-  AssetEvent86:
+        type: AssetEvent85
+  AssetEvent85:
     example:
       value:
         asset_id: 480
@@ -3028,7 +3062,7 @@ types:
           vin_photo_img_url: https://s3.amazonaws.com/wparkw.assets/vin.png
           vin_decode_location_lat: 18.851031
           vin_decode_location_long: -57.366377
-    displayName: AssetEvent86
+    displayName: AssetEvent85
     type: object
     properties:
       asset_id:
@@ -3050,7 +3084,7 @@ types:
       asset_properties:
         required: true
         displayName: asset_properties
-        type: AssetProperties87
+        type: AssetProperties86
       asset_images:
         required: true
         displayName: asset_images
@@ -3091,7 +3125,7 @@ types:
         required: true
         displayName: vin_decode_log
         type: VinDecodeLog
-  AssetProperties87:
+  AssetProperties86:
     example:
       value:
         vin_num: WBA7F2C56HG422712
@@ -3110,7 +3144,7 @@ types:
         age: ''
         cost: ''
         msrp: ''
-    displayName: AssetProperties87
+    displayName: AssetProperties86
     type: object
     properties:
       vin_num:
@@ -3252,8 +3286,8 @@ types:
       asset_origination:
         required: true
         displayName: asset_origination
-        type: AssetOrigination98
-  AssetOrigination98:
+        type: AssetOrigination97
+  AssetOrigination97:
     example:
       value:
         origination_type_id: 4
@@ -3267,7 +3301,7 @@ types:
         address_line1: dhdjdhd AAAA
         postal_code: 07087
         country: ''
-    displayName: AssetOrigination98
+    displayName: AssetOrigination97
     type: object
     properties:
       origination_type_id:
@@ -3344,7 +3378,7 @@ types:
       user:
         required: true
         displayName: user
-        type: User53
+        type: User52
   User  authenticate  sanderequest:
     example:
       value:
@@ -4900,7 +4934,7 @@ types:
               event_action_type: Sold to City of Austin
               origination_type_id: 2
           displayName: Body
-          type: EventActionTypeCheckIn  createrequest36
+          type: EventActionTypeCheckIn  createrequest35
       queryParameters:
         fwreinit:
           required: true
