@@ -6,6 +6,8 @@ baseUriParameters:
   domain:
     required: false
     default: DefaultParameterValue
+    example:
+      value: DefaultParameterValue
     displayName: domain
     type: string
 protocols:
@@ -3492,7 +3494,6 @@ types:
 /authenticate:
   post:
     displayName: User-Authenticate
-    description: 'TODO: Add Description'
     body:
       application/json:
         example:
@@ -3523,7 +3524,6 @@ types:
 /asset-activity/search:
   post:
     displayName: AssetActivity-Search
-    description: 'TODO: Add Description'
     body:
       application/json:
         example:
@@ -3556,7 +3556,6 @@ types:
 /vin-decode/WAUW2AFC9HN131967:
   get:
     displayName: VINDecode
-    description: 'TODO: Add Description'
     headers:
       Content-Type:
         required: true
@@ -3576,7 +3575,6 @@ types:
 /aws-authenticate:
   get:
     displayName: AWSAuthenticate
-    description: 'TODO: Add Description'
     headers:
       Content-Type:
         required: true
@@ -3596,7 +3594,6 @@ types:
 /asset-origination-type/list/1:
   post:
     displayName: AssetOriginationTypes-List
-    description: 'TODO: Add Description'
     headers:
       Content-Type:
         required: true
@@ -3616,7 +3613,6 @@ types:
 /event-type/list:
   get:
     displayName: EventTypes-List
-    description: 'TODO: Add Description'
     headers:
       Content-Type:
         required: true
@@ -3636,7 +3632,6 @@ types:
 /event-action-type/list:
   get:
     displayName: EventActionTypes-List
-    description: 'TODO: Add Description'
     headers:
       Content-Type:
         required: true
@@ -3656,7 +3651,6 @@ types:
 /event-outcome/list/1:
   get:
     displayName: EventOutcome-List
-    description: 'TODO: Add Description'
     headers:
       Content-Type:
         required: true
@@ -3670,7 +3664,6 @@ types:
 /logout:
   get:
     displayName: User-Logout
-    description: 'TODO: Add Description'
     headers:
       Content-Type:
         required: true
@@ -3684,7 +3677,6 @@ types:
 /profile.jpg:
   get:
     displayName: https://wparkw.s3.amazonaws.com/profile/1/profile.jpg
-    description: 'TODO: Add Description'
     responses:
       200:
         description: Success
@@ -3692,7 +3684,6 @@ types:
   /create:
     post:
       displayName: organization-create-v2
-      description: 'TODO: Add Description'
       body:
         application/json:
           example:
@@ -3738,7 +3729,6 @@ types:
   /put:
     post:
       displayName: organization-put
-      description: 'TODO: Add Description'
       body:
         application/json:
           example:
@@ -3785,7 +3775,6 @@ types:
   /stocknumber/17/U:
     get:
       displayName: organization/serialnumber/get
-      description: 'TODO: Add Description'
       queryParameters:
         fwreinit:
           required: true
@@ -3813,7 +3802,6 @@ types:
   /list/:
     get:
       displayName: organization-list
-      description: 'TODO: Add Description'
       headers:
         Content-Type:
           required: true
@@ -4551,7 +4539,6 @@ types:
   /delete:
     post:
       displayName: organization-delete-Greg'sData
-      description: 'TODO: Add Description'
       body:
         application/json:
           example:
@@ -4578,7 +4565,6 @@ types:
     /:
       post:
         displayName: organization-delete
-        description: 'TODO: Add Description'
         body:
           application/json:
             example:
@@ -4691,7 +4677,6 @@ types:
   /list/:
     get:
       displayName: event-action-type-check-in-LIST
-      description: 'TODO: Add Description'
       headers:
         Content-Type:
           required: true
@@ -4714,7 +4699,6 @@ types:
   /create:
     post:
       displayName: event-action-type-check-inCREATE1
-      description: 'TODO: Add Description'
       body:
         application/json:
           example:
@@ -4751,7 +4735,6 @@ types:
   /put:
     post:
       displayName: event-action-type-check-in-PUT/Update
-      description: 'TODO: Add Description'
       body:
         application/json:
           example:
@@ -4789,7 +4772,6 @@ types:
   /list:
     get:
       displayName: UserCRUD-List
-      description: 'TODO: Add Description'
       headers:
         Content-Type:
           required: true
@@ -4809,7 +4791,6 @@ types:
   /delete:
     post:
       displayName: Users-CRUDUserDelete
-      description: 'TODO: Add Description'
       body:
         application/json:
           example:
@@ -4844,7 +4825,6 @@ types:
   /create:
     post:
       displayName: User-CRUDcreatenew1
-      description: 'TODO: Add Description'
       body:
         application/json:
           example:
@@ -4893,7 +4873,6 @@ types:
   /put:
     post:
       displayName: User-CRUDUsersPut-UpdateV2
-      description: 'TODO: Add Description'
       body:
         application/json:
           example:
@@ -4943,7 +4922,6 @@ types:
   /get:
     get:
       displayName: User-CRUDgetCopy
-      description: 'TODO: Add Description'
       headers:
         Content-Type:
           required: true
@@ -4963,7 +4941,6 @@ types:
     /38:
       get:
         displayName: User-CRUDput
-        description: 'TODO: Add Description'
         headers:
           Content-Type:
             required: true
@@ -4984,7 +4961,6 @@ types:
   /create:
     post:
       displayName: User-belichick
-      description: 'TODO: Add Description'
       body:
         application/json:
           example:
@@ -5028,7 +5004,6 @@ types:
   /setpassword:
     post:
       displayName: User-UserSetNewPassword
-      description: 'TODO: Add Description'
       body:
         application/json:
           example:
@@ -5125,7 +5100,6 @@ types:
   /clearpasswordreset:
     post:
       displayName: User-UserClearPasswordReset
-      description: 'TODO: Add Description'
       body:
         application/json:
           example:
@@ -5160,7 +5134,6 @@ types:
   /resetpassword:
     post:
       displayName: User-resetpassword
-      description: 'TODO: Add Description'
       body:
         application/json:
           example:
@@ -5188,7 +5161,6 @@ types:
   /agreement:
     post:
       displayName: User-UserAgreementset
-      description: 'TODO: Add Description'
       body:
         application/json:
           example:
@@ -5223,7 +5195,6 @@ types:
   /update-settings:
     post:
       displayName: User-UpdateSettings/sandejones
-      description: 'TODO: Add Description'
       body:
         application/json:
           example:
@@ -5321,7 +5292,6 @@ types:
   /list:
     get:
       displayName: Account-List
-      description: 'TODO: Add Description'
       headers:
         Content-Type:
           required: true
@@ -5341,7 +5311,6 @@ types:
     /35:
       get:
         displayName: Users-ListCopy
-        description: 'TODO: Add Description'
         headers:
           Content-Type:
             required: true
@@ -5362,7 +5331,6 @@ types:
   /list:
     get:
       displayName: event-action-type-check-in-List
-      description: 'TODO: Add Description'
       headers:
         Content-Type:
           required: true
@@ -5466,7 +5434,6 @@ types:
   /check-in:
     post:
       displayName: Asset-Check-In-WithOriginationID
-      description: 'TODO: Add Description'
       body:
         application/json:
           example:
@@ -5563,7 +5530,6 @@ types:
   /history:
     post:
       displayName: AssetEventHistory-List
-      description: 'TODO: Add Description'
       body:
         application/json:
           example:
@@ -5593,7 +5559,6 @@ types:
   /list:
     get:
       displayName: AssetEventPOC-List
-      description: 'TODO: Add Description'
       headers:
         Content-Type:
           required: true
@@ -5613,7 +5578,6 @@ types:
   /edit:
     post:
       displayName: AssetEventPOC-Edit
-      description: 'TODO: Add Description'
       body:
         application/json:
           example:
@@ -5647,7 +5611,6 @@ types:
   /list:
     post:
       displayName: AssetOrigination-List
-      description: 'TODO: Add Description'
       body:
         application/json:
           example:
@@ -5676,7 +5639,6 @@ types:
   /18:
     get:
       displayName: AssetOrigination-Detail
-      description: 'TODO: Add Description'
       headers:
         Content-Type:
           required: true
@@ -5690,7 +5652,6 @@ types:
   /edit:
     post:
       displayName: AssetOrigination-Edit
-      description: 'TODO: Add Description'
       body:
         application/json:
           example:
@@ -5729,7 +5690,6 @@ types:
   /edit:
     post:
       displayName: Vehicle-Edit(Create/Update)
-      description: 'TODO: Add Description'
       body:
         application/json:
           example:
@@ -5776,7 +5736,6 @@ types:
   /view/1399:
     get:
       displayName: Vehicle-Detail
-      description: 'TODO: Add Description'
       headers:
         Content-Type:
           required: true
